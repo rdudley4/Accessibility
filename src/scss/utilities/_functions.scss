@@ -1,0 +1,18 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Import Google Font if font-url-google is defined.
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+// Px to Em
+@function em($target, $context: $base__font-size) {
+  @return ( $target / $context ) * 1em;
+}
+
+// Color Palette
+@function palette($color, $shade: 'base') {
+  @return map-get(map-get($color-palette, $color), $shade );
+}

@@ -1,0 +1,55 @@
+// ==========================================================================
+// Extends
+// ==========================================================================
+
+// Navigation
+// ----------
+
+%nav-item-default {
+  margin: 0 em(10px);
+}
+
+%nav-item-link {
+  display  : block;
+  font-size: em(20px);
+  padding  : em(7px, 20px);
+  transition: color $trns-duration--default;
+}
+
+%nav-link-hover {
+  color: palette(white);
+}
+
+
+// Headlines
+// ---------
+
+%headline-primary {
+  font-size     : em(32px);
+  font-weight   : $font-weight--light;
+  color         : $color-accent;
+  text-transform: uppercase;
+}
+
+%headline-secondary {
+  font-size     : em(24px);
+  color         : $color-secondary;
+  text-transform: uppercase;
+  border-bottom : 1px solid palette(white, x-opaque);
+  margin        : em(7px, 24px) 0;
+}
+
+
+// Border/Outline
+// --------------
+
+%border-outline {
+  border : 1px solid palette(white, x-opaque);
+  outline: 1px solid palette(black);
+}
+
+%border-outline-reverse {
+  border    : 1px solid palette(black);
+  outline   : 1px solid palette(white, x-opaque);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}

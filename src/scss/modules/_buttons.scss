@@ -1,0 +1,18 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn {
+  @extend %border-outline-reverse;
+  background-color: $color-secondary;
+  padding         : em(7px);
+  transition      : background-color $trns-duration--default;
+
+  &:hover {
+    background-color: $color-accent;
+  }
+
+  @include mq(med) {
+    align-self: flex-start;
+  }
+}

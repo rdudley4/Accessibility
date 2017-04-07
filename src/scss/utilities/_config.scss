@@ -1,0 +1,95 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Descriptive Color Variables
+// ---------------------------
+
+$white     : #fff;
+$black     : #000;
+$grey      : #999;
+
+$baltic-sea: #2d2b30;
+$magic-mint: #AAFAC8; /* Contrast: 10.3 against $baltic-sea */
+$platinum  : #D6E5E3; /* Contrast: 10.8 against $baltic-sea */
+$test: #EDEBD7;
+$prune     : #66101F; /* Contrast: ~10.7 against landing image */
+
+
+// Usable Color Variables
+// ----------------------
+$color-primary  : $baltic-sea;
+$color-secondary: $test;
+$color-tertiary : $prune;
+$color-accent   : $magic-mint;
+
+
+// Color Palette Modifiers
+// -----------------------
+
+$color-palette: (
+  white: (
+    x-opaque: rgba($white, .1),
+    opaque  : rgba($white, .6),
+    base    : $white
+  ),
+  black: (
+    x-opaque: rgba($black, .1),
+    opaque  : rgba(black, .6),
+    base    : $black
+  ),
+  grey: (
+    base: $grey
+  ),
+  baltic: (
+    x-opaque: rgba($baltic-sea, 0.1),
+    opaque  : rgba($baltic-sea, 0.5),
+    base    : $baltic-sea
+  )
+);
+
+
+// Font Vars
+// ---------
+
+$font-url--google  : 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700';
+$font-stack-primary: 'Open Sans Condensed', sans-serif;
+
+$base__font-size  : 16px;
+$base__line-height: 24px;
+
+$font-weight--light: 300;
+$font-weight--bold : 700;
+
+
+// Media Query Breakpoints
+// -----------------------
+
+$brk-md: '(min-width: 840px)';
+$brk-lg: '(min-width: 1050px)';
+
+
+// Icons
+// -----
+
+$icons: (
+  itunes    : 'platforms/itunes.svg',
+  soundcloud: 'platforms/soundcloud.svg',
+  youtube   : 'platforms/youtube.svg',
+  twitter   : 'social-media/twitter.svg',
+  instagram : 'social-media/instagram.svg',
+  facebook  : 'social-media/facebook.svg'
+);
+
+
+// Miscellaneous
+// -------------
+
+// Max Width
+$content-max-width: 1200px;
+
+// Transition Duration
+$trns-duration--default: 250ms;
+
+// Image Path
+$path--rel: '../img';

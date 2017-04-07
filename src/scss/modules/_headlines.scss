@@ -1,0 +1,42 @@
+// ==========================================================================
+// Headlines
+// ==========================================================================
+
+.headline {
+  &-primary {
+    @extend %headline-primary;
+
+    @include m(grouped) {
+      @extend %headline-primary;
+      margin-top: 0;
+    }
+  }
+
+  &-secondary {
+    @extend %headline-secondary;
+
+    @include m(box-inset) {
+      @extend %headline-secondary;
+      @extend %border-outline-reverse;
+      padding: em(7px, 24px);
+    }
+  }
+}
+
+
+// Website Title
+// -------------
+
+.title {
+  font-size     : em(60px);
+  text-transform: uppercase;
+  margin        : 0;
+  color         : $color-primary;
+
+  &-subtext {
+    font-size     : em(30px);
+    color         : $color-tertiary;
+    text-transform: lowercase;
+    margin        : 0;
+  }
+}

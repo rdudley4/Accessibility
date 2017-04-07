@@ -1,0 +1,73 @@
+// ==========================================================================
+// Imagery
+// ==========================================================================
+
+
+// Landing Image
+// -------------
+
+.landing {
+  @extend %text-center;
+  @include bg-image('layout/concert02_no_text.jpg', 100%, 350px);
+  background-size    : cover;
+  background-position: top center;
+
+  @include mq(med) {
+    min-height: 470px; 
+  }
+}
+
+
+// Logo Image
+// ----------
+
+#logo {
+  max-width : 75px;
+  margin-top: em(80px);
+
+  @include mq(med) {
+    max-width: 150px;
+  }
+}
+
+
+// Music Platform Icons
+// --------------------
+
+.platform {
+  background-size: contain;
+  opacity        : .5;
+  transition     : opacity $trns-duration--default, transform $trns-duration--default;
+
+  &:not(:last-of-type) {
+    margin-right: em(10px);
+  }
+
+  &:hover {
+    transform: scale(1.25);
+    opacity  : 1;
+  }
+
+
+  @each $platform, $link in $icons {
+    $size: 0px;
+    &.#{$platform} {
+      @if $platform == itunes or $platform == soundcloud or $platform == youtube {
+        $size: 48px;
+      }
+      @else {
+        $size: 24px;
+      }
+      @include bg-image(#{$link}, $size, $size, inline-block);
+    }
+  }
+}
+
+
+// Tour Icon
+// ---------
+
+.tour {
+  @include bg-image('layout/tour.svg', 150px, 150px, inline-block);
+  background-size: contain;
+}

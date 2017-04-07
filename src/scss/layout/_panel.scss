@@ -1,0 +1,40 @@
+// ==========================================================================
+// Panels
+// ==========================================================================
+
+.panel {
+  // Default Panel [20px Top | 30px Bot ]
+  @extend %panel-default;
+
+  @include m(centered) {
+    @extend %panel-default;
+    @extend %text-center;
+  }
+  // Even Panel [20px Top | 20px Bot ]
+  @include m(even) {
+    @extend %panel-even;
+
+    @include m(centered) {
+      @extend %panel-even;
+      @extend %text-center;
+    }
+  }
+ // Top Panel [20px Top | 0px Bot ]
+  @include m(top) {
+    @extend %panel-only-top;
+
+    @include m(centered) {
+      @extend %panel-only-top;
+      @extend %text-center;
+    }
+  }
+  // Bot Panel [0px Top | 20px Bot ]
+  @include m(bot) {
+    @extend %panel-only-bot;
+
+    @include m(centered) {
+      @extend %panel-only-bot;
+      @extend %text-center;
+    }
+  }
+}

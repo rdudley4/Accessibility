@@ -1,0 +1,59 @@
+// ==========================================================================
+// Info Card
+// ==========================================================================
+
+.info-card {
+  @extend %border-outline;
+  @extend .centered;
+  flex-direction: column;
+  flex-wrap     : nowrap;
+  align-items   : center;
+  max-width     : 1000px;
+  transition    : border-color $trns-duration--default;
+
+  &:hover {
+    border-color: $color-secondary;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: em(20px);
+  }
+
+  // Media Queries
+  @include mq(med) {
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : flex-start;
+  }
+
+  // info-card__content
+  @include e(content) {
+    @include mq(med) {
+      margin-left: em(20px);
+      flex-grow  : 1;
+      text-align : left;
+    }  
+  }
+
+  // info-card__photo
+  @include e(photo) {
+    @extend %border-outline-reverse;
+    width: 200px;
+
+    @include mq(med) {
+      width: 300px;
+    }
+  }
+
+  // info-card__box
+  @include e(box) {
+    @extend %border-outline-reverse;
+    padding: em(3px) em(10px);
+
+    // Modifiers
+    @include m(padded) {
+      @extend %border-outline-reverse;
+      padding: em(7px) em(10px);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+// ==========================================================================
+// Navigation
+// ==========================================================================
+
+.navbar {
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  background-color: palette(black, opaque);
+  padding         : em(7px);
+}
+
+.nav {
+  @include e(item) {
+    @extend %nav-item-default;
+
+    a {
+      @extend %nav-item-link;
+      font-weight   : $font-weight--light;
+      letter-spacing: 5px;
+
+      // hover
+      &:hover {
+        @extend %nav-link-hover;
+      }
+    }
+
+    &:first-of-type {
+      margin-right: auto;
+    }
+
+    // Modifiers
+    @include m(bold) {
+      @extend %nav-item-default;
+
+      a {
+        @extend %nav-item-link;
+        font-weight: bold;
+
+        &:hover {
+          @extend %nav-link-hover;
+        }
+      }
+    }
+  }
+}
