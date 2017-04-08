@@ -4,11 +4,13 @@
 
 .btn {
   @extend %border-outline-reverse;
-  background-color: $color-secondary;
+  color: $color-accent;
   padding         : em(7px);
+  font-weight: $font-weight--bold;
   transition      : background-color $trns-duration--default;
 
   &:hover {
+    color: $color-primary;
     background-color: $color-accent;
   }
 

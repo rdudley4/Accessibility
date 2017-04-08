@@ -12,7 +12,7 @@
   transition    : border-color $trns-duration--default;
 
   &:hover {
-    border-color: $color-secondary;
+    border-color: $color-accent;
   }
 
   &:not(:first-of-type) {

@@ -9,19 +9,18 @@ $white     : #fff;
 $black     : #000;
 $grey      : #999;
 
-$baltic-sea: #2d2b30;
-$magic-mint: #AAFAC8; /* Contrast: 10.3 against $baltic-sea */
-$platinum  : #D6E5E3; /* Contrast: 10.8 against $baltic-sea */
-$test: #EDEBD7;
-$prune     : #66101F; /* Contrast: ~10.7 against landing image */
+$onyx      : #343A3F;
+$queen-blue: #3E6990;
+$aquamarine: #63C7B2;
+$isabelline: #EBEBEB;
 
 
 // Usable Color Variables
 // ----------------------
-$color-primary  : $baltic-sea;
-$color-secondary: $test;
-$color-tertiary : $prune;
-$color-accent   : $magic-mint;
+$color-primary  : $onyx;
+$color-secondary: $isabelline;
+$color-tertiary : $queen-blue;
+$color-accent   : $aquamarine;
 
 
 // Color Palette Modifiers
@@ -41,10 +40,10 @@ $color-palette: (
   grey: (
     base: $grey
   ),
-  baltic: (
-    x-opaque: rgba($baltic-sea, 0.1),
-    opaque  : rgba($baltic-sea, 0.5),
-    base    : $baltic-sea
+  onyx: (
+    x-opaque: rgba($onyx, 0.1),
+    opaque  : rgba($onyx, 0.5),
+    base    : $onyx
   )
 );
 
