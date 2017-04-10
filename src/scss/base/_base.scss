@@ -38,3 +38,61 @@ img {
 p {
   color: $color-secondary;
 }
+
+
+// Form Elements
+// -------------
+
+form {
+  color: $color-accent;
+}
+
+fieldset {
+  border : none;
+  padding: 0;
+  margin : em(20px) 0;
+}
+
+legend {
+  @extend %border-outline-reverse;
+  visibility    : hidden;
+  position      : absolute;
+  top           : 20px;
+  right         : 20px;
+  padding       : em(5px);
+  color         : $color-secondary;
+  text-transform: uppercase;
+  font-size     : em(20px);
+  font-weight   : $font-weight--light;
+
+  @include mq(med) {
+    visibility: visible;
+  }
+}
+
+select,
+input,
+textarea {
+  background-color: transparent;
+  color           : $color-accent;
+  transition      : border $trns-duration--default, outline $trns-duration--default;
+
+  &:focus {
+    @extend %border-outline;
+    outline-offset: 0;
+    // Style Validation only for required form elements.
+    &:required {
+      &:valid {
+        border-color: $color-success;
+      }
+
+      &:invalid {
+        border-color: $color-error;
+      }
+    }  
+  }
+}
+
+option {
+  background-color: $color-primary;
+}

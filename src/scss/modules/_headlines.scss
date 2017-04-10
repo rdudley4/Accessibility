@@ -28,15 +28,23 @@
 // -------------
 
 .title {
-  font-size     : em(60px);
+  font-size     : em(48px);
   text-transform: uppercase;
   margin        : 0;
   color         : $color-primary;
 
+  @include mq(med) {
+    font-size: em(60px); /* 20% Increase */
+  }
+
   &-subtext {
-    font-size     : em(30px);
+    font-size     : em(24px);
     color         : $color-tertiary;
     text-transform: lowercase;
     margin        : 0;
+
+    @include mq(med) {
+      font-size: 30px; /* 20% Increase */
+    }
   }
 }

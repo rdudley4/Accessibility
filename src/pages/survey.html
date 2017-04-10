@@ -25,8 +25,80 @@
       </div>
     </header>
 
-    <main id="main-content" class="limit">
-      <!-- STUFF GOES HERE -->
+    <main id="main-content" class="limit panel--even--centered">
+      <h1 class="headline-primary">Survey</h1>
+      <div class="info-card flex panel--even--centered">
+        <img id="survey" class="info-card__photo" src="../img/layout/concert01.jpg" alt="Picture of the band playing a live show.">
+        <div class="info-card__content">
+          <!-- Survey Form -->
+          <form action="" method="POST" class="form">
+            <!-- Favorites -->
+            <fieldset class="form__fieldset">
+              <legend>Favorites</legend>
+              <!-- Favorite Band Member -->
+              <label class="form__label" for="John">Who is your favorite band member?</label>
+              <input id="John" class="form__radio" type="radio" name="members" value="John">
+              <label class="form__label--boxed" for="John">John</label>
+
+              <input id="Hazzard" class="form__radio" type="radio" name="members" value="Hazzard">
+              <label class="form__label--boxed" for="Hazzard">Hazzard</label>
+              
+              <input id="Bob" class="form__radio" type="radio" name="members" value="Bob">
+              <label class="form__label--boxed" for="Bob">Bob</label>
+              
+              <input id="Sally" class="form__radio" type="radio" name="members" value="Sally">
+              <label class="form__label--boxed" for="Sally">Sally</label>
+
+              <!-- Favorite Album -->
+              <label for="favorite-album" class="form__label">What is your favorite album?</label>
+              <input id="favorite-album" class="form__input" type="text" list="albums">
+              <datalist id="albums">
+                <option value="Party For An Angel">
+                <option value="A Day Of Old">
+                <option value="Finding My Shadow">
+                <option value="Diamond Fireworks">
+                <option value="Enjoy Your Desire">
+                <option value="This Is For You">
+                <option value="Music Of My Life">
+                <option value="Song For Yesterday">
+                <option value="Heroic Forever">
+                <option value="Midnight Fires">
+                <option value="Street Of The Rider">
+              </datalist>
+
+              <!-- Favorite Song -->
+              <label for="favorite-song" class="form__label">What is your favorite song?</label>
+              <input id="favorite-song" class="form__input" type="text">
+            </fieldset>
+          </form>
+        </div>      
+      </div>
+
+      <h1 class="headline-primary">Newsletter</h1>
+      <div class="info-card flex panel--even--centered">
+        <img id="newsletter" class="info-card__photo" src="../img/layout/the_band.jpg" alt="Picture of the band playing a live show.">
+        <div class="info-card__content">
+          <!-- Newsletter Form -->
+          <form action="#" method="POST" class="form">
+            <fieldset class="form__fieldset">
+              <legend>Contact Info</legend>
+              <!-- Name -->
+              <label class="form__label" for="input-name">Full Name</label>
+              <input id="input-name" class="form__input" type="text" placeholder="Rick Sanchez" pattern="[a-zA-Z]+[\s][a-zA-Z]+" required>
+              <!-- Email -->
+              <label class="form__label" for="input-email">Email</label>
+              <input id="input-email" class="form__input" type="email" placeholder="rick@szechuan.sauce" pattern=".{9,}" required>
+              <!-- Email Verify -->
+              <label class="form__label" for="input-email-verify">Verify Email</label>
+              <input id="input-email-verify" class="form__input" type="email" placeholder="Same as above." pattern=".{9,}" required>
+              <!-- Submit -->
+              <input class="btn" type="submit" value="Submit">
+              <!-- Reset -->
+              <input class="btn" type="reset" value="Reset">
+            </fieldset>
+          </form>
+        </div>      
+      </div>
     </main>
 
     <footer class="limit panel--centered">

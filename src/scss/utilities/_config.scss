@@ -5,14 +5,20 @@
 // Descriptive Color Variables
 // ---------------------------
 
+// Basic
 $white     : #fff;
 $black     : #000;
 $grey      : #999;
 
+// Layout
 $onyx      : #343A3F;
 $queen-blue: #3E6990;
 $aquamarine: #63C7B2;
 $isabelline: #EBEBEB;
+
+// Success/Error
+$rusty-red : #DB324D;
+$ufo-green : #2DD881;
 
 
 // Usable Color Variables
@@ -21,6 +27,9 @@ $color-primary  : $onyx;
 $color-secondary: $isabelline;
 $color-tertiary : $queen-blue;
 $color-accent   : $aquamarine;
+
+$color-success  : $ufo-green;
+$color-error    : $rusty-red;
 
 
 // Color Palette Modifiers

@@ -5,9 +5,10 @@
 .info-card {
   @extend %border-outline;
   @extend .centered;
+  position: relative;
+  align-items   : center;
   flex-direction: column;
   flex-wrap     : nowrap;
-  align-items   : center;
   max-width     : 1000px;
   transition    : border-color $trns-duration--default;
 
@@ -23,7 +24,6 @@
   @include mq(med) {
     flex-direction : row;
     justify-content: space-between;
-    align-items    : flex-start;
   }
 
   // info-card__content

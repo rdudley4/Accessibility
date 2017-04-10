@@ -3,18 +3,28 @@
 // ==========================================================================
 
 .btn {
-  @extend %border-outline-reverse;
-  color: $color-accent;
-  padding         : em(7px);
-  font-weight: $font-weight--bold;
-  transition      : background-color $trns-duration--default;
+  @extend %btn-default;
+  width: 100px;
 
   &:hover {
-    color: $color-primary;
-    background-color: $color-accent;
+    @extend %btn-hover;
   }
 
-  @include mq(med) {
-    align-self: flex-start;
+  & + & {
+    margin-left: em(15px);
+  }
+
+  // Flex Button
+  @include m(flexible) {
+    @extend %btn-default;
+
+    &:hover {
+      @extend %btn-hover;
+    }
+
+    @include mq(med) {
+      align-self: flex-start;
+      margin-top: 0;
+    }
   }
 }

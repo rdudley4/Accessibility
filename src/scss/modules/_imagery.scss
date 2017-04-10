@@ -71,3 +71,14 @@
   @include bg-image('layout/tour.svg', 150px, 150px, inline-block);
   background-size: contain;
 }
+
+
+// Survey
+// ------
+
+#survey,
+#newsletter {
+  @include mq(med) {
+    height: 300px;
+  }
+}

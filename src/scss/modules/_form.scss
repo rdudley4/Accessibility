@@ -1,0 +1,70 @@
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+.form {
+  // Labels
+  @include e(label) {
+    display: block;
+    margin       : em(10px) 0;
+    font-weight  : $font-weight--bold;
+    text-align   : center;
+
+    @include mq(med) {
+      text-align: left;
+    } 
+
+    // form__label--boxed - Radio Buttons
+    @include m(boxed) {
+      @extend %input-default;
+      display    : inline-block;
+      width      : 100px;
+      margin     : em(5px);
+      font-weight: $font-weight--bold;
+      text-align : center;
+      transition : color $trns-duration--default, background-color $trns-duration--default;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include mq(med) {
+        margin-left: 0;
+
+        & ~ & {
+          margin: em(5px);
+        }
+      }
+    }  
+  }
+
+  // Fieldsets
+  @include e(fieldset) {
+    &:last-of-type {
+      margin: em(20px) 0 0 0;
+    }
+
+    @include mq(med) {
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Radio Buttons
+  @include e(radio) {
+    display: none;
+
+    &:checked + label {
+      color           : $color-primary;
+      background-color: $color-accent;
+    }
+  }
+  
+  // Input
+  @include e(input) {
+    @extend %input-default;
+    width: 100%;
+  }
+
+}
