@@ -63,6 +63,7 @@ legend {
   color         : $color-secondary;
   text-transform: uppercase;
   font-family   : $font-stack-secondary;
+  transition    : color $trns-duration--default;
 
   @include mq(med) {
     visibility: visible;
