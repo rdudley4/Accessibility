@@ -13,7 +13,9 @@
   transition    : border-color $trns-duration--default;
 
   &:hover {
-    border-color: $color-accent;
+    & legend {
+      color: $color-accent;
+    }
   }
 
   &:not(:first-of-type) {
