@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Accessible Frog</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <!-- Page Header [Nav, Landing] -->
-    <header>
+    <header role="banner">
       <!-- Navigation -->
-      <nav class="navbar">
+      <nav class="navbar" role="navigation">
         <ul class="nav flex limit">
           <li id="home" class="nav__item"><a href="index.html">Accessible Frog</a></li>
           <li class="nav__item--bold"><a href="#">Survey</a></li>
@@ -25,13 +25,13 @@
       </div>
     </header>
 
-    <main id="main-content" class="limit panel--even--centered">
+    <main id="main-content" class="limit panel--even--centered" role="main">
       <h1 class="headline-primary">Survey</h1>
       <div class="info-card flex panel--even--centered">
         <img id="survey" class="info-card__photo" src="../img/layout/concert01.jpg" alt="Picture of the band playing a live show.">
         <div class="info-card__content">
           <!-- Survey Form -->
-          <form action="" method="POST" class="form">
+          <form action="" method="POST" class="form" role="form">
             <!-- Favorites -->
             <fieldset class="form__fieldset">
               <legend>Favorites</legend>
@@ -79,7 +79,7 @@
         <img id="newsletter" class="info-card__photo" src="../img/layout/the_band.jpg" alt="Picture of the band playing a live show.">
         <div class="info-card__content">
           <!-- Newsletter Form -->
-          <form action="#" method="POST" class="form">
+          <form action="#" method="POST" class="form" role="form">
             <fieldset class="form__fieldset">
               <legend>Contact Info</legend>
               <!-- Name -->
@@ -101,7 +101,7 @@
       </div>
     </main>
 
-    <footer class="limit panel--centered">
+    <footer class="limit panel--centered" role="contentinfo">
       <a href="#" class="platform twitter">
         <b class="srt">Find us on Twitter</b>
       </a>

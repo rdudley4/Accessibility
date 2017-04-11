@@ -63,11 +63,13 @@
 
 %btn-default {
   @extend %border-outline-reverse;
-  color      : $color-accent;
-  padding    : em(7px);
-  margin-top : em(30px);
-  font-weight: $font-weight--bold;
-  transition : background-color $trns-duration--default;
+  color         : $color-accent;
+  padding       : em(7px);
+  margin-top    : em(30px);
+  font-family   : $font-stack-primary;
+  font-weight   : $font-weight--bold;
+  text-transform: uppercase;
+  transition    : background-color $trns-duration--default;
 }
 
 %btn-hover {

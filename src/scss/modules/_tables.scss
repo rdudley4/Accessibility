@@ -5,7 +5,8 @@
 .table {
   @extend %border-outline;
   @extend .centered;
-  color: $color-secondary; 
+  font-family   : $font-stack-secondary;
+  color         : $color-secondary; 
   border-spacing: em(20px);
 
   // th
@@ -31,7 +32,6 @@
   td {
     border     : 1px solid transparent;
     outline    : 1px solid transparent;
-    font-weight: bold;
     padding    : em(8px);
   }
 }

@@ -48,12 +48,15 @@
   // info-card__box
   @include e(box) {
     @extend %border-outline-reverse;
-    padding: em(3px) em(10px);
+    padding    : em(3px) em(10px);
+    font-family: $font-stack-secondary;
 
     // Modifiers
     @include m(padded) {
       @extend %border-outline-reverse;
-      padding: em(7px) em(10px);
+      padding    : em(7px) em(10px);
+      font-family: $font-stack-secondary;
+      font-size  : em(15px);
     }
   }
 }

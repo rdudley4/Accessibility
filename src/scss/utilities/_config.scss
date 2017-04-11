@@ -60,8 +60,9 @@ $color-palette: (
 // Font Vars
 // ---------
 
-$font-url--google  : 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700';
-$font-stack-primary: 'Open Sans Condensed', sans-serif;
+$font-url--google    : 'https://fonts.googleapis.com/css?family=Cantarell:400,700|Open+Sans+Condensed:300,700';
+$font-stack-primary  : 'Open Sans Condensed', sans-serif;
+$font-stack-secondary: 'Cantarell', sans-serif;
 
 $base__font-size  : 16px;
 $base__line-height: 24px;

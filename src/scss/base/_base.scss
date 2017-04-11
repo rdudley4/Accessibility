@@ -54,16 +54,15 @@ fieldset {
 }
 
 legend {
-  @extend %border-outline-reverse;
+  @extend %border-outline;
   visibility    : hidden;
   position      : absolute;
-  top           : 20px;
-  right         : 20px;
-  padding       : em(5px);
+  top           : -34px;
+  left          : -1px;
+  padding       : em(3px) em(7px);
   color         : $color-secondary;
   text-transform: uppercase;
-  font-size     : em(20px);
-  font-weight   : $font-weight--light;
+  font-family   : $font-stack-secondary;
 
   @include mq(med) {
     visibility: visible;
@@ -73,6 +72,7 @@ legend {
 select,
 input,
 textarea {
+  font-family: $font-stack-secondary;
   background-color: transparent;
   color           : $color-accent;
   transition      : border $trns-duration--default, outline $trns-duration--default;
