@@ -12,8 +12,10 @@
   // th
   th {
     @extend %border-outline-reverse;
-    padding: em(7px);
-    width  : 33%;
+    padding       : em(7px);
+    width         : 33%;
+    font-family   : $font-stack-primary;
+    text-transform: uppercase;
   }
 
   tr {
