@@ -26,11 +26,11 @@
   tr {
 
     &:hover {
-      cursor          : help;
-      color           : $color-accent;
+      cursor: help;
 
       & td {
         @extend %border-outline-reverse;
+        color: $color-accent;
       }
     }
   }
