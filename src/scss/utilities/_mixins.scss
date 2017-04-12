@@ -28,6 +28,20 @@
 }
 
 
+// Shadow Generator
+// ----------------
+
+@mixin shadow($type) {
+  $shadow: map-get($shadows, $type);
+  @if $shadow {
+    box-shadow: $shadow palette(black, x-opaque);
+  }
+  @else {
+    @error "#{$type} is not a valid shadow type. Please review the $shadows var in the config partial for valid types.";
+  }
+}
+
+
 // Media Queries
 // -------------
 

@@ -11,6 +11,7 @@
   caption {
     @extend %text-important;
     @extend %border-outline;
+    @include shadow(bottom);
     padding       : em(5px);
     letter-spacing: em(2px);
   }
@@ -24,7 +25,6 @@
   }
 
   tr {
-
     &:hover {
       cursor: help;
 
