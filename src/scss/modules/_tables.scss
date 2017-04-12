@@ -9,6 +9,14 @@
   color         : $color-secondary; 
   border-spacing: em(20px);
 
+  // Caption
+  caption {
+    @extend %border-outline;
+    padding       : em(5px);
+    text-transform: uppercase;
+    letter-spacing: em(2px);
+  }
+
   // th
   th {
     @extend %border-outline-reverse;

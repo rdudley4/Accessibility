@@ -73,7 +73,7 @@ legend {
 select,
 input,
 textarea {
-  font-family: $font-stack-secondary;
+  font-family     : $font-stack-secondary;
   background-color: transparent;
   color           : $color-accent;
   transition      : border $trns-duration--default, outline $trns-duration--default;

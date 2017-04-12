@@ -5,7 +5,7 @@
 .info-card {
   @extend %border-outline;
   @extend .centered;
-  position: relative;
+  position      : relative;
   align-items   : center;
   flex-direction: column;
   flex-wrap     : nowrap;
