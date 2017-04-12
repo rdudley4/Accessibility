@@ -5,10 +5,10 @@
 .form {
   // Labels
   @include e(label) {
-    display: block;
-    margin       : em(10px) 0;
-    font-weight  : $font-weight--bold;
-    text-align   : center;
+    @extend %text-important;
+    display   : block;
+    margin    : em(10px) 0;
+    text-align: center;
 
     @include mq(med) {
       text-align: left;

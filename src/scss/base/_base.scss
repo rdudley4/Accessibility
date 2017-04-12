@@ -54,15 +54,14 @@ fieldset {
 }
 
 legend {
+  @extend %text-content;
   @extend %border-outline;
   visibility    : hidden;
   position      : absolute;
   top           : -34px;
   left          : -1px;
   padding       : em(3px) em(7px);
-  color         : $color-secondary;
   text-transform: uppercase;
-  font-family   : $font-stack-secondary;
   transition    : color $trns-duration--default;
 
   @include mq(med) {
@@ -73,9 +72,8 @@ legend {
 select,
 input,
 textarea {
-  font-family     : $font-stack-secondary;
+  @extend %text-content;
   background-color: transparent;
-  color           : $color-accent;
   transition      : border $trns-duration--default, outline $trns-duration--default;
 
   &:focus {
