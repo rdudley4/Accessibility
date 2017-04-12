@@ -4,27 +4,23 @@
 
 .table {
   @extend %border-outline;
-  @extend .centered;
-  font-family   : $font-stack-secondary;
-  color         : $color-secondary; 
+  @extend .centered; 
   border-spacing: em(20px);
 
   // Caption
   caption {
+    @extend %text-important;
     @extend %border-outline;
     padding       : em(5px);
-    text-transform: uppercase;
     letter-spacing: em(2px);
   }
 
   // th
   th {
+    @extend %text-important;
     @extend %border-outline-reverse;
-    padding       : em(7px);
-    width         : 33%;
-    color         : $color-accent;
-    font-family   : $font-stack-primary;
-    text-transform: uppercase;
+    width  : 33%;
+    padding: em(7px);
   }
 
   tr {
@@ -41,8 +37,9 @@
 
   // td
   td {
-    border     : 1px solid transparent;
-    outline    : 1px solid transparent;
-    padding    : em(8px);
+    @extend %text-content;
+    border : 1px solid transparent;
+    outline: 1px solid transparent;
+    padding: em(8px);
   }
 }

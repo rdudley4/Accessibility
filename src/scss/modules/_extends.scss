@@ -43,6 +43,22 @@
 }
 
 
+// Text Styles
+// -----------
+
+%text-important {
+  color         : $color-accent;
+  font-family   : $font-stack-primary;
+  font-weight   : $font-weight--bold;
+  text-transform: uppercase;
+}
+
+%text-content {
+  font-family: $font-stack-secondary;
+  color      : $color-secondary;
+}
+
+
 // Border/Outline
 // --------------
 
@@ -62,14 +78,11 @@
 // -------
 
 %btn-default {
+  @extend %text-important;
   @extend %border-outline-reverse;
-  color         : $color-accent;
-  padding       : em(7px);
-  margin-top    : em(30px);
-  font-family   : $font-stack-primary;
-  font-weight   : $font-weight--bold;
-  text-transform: uppercase;
-  transition    : background-color $trns-duration--default;
+  padding   : em(7px);
+  margin-top: em(30px);
+  transition: background-color $trns-duration--default;
 }
 
 %btn-hover {
