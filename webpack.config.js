@@ -12,7 +12,10 @@ const webpackConfig = {
     rules: [
       {
         test: /\.html$/,
-        loader: "html-loader"
+        loader: "html-loader",
+        options: {
+          attrs: ['img:src', 'video:src']
+        }
       },
       {
         test: /\.js$/,
@@ -51,6 +54,14 @@ const webpackConfig = {
             }
           }
         ]
+      },
+      {
+        test: /\.webm$/,
+        loader: "file-loader",
+        options: {
+          name: '[path]video-[sha512:hash:base64:7].[ext]',
+          context: './src'
+        }
       }
     ]
   },

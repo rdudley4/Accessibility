@@ -17,11 +17,13 @@
         </ul>
       </nav>
       <!-- Landing Image -->
-      <div class="landing">
+      <div class="landing--stationary">
         <b class="srt">Landing Page Image. Accessible Frog - We Make Awesome Music</b>
-        <img id="logo" src="../img/layout/logo.svg" alt="Website Logo, Flat Design Frog With A Crown">
-        <h1 class="title">Accessible Frog</h1>
-        <h2 class="title-subtext">We Make Awesome Music</h2>
+        <div class="title--static">
+          <img id="logo" src="../img/layout/logo.svg" alt="Website Logo, Flat Design Frog With A Crown">
+          <h1 class="title__name">Accessible Frog</h1>
+          <h2 class="title__subtext">We Make Awesome Music</h2>
+        </div>     
       </div>
     </header>
 
@@ -32,7 +34,11 @@
       <h1 class="headline-primary--grouped">Our Tour Dates</h1>
       <!-- Tour Dates -->
       <table class="table">
-        <caption>Show Information</caption>
+        <caption>
+          <img src="../img/layout/ticket.svg" alt="" class="caption__img">
+          Show Information
+          <img src="../img/layout/ticket.svg" alt="" class="caption__img">
+        </caption>
         <!-- Table Head -->
         <thead>      
           <tr>

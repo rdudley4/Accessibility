@@ -1,0 +1,27 @@
+// ==========================================================================
+// Page Landing
+// ==========================================================================
+
+.landing {
+  @extend %text-center;
+
+  // landing--stationary
+  @include m(stationary) {
+    @extend %text-center;
+    @include bg-image('layout/concert02_no_text.jpg', 100%, 350px);
+    background-size    : cover;
+    background-position: top center;
+
+    @include mq(med) {
+      min-height: 470px; 
+    }
+  }
+
+  // landing__video
+  @include e(video) {
+    @extend %border-outline-reverse;
+    width     : 100%;
+    height    : 100vh;
+    object-fit: fill;
+  }
+}

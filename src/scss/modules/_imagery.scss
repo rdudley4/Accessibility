@@ -2,28 +2,11 @@
 // Imagery
 // ==========================================================================
 
-
-// Landing Image
-// -------------
-
-.landing {
-  @extend %text-center;
-  @include bg-image('layout/concert02_no_text.jpg', 100%, 350px);
-  background-size    : cover;
-  background-position: top center;
-
-  @include mq(med) {
-    min-height: 470px; 
-  }
-}
-
-
 // Logo Image
 // ----------
 
 #logo {
   max-width : 75px;
-  margin-top: em(80px);
 
   @include mq(med) {
     max-width: 150px;
@@ -70,6 +53,18 @@
 .tour {
   @include bg-image('layout/tour.svg', 150px, 150px, inline-block);
   background-size: contain;
+}
+
+// Caption Ticket Icons
+// --------------------
+
+.caption__img {
+  width: 33px;
+  float: left;
+
+  &:last-of-type {
+    float: right;
+  }
 }
 
 
