@@ -14,7 +14,7 @@ const webpackConfig = {
         test: /\.html$/,
         loader: "html-loader",
         options: {
-          attrs: ['img:src', 'video:src']
+          attrs: ['img:src', 'source:src']
         }
       },
       {
@@ -56,7 +56,7 @@ const webpackConfig = {
         ]
       },
       {
-        test: /\.webm$/,
+        test: /\.(webm|mp4)$/i,
         loader: "file-loader",
         options: {
           name: '[path]video-[sha512:hash:base64:7].[ext]',
