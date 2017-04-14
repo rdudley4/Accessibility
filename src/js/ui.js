@@ -6,6 +6,7 @@
 // ------------
 
 require('smoothscroll-polyfill').polyfill();
+const objectFitVideos = require('object-fit-videos/dist/object-fit-videos.min');
 
 
 // Global Variables
@@ -40,3 +41,9 @@ if (toTop) {
     });
   });
 }
+
+
+// Object-fit Videos Polyfill
+// --------------------------
+
+objectFitVideos();
