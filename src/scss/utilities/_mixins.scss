@@ -45,7 +45,7 @@
 // Media Queries
 // -------------
 
-@mixin mq($breakpoint) {
+@mixin mq($breakpoint, $elm: null) {
   @if $breakpoint == med {
     @media #{$brk-md} {
       @content;
@@ -58,6 +58,16 @@
   }
   @else if $breakpoint == xlg {
     @media #{$brk-xlrg} {
+      @content;
+    }
+  }
+  @else if $breakpoint == edge {
+    _:-ms-lang(x), _:-webkit-full-screen, & {
+      @content;
+    }
+  }
+  @else if $breakpoint == ie11 {
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
       @content;
     }
   }

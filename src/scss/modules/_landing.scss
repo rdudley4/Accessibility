@@ -5,6 +5,18 @@
 .landing {
   @extend %text-center;
 
+  // IE/Edge Specific Fixes
+  // ----------------------
+  @include mq(edge) {
+    width : 100%;
+    height: 100vh;
+  }
+
+  @include mq(ie11) {
+    width : 100%;
+    height: 100vh;
+  }
+
   // landing--stationary
   @include m(static) {
     @extend %text-center;
@@ -24,14 +36,24 @@
   // landing__video
   @include e(video) {
     @extend %border-outline-reverse;
-    width      : 100%;
-    height     : 100vh;
-    object-fit : cover;
-    font-family: 'object-fit: cover;';
+    width     : 100%;
+    height    : 100vh;
+    object-fit:  cover;
 
     @include mq(med) {
       object-fit: fill;
-      font-family: 'object-fit: fill;';
     }
+
+    // IE/Edge Specific Fixes
+    // ----------------------
+    @include mq(edge) {
+      width:  100%;
+      height: 100%;
+    }
+
+    @include mq(ie11) {
+      width:  100%;
+      height: 100%;
+    }   
   }
 }
