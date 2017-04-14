@@ -56,6 +56,11 @@
       @content;
     }
   }
+  @else if $breakpoint == xlg {
+    @media #{$brk-xlrg} {
+      @content;
+    }
+  }
   @else {
     @error "`#{$breakpoint}` is not a valid argument for `mq`.";
   }

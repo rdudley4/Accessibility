@@ -11,27 +11,32 @@ require('smoothscroll-polyfill').polyfill();
 // Global Variables
 // ----------------
 
-const landing = document.querySelector('.landing');
+const landing = document.querySelector('.landing') || document.querySelector('.landing--static');
 const mainContent = document.getElementById('main-content');
 const chevronDown = document.querySelector('.title__chevron-down');
 const toTop = document.getElementById('top');
+
 
 
 // Event Handlers
 // --------------
 
 // Landing Chevron
-chevronDown.addEventListener('click', function() {
-  mainContent.scrollIntoView({
-    behavior: "smooth",
-    block: "end"
+if (chevronDown) {
+  chevronDown.addEventListener('click', function() {
+    mainContent.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   });
-});
+}
 
 // Footer - Back To Top
-toTop.addEventListener('click', function() {
-  landing.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
+if (toTop) {
+  toTop.addEventListener('click', function() {
+    landing.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   });
-});
+}

@@ -17,7 +17,17 @@ body {
 
 main {
   padding: em(15px);
+  padding-top: em(60px);
   overflow: hidden;
+
+  @include mq(med) {
+    padding-top: em(179px);
+
+    // Firefox Specific
+    @-moz-document url-prefix() {
+      padding-top: em(200px);
+    }
+  }
 }
 
 a {

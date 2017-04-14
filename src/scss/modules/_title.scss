@@ -27,7 +27,7 @@
   // title__subtext
   @include e(subtext) {
     font-size     : em(24px);
-    color         : $color-tertiary;
+    color         : $color-accent;
     text-transform: lowercase;
     margin        : 0;
 
