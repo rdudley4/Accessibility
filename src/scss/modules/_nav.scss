@@ -2,24 +2,32 @@
 // Navigation
 // ==========================================================================
 
+// Navbar [Container]
+// ------------------
 .navbar {
   position        : fixed;
   top             : 0;
   left            : 0;
   right           : 0;
-  background-color: palette(black, opaque);
-  padding         : em(7px);
+  padding         : em(17.5px) em(7px);
   z-index         : 1;
+  background-color: transparent;
+  border          : 2px solid transparent;
+  transition      : background-color $trns-duration--default,
+                    border-color $trns-duration--default;
 }
 
+
+// Nav [UL]
+// --------
 .nav {
+  justify-content: space-between;
+
   @include e(item) {
     @extend %nav-item-default;
-
     a {
-      @extend %nav-item-link;
-      font-weight   : $font-weight--light;
-      letter-spacing: 5px;
+      @extend .nav-item-link;
+      color: palette(white);
 
       // hover
       &:hover {
@@ -27,22 +35,23 @@
       }
     }
 
-    &:first-of-type {
-      margin-right: auto;
-    }
-
-    // Modifiers
-    @include m(bold) {
+    // nav__item--alt
+    @include m(alt) {
       @extend %nav-item-default;
-
       a {
-        @extend %nav-item-link;
-        font-weight: bold;
+        @extend .nav-item-link;
+        color: palette(gray, dark);
 
+        // hover
         &:hover {
           @extend %nav-link-hover;
         }
       }
     }
   }
+}
+
+#page-survey,
+#page-tours {
+  width: 80px;
 }

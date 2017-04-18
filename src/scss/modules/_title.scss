@@ -14,26 +14,16 @@
 
   // title__name
   @include e(name) {
-    font-size     : em(48px);
     text-transform: uppercase;
     margin        : 0;
-    color         : $color-secondary;
-
-    @include mq(med) {
-      font-size: em(60px); /* 20% Increase */
-    }
+    color         : palette(white);
   }
 
   // title__subtext
   @include e(subtext) {
-    font-size     : em(24px);
-    color         : $color-accent;
+    color         : palette(red);
     text-transform: lowercase;
     margin        : 0;
-
-    @include mq(med) {
-      font-size: 30px; /* 20% Increase */
-    }
   }
 
   // title__chevron-down

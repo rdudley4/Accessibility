@@ -1,0 +1,67 @@
+// ==========================================================================
+// Typography Styles
+// ==========================================================================
+
+// Headings
+// --------
+
+.header {
+  // Heading [Normal-Lg] (1)
+  // --------------------
+  &-1 {
+    @extend %typography-default;
+    font-size  : em(42px);
+    font-weight: $font-weight--normal;
+    line-height: (50.4px / 42px);
+  }
+
+  // Heading [Normal] (2)
+  // --------------------
+  &-2 {
+    @extend %typography-default;
+    font-size     : em(34px);
+    font-weight   : $font-weight--normal;
+    line-height   : (40.8px / 34px);
+  }
+  
+  // Heading [Medium] (3)
+  // --------------------
+  &-3 {
+    @extend %typography-default;
+    font-size  : em(15px);
+    font-weight: $font-weight--medium;
+    line-height: 21px;
+  }
+}
+
+
+// Content
+// -------
+
+.content {
+  // Red [Normal] (1)
+  // ----------------
+  &-1 {
+    @extend %typography-default;
+    font-size  : em(20px);
+    font-weight: $font-weight--normal;
+    line-height: 28px;
+  }
+
+  // Gray [Light] (2)
+  // ----------------
+  &-2 {
+    @extend %typography-default;
+    font-size  : em(22px);
+    font-weight: $font-weight--light;
+    line-height: 30.8px;
+  }
+
+  // Blue [Medium] (3)
+  // -----------------
+  &-3 {
+    font-size       : em(18px);
+    font-weight     : $font-weight--medium;
+    line-height     : 25.2px;
+  }
+}

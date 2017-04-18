@@ -5,16 +5,35 @@
 // Descriptive Color Variables
 // ---------------------------
 
-// Basic
-$white     : #fff;
-$black     : #000;
-$grey      : #999;
+
 
 // Layout
 $onyx      : #343A3F;
 $queen-blue: #3E6990;
 $aquamarine: #63C7B2;
 $isabelline: #EBEBEB;
+
+// New Layout
+// ----------
+
+// Basic
+$white     : #fff;
+$black     : #000;
+
+// Reds
+$froly         : #F46B70;
+
+// Blues
+$malibu        : #71b6fb;
+$picton-blue   : #4EA6EC;
+$azure-radiance: #0B88EE;
+
+// Grays
+$alto          : #dedede;
+$gray-chateau  : #9DA2A6;
+$oslo-gray     : #868C91;
+$cape-cod      : #404447;
+
 
 // Success/Error
 $rusty-red : #DB324D;
@@ -36,9 +55,10 @@ $color-error    : $rusty-red;
 // -----------------------
 
 $color-palette: (
+  // Basic
   white: (
     x-opaque: rgba($white, .1),
-    opaque  : rgba($white, .6),
+    opaque  : rgba($white, .7),
     base    : $white
   ),
   black: (
@@ -46,29 +66,36 @@ $color-palette: (
     opaque  : rgba(black, .6),
     base    : $black
   ),
-  grey: (
-    base: $grey
+  // Layout
+  red: (
+    base : $froly
   ),
-  onyx: (
-    x-opaque: rgba($onyx, 0.1),
-    opaque  : rgba($onyx, 0.5),
-    base    : $onyx
-  )
+  blue: (
+    light: $malibu,
+    base : $picton-blue,
+    dark : $azure-radiance
+  ),
+  gray: (
+    x-light: $alto,
+    light  : $gray-chateau,
+    base   : $oslo-gray,
+    dark   : $cape-cod
+  ),
 );
 
 
 // Font Vars
 // ---------
 
-$font-url--google    : 'https://fonts.googleapis.com/css?family=Cantarell:400,700|Open+Sans+Condensed:300,700';
-$font-stack-primary  : 'Open Sans Condensed', sans-serif;
-$font-stack-secondary: 'Cantarell', sans-serif;
+$font-url--google    : 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+$font-stack-primary  : Roboto, sans-serif;
 
 $base__font-size  : 16px;
 $base__line-height: 24px;
 
-$font-weight--light: 300;
-$font-weight--bold : 700;
+$font-weight--light : 300;
+$font-weight--normal: 400;
+$font-weight--medium: 500;
 
 
 // Media Query Breakpoints
@@ -113,3 +140,6 @@ $trns-duration--default: 250ms;
 
 // Image Path
 $path--rel: '../img';
+
+// Border Radius
+$br: 5px;

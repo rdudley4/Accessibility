@@ -27,4 +27,13 @@
       margin-top: 0;
     }
   }
+
+  @include m(small) {
+    @extend %btn-default;
+    font-size: 13.3333px;
+
+    &:hover {
+      @extend %btn-hover;
+    }
+  }
 }
