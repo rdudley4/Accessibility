@@ -1,0 +1,59 @@
+// ==========================================================================
+// Sections
+// ==========================================================================
+
+.section {
+  @extend %text-center;
+  border-bottom : 1px solid palette(gray, x-light);
+  padding-bottom: em(60px);
+  margin-bottom : em(60px);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  // section__title
+  @include e(title) {
+    color: palette(gray, dark);
+    margin: 0;
+    // section__title--info
+    @include m(info) {
+      margin-bottom: em(5px);
+      color: palette(blue);
+    }
+  }
+  // section__desc
+  @include e(desc) {
+    @extend %section-desc-default;
+
+    @include m(justified) {
+      @extend %section-desc-default;
+      text-align: justify;
+    }
+  }
+  // section__icon
+  @include e(icon) {
+    @include m(album) {
+      @include bg-image('layout/vinyls.svg', 100px, 100px, inline-block);
+      margin-bottom: em(10px);
+    }
+
+    @include m(info) {
+      @include bg-image('layout/info.svg', 100px, 100px, inline-block);
+      margin-bottom: em(10px);
+    }
+  }
+  // section__album
+  @include e(img) {
+    @include shadow(bottom);
+    max-width    : em(400px);
+    padding      : em(10px);
+    margin-bottom: em(20px);
+    border       : 1px solid palette(gray, x-light);
+    border-radius: $br;
+  }
+  // section__platforms
+  @include e(platforms) {
+    margin-bottom: em(20px);
+  }
+}

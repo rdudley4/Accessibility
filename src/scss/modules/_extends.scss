@@ -14,7 +14,7 @@
 }
 
 .nav-item-link {
-  @extend .header-3;
+  @extend .header-4;
   display      : inline-block;
   padding      : em(8px, 15px) em(15px, 15px);
   border       : 2px solid palette(gray, x-light);
@@ -92,17 +92,17 @@
 // -------
 
 %btn-default {
-  @extend %text-important;
-  @extend %border-outline-reverse;
-  padding   : em(7px);
-  margin-top: em(30px);
-  transition: background-color $trns-duration--default;
+  @extend .content-3;
+  padding         : em(12px, 18px) em(11px, 18px);
+  border-radius   : $br;
+  color           : palette(white);
+  background-color: palette(blue, dark);
+  transition      : background-color $trns-duration--default;
 }
 
 %btn-hover {
   cursor          : pointer;
-  color           : $color-primary;
-  background-color: $color-accent;
+  background-color: palette(blue, light);
 }
 
 
@@ -112,4 +112,13 @@
 %input-default {
   @extend %border-outline-reverse;
   padding: em(8px);
+}
+
+
+// Section
+// -------
+
+%section-desc-default {
+  color: palette(gray, light);
+  margin-top: 0;
 }
