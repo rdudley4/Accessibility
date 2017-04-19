@@ -20,30 +20,6 @@ const chevronDown = document.querySelector('.title__chevron-down');
 const toTop = document.getElementById('top');
 
 
-// Event Handlers
-// --------------
-
-// Landing Chevron
-if (chevronDown) {
-  chevronDown.addEventListener('click', function() {
-    mainContent.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  });
-}
-
-// Footer - Back To Top
-if (toTop) {
-  toTop.addEventListener('click', function() {
-    landing.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  });
-}
-
-
 // Object-fit Polyfill
 // -------------------
 
@@ -54,7 +30,31 @@ if (/Edge\/\d./i.test(navigator.userAgent) || !!navigator.userAgent.match(/Tride
    } 
 }
 
-// Navigation Handler
-window.addEventListener('scroll', function() {
+
+// Event Handlers
+// --------------
+
+// Navigation Transition
+window.addEventListener('scroll', () => {
   nav.transition(landing);
 });
+
+// Landing Chevron
+if (chevronDown) {
+  chevronDown.addEventListener('click', () => {
+    mainContent.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+}
+
+// Footer - Back To Top
+if (toTop) {
+  toTop.addEventListener('click', () => {
+    landing.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+}

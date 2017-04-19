@@ -12,12 +12,12 @@ const navItems = document.querySelectorAll('.nav__item');
 // ----------
 
 const Nav = {
-  swapLinkStyles:  function({elm, testClass, newClass} = {}) {
+  swapLinkStyles: ({elm, testClass, newClass} = {}) => {
     if (elm.className === testClass) {
       elm.className = newClass;
     }
   },
-  transition: function(landing) {
+  transition: landing => {
     const landingIsHidden = Math.abs(landing.getBoundingClientRect().top) > (landing.clientHeight - 50);
     for (let link of navItems) {
       if (landingIsHidden) {

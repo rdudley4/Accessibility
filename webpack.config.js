@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const version = process.env.npm_package_version;
@@ -19,7 +20,17 @@ const webpackConfig = {
       },
       {
         test: /\.js$/,
-        loader: "babel-loader"
+        include: [ path.resolve(__dirname, "src/js") ],
+        loader: "babel-loader",
+        options: {
+          presets: [
+            ['env', {
+              "targets": {
+                "browsers": ["last 2 versions", "safari >= 7"]
+              }
+            }]
+          ]
+        }     
       },
       {
         test: /\.scss$/,
