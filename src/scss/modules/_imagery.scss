@@ -77,3 +77,19 @@
     height: 300px;
   }
 }
+
+
+// Album Formats
+// -------------
+
+.digital::before {
+  background-image: url('#{$path--rel}/layout/download.svg');
+}
+
+.cd::before {
+  background-image: url('#{$path--rel}/layout/compact-disc.svg');
+}
+
+.lp::before {
+  background-image: url('#{$path--rel}/layout/turntable.svg');
+}

@@ -3,6 +3,8 @@
 // ==========================================================================
 
 // Bem Selector Mixins (Element, Modifier)
+// ---------------------------------------
+
 @mixin e($element) {
   &__#{$element} {
     @content;
@@ -74,4 +76,24 @@
   @else {
     @error "`#{$breakpoint}` is not a valid argument for `mq`.";
   }
+}
+
+
+// Animation Generator
+// -------------------
+
+@mixin createAnimation($animation, $numOfElements: 1, $animDelayDivisor: null) {
+  & {
+    animation: $animation 750ms cubic-bezier(0.3, 0, 0.3, 1) forwards;
+    // Optional: Stagger animations with multiple elements.
+    @if $numOfElements > 1 {
+      @for $i from 1 through $numOfElements {
+        $offset: $i - 1; // ensure that first element has no delay
+        $delay: unquote("#{$offset / $animDelayDivisor}s");
+        &:nth-of-type(#{$i}) {
+          animation-delay: $delay;
+        }
+      }
+    }
+  } 
 }

@@ -1,0 +1,34 @@
+// ==========================================================================
+// Animation
+// ==========================================================================
+
+// Keyframes
+// ---------
+
+@keyframes slide {
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity  : 1;
+  }
+}
+
+
+// Pre-Animation Styles
+// --------------------
+
+.format,
+.about {
+  transform: translate3d(0, 60px, 0);
+  opacity  : 0;
+}
+
+
+// Animations
+// ----------
+
+.slide {
+  // Three Element Slide
+  @include m(3) {
+    @include createAnimation(slide, 3, 5);
+  }
+}

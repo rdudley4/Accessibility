@@ -16,3 +16,17 @@
 @function palette($color, $shade: 'base') {
   @return map-get(map-get($color-palette, $color), $shade );
 }
+
+// Px to %
+// -------
+@function px-to-pc($target, $context: $content-max-width) {
+  @return ($target / $context) * 100%;
+}
+
+// Flex Items per Line
+// -------------------
+@function per-line($items, $gutter-size) {
+  $g-pc   : px-to-pc($gutter-size) * 2;
+  $g-total: $items * $g-pc;
+  @return (100% / $items) - $g-total;
+}

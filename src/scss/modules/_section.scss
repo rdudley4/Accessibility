@@ -18,7 +18,7 @@
     margin: 0;
     // section__title--info
     @include m(info) {
-      margin-bottom: em(5px);
+      margin-bottom: em(10px, 19px);
       color: palette(blue);
     }
   }
@@ -34,7 +34,7 @@
   // section__icon
   @include e(icon) {
     @include m(album) {
-      @include bg-image('layout/vinyls.svg', 100px, 100px, inline-block);
+      @include bg-image('layout/vinyl.svg', 150px, 150px, inline-block);
       margin-bottom: em(10px);
     }
 
@@ -46,14 +46,68 @@
   // section__album
   @include e(img) {
     @include shadow(bottom);
-    max-width    : em(400px);
     padding      : em(10px);
-    margin-bottom: em(20px);
     border       : 1px solid palette(gray, x-light);
     border-radius: $br;
+
+    @include mq(med) {
+      max-width: 400px;
+    }
   }
   // section__platforms
   @include e(platforms) {
-    margin-bottom: em(20px);
+    margin-bottom: em(50px);
   }
+
+  // section__list
+  @include e(list) {
+    @extend .flex;
+    color: palette(gray);
+
+    li {
+      @extend .flex;
+      flex-direction: column;
+      flex          : 1 per-line(3, $gutter);
+      align-items   : center;
+      padding       : em(8px) em(15px);
+      margin        : $gutter;
+      border        : 1px solid transparent;
+      border-radius : $br;
+      transition    : border-color $trns-duration--default;
+
+      &:hover {
+        cursor      : pointer;
+        border-color: palette(gray, x-light);
+      }
+
+      &::before {
+        @extend %pseudo-default-before;
+      }
+    }
+  }
+
+  @include e(about-the-band) {
+    @extend .flex;
+
+    .wrap {
+      $gutter: 20px;
+      padding: em(8px) em(15px);
+      flex  : 1 per-line(2, $gutter);
+      margin: $gutter;
+
+      @include mq(med) {
+        flex-basis: per-line(3, $gutter);
+      }
+    }
+  }
+
+  .btn {
+    max-width: 250px;
+    margin   : em(30px, 18px) auto;
+  }
+}
+
+.about {
+  transform: translate3d(0, 60px, 0);
+  opacity  : 0;
 }

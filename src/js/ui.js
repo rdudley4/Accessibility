@@ -5,19 +5,62 @@
 // Dependencies
 // ------------
 
+// Polyfills
 import 'objectFitPolyfill/dist/objectFitPolyfill.min';
 require('smoothscroll-polyfill').polyfill();
-const nav = require('./nav');
+
+// Modules
+import { Nav } from './nav';
+import { Anim } from './anim';
 
 
-// Module Variables
-// ----------------
+// UI Object
+// ---------
 
-const landing = document.querySelector('.landing') || document.querySelector('.landing--static');
-const landingVideo = document.querySelector('.landing__video');
-const mainContent = document.getElementById('main-content');
-const chevronDown = document.querySelector('.title__chevron-down');
-const toTop = document.getElementById('top');
+const UI = {
+  elms: {
+    // Generic Elements
+    // ----------------
+    landing: document.querySelector('.landing') || document.querySelector('.landing--static'),
+    landingVideo: document.querySelector('.landing__video'),
+    mainContent: document.getElementById('main-content'),
+    chevronDown: document.querySelector('.title__chevron-down'),
+    toTop: document.getElementById('top'),
+
+    // Navigation Elements
+    // -------------------
+    navBar: document.querySelector('.navbar'),
+    navLinks: document.querySelectorAll('.nav__item'),
+
+    // Animation Elements
+    // ------------------ 
+    // Album Formats
+    formatContainer: document.querySelector('.section__list'),
+    formatItems: document.querySelectorAll('.format'),
+    // About The Band
+    aboutContainer: document.querySelector('.section__about-the-band'),
+    aboutItems: document.querySelectorAll('.about')
+  },
+  elementInViewport: el => {
+    let top = el.offsetTop;
+    let left = el.offsetLeft;
+    let width = el.offsetWidth;
+    let height = el.offsetHeight;
+      
+    while(el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+
+    return (
+      top >= window.pageYOffset &&
+      left >= window.pageXOffset &&
+      (top + height) <= (window.pageYOffset + window.innerHeight) &&
+      (left + width) <= (window.pageXOffset + window.innerWidth)
+    );
+  }
+};
 
 
 // Object-fit Polyfill
@@ -25,24 +68,45 @@ const toTop = document.getElementById('top');
 
 if (/Edge\/\d./i.test(navigator.userAgent) || !!navigator.userAgent.match(/Trident\/7\./)){
    // This is Microsoft Edge or IE 10-11
-   if(landingVideo) {
-     landingVideo.setAttribute('data-object-fit', 'cover');
-   } 
+   if(UI.elms.landingVideo) {
+     UI.elms.landingVideo.setAttribute('data-object-fit', 'cover');
+   }
 }
 
 
 // Event Handlers
 // --------------
 
-// Navigation Transition
+// Window Scroll
 window.addEventListener('scroll', () => {
-  nav.transition(landing);
+  // Nav Transition
+  Nav.transition({
+    navBar: UI.elms.navBar,
+    navLinks: UI.elms.navLinks,
+    relativeTo: UI.elms.landing
+  });
+
+  // Trigger Album Format Animation
+  if (UI.elementInViewport(UI.elms.formatContainer) && Anim.notTriggered(UI.elms.formatItems[0], 'slide')) {
+    Anim.play({
+      animation: 'slide--3',
+      nodeList: UI.elms.formatItems
+    });
+  }
+
+  // Trigger About the Band Animation
+  if (UI.elementInViewport(UI.elms.aboutContainer) && Anim.notTriggered(UI.elms.aboutItems[0], 'slide')) {
+    Anim.play({
+      animation: 'slide--3',
+      nodeList: UI.elms.aboutItems
+    });
+  }
 });
 
 // Landing Chevron
-if (chevronDown) {
-  chevronDown.addEventListener('click', () => {
-    mainContent.scrollIntoView({
+if (UI.elms.chevronDown) {
+  UI.elms.chevronDown.addEventListener('click', () => {
+    UI.elms.mainContent.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
@@ -50,9 +114,9 @@ if (chevronDown) {
 }
 
 // Footer - Back To Top
-if (toTop) {
-  toTop.addEventListener('click', () => {
-    landing.scrollIntoView({
+if (UI.elms.toTop) {
+  UI.elms.toTop.addEventListener('click', () => {
+    UI.elms.landing.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });

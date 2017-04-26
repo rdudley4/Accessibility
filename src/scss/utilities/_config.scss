@@ -118,6 +118,15 @@ $icons: (
   facebook  : 'social-media/facebook.svg'
 );
 
+// Layout
+// ------
+
+// Max Width
+$content-max-width: 1200px;
+
+// Gutter
+$gutter: 10px;
+
 
 // Miscellaneous
 // -------------
@@ -131,9 +140,6 @@ $shadows: (
   left  : -10px 0 20px -5px,
   right : 10px 0 20px -5px
 );
-
-// Max Width
-$content-max-width: 1200px;
 
 // Transition Duration
 $trns-duration--default: 250ms;

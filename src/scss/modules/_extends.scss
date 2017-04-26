@@ -122,3 +122,15 @@
   color: palette(gray, light);
   margin-top: 0;
 }
+
+
+// Pseudo
+// ------
+
+%pseudo-default-before {
+  content        : '';
+  width          : 48px;
+  height         : 48px;
+  margin-bottom  : em(10px);
+  background-size: contain;
+}
