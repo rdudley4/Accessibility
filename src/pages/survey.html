@@ -28,53 +28,52 @@
     </header>
 
     <main id="main-content" class="limit panel--even--centered" role="main">
-      <h1 class="headline-primary">Survey</h1>
-      <div class="info-card flex panel--even--centered">
-        <img id="survey" class="info-card__photo" src="../img/layout/concert01.jpg" alt="Picture of the band playing a live show.">
-        <div class="info-card__content">
-          <!-- Survey Form -->
-          <form action="" method="POST" class="form" role="form">
-            <!-- Favorites -->
-            <fieldset class="form__fieldset">
-              <legend>Favorites</legend>
-              <!-- Favorite Band Member -->
-              <label class="form__label" for="John">Who is your favorite band member?</label>
-              <input id="John" class="form__radio" type="radio" name="members" value="John">
-              <label class="form__label--boxed" for="John">John</label>
+      <section class="flex--centered section">
+        <h2 class="section__title fb--100">Survey</h2>
+        <p class="section__desc fb--100">What are your favorites?</p>
+        <img id="survey" class="section__img" src="../img/layout/concert01.jpg" alt="Picture of the band playing a live show.">
+        <!-- Survey Form -->
+        <form action="" method="POST" class="form" role="form">
+          <!-- Favorites -->
+          <fieldset class="form__fieldset">
+            <legend>Favorites</legend>
+            <!-- Favorite Band Member -->
+            <label class="form__label" for="John">Who is your favorite band member?</label>
+            <input id="John" class="form__radio" type="radio" name="members" value="John">
+            <label class="form__label--boxed" for="John">John</label>
 
-              <input id="Hazzard" class="form__radio" type="radio" name="members" value="Hazzard">
-              <label class="form__label--boxed" for="Hazzard">Hazzard</label>
-              
-              <input id="Bob" class="form__radio" type="radio" name="members" value="Bob">
-              <label class="form__label--boxed" for="Bob">Bob</label>
-              
-              <input id="Sally" class="form__radio" type="radio" name="members" value="Sally">
-              <label class="form__label--boxed" for="Sally">Sally</label>
+            <input id="Hazzard" class="form__radio" type="radio" name="members" value="Hazzard">
+            <label class="form__label--boxed" for="Hazzard">Hazzard</label>
+            
+            <input id="Bob" class="form__radio" type="radio" name="members" value="Bob">
+            <label class="form__label--boxed" for="Bob">Bob</label>
+            
+            <input id="Sally" class="form__radio" type="radio" name="members" value="Sally">
+            <label class="form__label--boxed" for="Sally">Sally</label>
 
-              <!-- Favorite Album -->
-              <label for="favorite-album" class="form__label">What is your favorite album?</label>
-              <input id="favorite-album" class="form__input" type="text" list="albums" placeholder="Choose One">
-              <datalist id="albums">
-                <option value="A Day Of Old">
-                <option value="Diamond Fireworks">
-                <option value="Enjoy Your Desire">
-                <option value="Finding My Shadow">
-                <option value="Heroic Forever">
-                <option value="Midnight Fires">
-                <option value="Music Of My Life">
-                <option value="Party For An Angel">
-                <option value="Song For Yesterday">
-                <option value="Street Of The Rider">
-                <option value="This Is For You">
-              </datalist>
+            <!-- Favorite Album -->
+            <label for="favorite-album" class="form__label">What is your favorite album?</label>
+            <input id="favorite-album" class="form__input" type="text" list="albums" placeholder="Choose One">
+            <datalist id="albums">
+              <option value="A Day Of Old">
+              <option value="Diamond Fireworks">
+              <option value="Enjoy Your Desire">
+              <option value="Finding My Shadow">
+              <option value="Heroic Forever">
+              <option value="Midnight Fires">
+              <option value="Music Of My Life">
+              <option value="Party For An Angel">
+              <option value="Song For Yesterday">
+              <option value="Street Of The Rider">
+              <option value="This Is For You">
+            </datalist>
 
-              <!-- Favorite Song -->
-              <label for="favorite-song" class="form__label">What is your favorite song?</label>
-              <input id="favorite-song" class="form__input" type="text" placeholder="Super Kewl Song">
-            </fieldset>
-          </form>
-        </div>      
-      </div>
+            <!-- Favorite Song -->
+            <label for="favorite-song" class="form__label">What is your favorite song?</label>
+            <input id="favorite-song" class="form__input" type="text" placeholder="Super Kewl Song">
+          </fieldset>
+        </form>   
+      </section>
 
       <h1 class="headline-primary">Newsletter</h1>
       <div class="info-card flex panel--even--centered">

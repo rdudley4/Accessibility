@@ -4,10 +4,13 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" 
+      type="image/svg" 
+      href="img/layout/logo.svg">
   </head>
   <body>
     <!-- Page Header [Nav, Landing] -->
-    <header id="head" role="banner">
+    <header id="head" role="banner">  
       <!-- Navigation -->
       <nav class="navbar" role="navigation">
         <ul class="nav flex limit">
@@ -31,8 +34,8 @@
         <!-- Page Title -->
         <div class="title">
           <img id="logo" src="img/layout/logo.svg" alt="Website Logo, Flat Design Frog With A Crown">
-          <h1 class="title__name header-1">Accessible Frog</h1>  <!-- Contrast: ~12.7 -->
-          <h2 class="title__subtext header-2">We Make Awesome Music</h2> <!-- Contrast: ~10.0 -->
+          <h1 class="title__name">Company Title</h1>  <!-- Contrast: ~12.7 -->
+          <h2 class="title__subtext">Company Slogan</h2> <!-- Contrast: ~10.0 -->
           <img class="title__chevron-down" src="img/layout/chevron-down.svg" alt="Down Arrow - Continue to Page Content">
         </div>
       </div>
@@ -40,19 +43,19 @@
 
     <main id="main-content" class="limit" role="main">
       <!-- Section [New Album] -->
-      <section class="section">
+      <section id="newAlbum" class="section">
         <!-- Section Heading [Icon/Title/Description] -->
-        <div class="section__icon--album">
+        <div class="section__icon icon__album">
           <b class="srt">Flat styled image of a stack of vinyl albums.</b>
         </div>
-        <h2 class="section__title header-2">New Album Out Now!</h2>
-        <p class="section__desc content-2">Featuring the new hit single "Pew Pew Lazers."</p>
+        <h2 class="section__title">Album name here.</h2>
+        <p class="section__desc">Random Stuff Goes Here</p>   
         <!-- Album Cover -->
         <img class="section__img" src="img/layout/soul_of_the_frog.jpg" alt="Album cover for Soul of the Frog" />
         <!-- Purhcase Button -->
         <a class="btn" href="#">Purchase Now</a>
         <!-- Platforms -->
-        <div class="section__platforms">
+        <div class="album__platforms">
           <!-- SoundCloud -->
           <a href="#" class="platform soundcloud">
             <b class="srt">Find us on SoundCloud</b>
@@ -67,40 +70,48 @@
           </a>
         </div>
         <!-- Available Formats -->
-        <h3 class="section__title--info header-3">Formats</h3>
-        <ul class="section__list content-2">
-          <li class="format lp">2x Long Play [LP]</li>
-          <li class="format cd">Compact Disc [CD]</li>
-          <li class="format digital">Digital Download [MP4]</li>              
+        <h3 class="section__title--info">Formats</h3>
+        <ul class="album__formats content-2">
+          <li class="lp content-box--animated">2x Long Play [LP]</li>
+          <li class="cd content-box--animated">Compact Disc [CD]</li>
+          <li class="digital content-box--animated">Digital Download [MP4]</li>              
         </ul>
       </section>
       
       <!-- Section [About The Band] -->
       <section class="section">
         <!-- Section Heading [Icon/Title/Description] -->
-        <div class="section__icon--info">
+        <div class="section__icon icon__info">
           <b class="srt">Flat styled image of a stack of vinyl albums.</b>
         </div>
-        <h2 class="section__title header-2">About the Band</h2>
-        <p class="section__desc content-2">Learn a little bit more about how we got started, and who we are!</p>
+        <h2 class="section__title">About the Band</h2>
+        <p class="section__desc">Info box goes here.</p>  
         <!-- Lead Singer Image -->
         <img class="section__img" src="img/layout/lead_singer.jpg" alt="Our lead singer on stage at a recent concert." />
-        <div class="section__about-the-band">
+        <div class="about">
           <!-- Who We Are -->
-          <div class="wrap about">
-            <h3 class="section__title--info header-3">Who We Are</h3>
-            <p class="section__desc--justified content-4">We are a couple of friends with a passion for music, which all started when we were very young.</p>
-          </div>
-          <!-- Our Sound -->
-          <div class="wrap about">
-            <h3 class="section__title--info header-3">Our Sound</h3>
-            <p class="section__desc--justified content-4">We rock. HARD. We all grew up listening to great rock bands from our time such as Ozzy, Rolling Stones, Led Zeppelin, AC/DC and many more. We draw inspiration from all of our favorite music.</p>
+          <div class="wrap content-box--animated">
+            <img src="img/icons/earth-globe.svg" alt="flat icon of team members" />
+            <h3 class="section__title--info">Live Shows Section</h3>
+            <p id ="text__live-show" class="section__desc--padded">Randomly Generated Text Here</p> 
           </div>
           <!-- Current Members -->
-          <div class="wrap about">
-            <h3 class="section__title--info header-3">Current Members</h3>
-            <p class="section__desc--justified content-4">Currently the band consists of: John - Drums, Bill - Guitar, Eric - Bass, Jimmy - Vocals.</p>
+          <div class="wrap content-box--animated">
+            <img src="img/icons/team.svg" alt="flat icon of team members" />
+            <h3 class="section__title--info">Current Members</h3>
+            <ul class="list content-4">
+              <li class="drums">Member 1<span class="list__tag">Drums</span></li>
+              <li class="bass">Member 2<span class="list__tag">Bass</span></li>
+              <li class="guitar">Member 3<span class="list__tag">Guitar</span></li>
+              <li class="vocals">Member 4<span class="list__tag">Vocals</span></li>
+            </ul>
           </div>
+          <!-- Our Sound -->
+          <div class="wrap content-box--animated">
+            <img src="img/icons/volume-control.svg" alt="flat icon of team members" />
+            <h3 class="section__title--info">Our Sound</h3>
+            <p id="text__tour" class="section__desc--padded">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
+          </div>     
         </div>       
       </section>
     </main>

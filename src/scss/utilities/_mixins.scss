@@ -82,9 +82,9 @@
 // Animation Generator
 // -------------------
 
-@mixin createAnimation($animation, $numOfElements: 1, $animDelayDivisor: null) {
+@mixin createAnimation($animation, $animation-duration, $numOfElements: 1, $animDelayDivisor: null) {
   & {
-    animation: $animation 750ms cubic-bezier(0.3, 0, 0.3, 1) forwards;
+    animation: $animation $animation-duration cubic-bezier(0.3, 0, 0.3, 1) forwards;
     // Optional: Stagger animations with multiple elements.
     @if $numOfElements > 1 {
       @for $i from 1 through $numOfElements {
@@ -96,4 +96,19 @@
       }
     }
   } 
+}
+
+
+// Pseudo Elements
+// ---------------
+
+@mixin pseudo($pos, $w, $h, $bg-size: contain) {
+  &::#{$pos} {
+    content        : '';
+    width          : $w;
+    height         : $h;
+    background-size: $bg-size;
+    // Additional Styles
+    @content;
+  }
 }

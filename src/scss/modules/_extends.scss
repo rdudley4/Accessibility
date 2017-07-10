@@ -54,7 +54,7 @@
   color         : $color-secondary;
   text-transform: uppercase;
   border-bottom : 1px solid palette(white, x-opaque);
-  margin        : em(7px, 24px) 0;
+  margin        : em(7px, 24px) 0;  
 }
 
 
@@ -110,8 +110,9 @@
 // -----
 
 %input-default {
-  @extend %border-outline-reverse;
-  padding: em(8px);
+  padding: em(12px);
+  border : 1px solid palette(gray, x-light);
+  color  : palette(gray, dark);
 }
 
 
@@ -123,14 +124,9 @@
   margin-top: 0;
 }
 
+// Hover
+// -----
 
-// Pseudo
-// ------
-
-%pseudo-default-before {
-  content        : '';
-  width          : 48px;
-  height         : 48px;
-  margin-bottom  : em(10px);
-  background-size: contain;
+%hover-shadow {
+  box-shadow: 0 0 0 1px rgba(232,232,232,.36), 0 12px 24px 0 rgba(202,202,202,.22);
 }

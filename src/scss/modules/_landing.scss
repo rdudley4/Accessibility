@@ -20,9 +20,12 @@
   // landing--stationary
   @include m(static) {
     @extend %text-center;
-    @extend %border-outline-reverse;
-    @include bg-image('layout/tours_new--ultra-slim.jpg', 100%, 350px);
-    background-position: center bottom;
+    // @include bg-image('background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");', 100%, 350px);
+    @include shadow(inset);
+    background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
+    background-color: palette(blue, dark);
+    // background-position: center bottom;
+    // background-repeat: repeat-x;
 
     @include mq(med) {
       min-height: 470px; 

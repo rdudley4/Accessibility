@@ -21,3 +21,8 @@
 %panel-only-bot {
   padding-bottom: em(20px);
 }
+
+%flex-default {
+  display  : flex;
+  flex-wrap: wrap;
+}

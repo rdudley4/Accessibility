@@ -1,6 +1,7 @@
 // ==========================================================================
 // Animation Functionality
 // ==========================================================================
+//@ts-check
 
 // Animation Object
 // ----------------
@@ -9,14 +10,12 @@ export const Anim = {
   notTriggered: (elm, animation) => {
     return !elm.classList.contains(animation);
   },
-  play: ({ animation, elm = null, nodeList = null } = {}) => {
-    const elmsToAnimate = elm || nodeList;
-    if (elmsToAnimate.constructor == NodeList) {   
-      for(let e of elmsToAnimate) {
-        e.classList.add(animation);
+  play: ({ animation, section, childSelector } = {}) => {
+    const elmsToAnimate = section.querySelectorAll(childSelector);
+    if (Anim.notTriggered(elmsToAnimate[0], animation)) {
+      for (let elm of elmsToAnimate) {
+        elm.classList.add(animation);
       }
-    } else {
-      elmsToAnimate.classList.add(animation);
     }
   }
 };

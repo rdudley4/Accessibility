@@ -1,0 +1,64 @@
+// ==========================================================================
+// Sections
+// ==========================================================================
+
+.section {
+  @extend %text-center;
+  border-bottom : 1px solid palette(gray, x-light);
+  padding-bottom: em(60px);
+  margin-bottom : em(60px);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  // section__title
+  @include e(title) {
+    @extend .header-2;
+    color: palette(gray, dark);
+    margin: 0;
+    // section__title--info
+    @include m(info) {
+      @extend .header-3;
+      margin-bottom: em(10px, 19px);
+      color: palette(blue);
+    }
+  }
+  // section__desc
+  @include e(desc) {
+    @extend %section-desc-default;
+    @extend .content-2;
+
+    @include m(justified) {
+      @extend %section-desc-default;
+      text-align: justify;
+    }
+
+    @include m(padded) {
+      @extend %section-desc-default;
+      @extend .content-4;
+      padding: em(8px) em(15px);
+    }
+  }
+  // section__icon
+  @include e(icon) {
+    margin-bottom: em(10px);
+  }
+  
+  // section__hero
+  @include e(img) {
+    @include shadow(bottom);
+    padding      : em(10px);
+    border       : 1px solid palette(gray, x-light);
+    border-radius: $br;
+    
+    @include mq(med) {
+      max-width: 400px;
+    }
+  }
+
+  .btn {
+    max-width: 250px;
+    margin   : em(30px, 18px) auto;
+  }
+}

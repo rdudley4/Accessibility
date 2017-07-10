@@ -15,7 +15,7 @@ const webpackConfig = {
         test: /\.html$/,
         loader: "html-loader",
         options: {
-          attrs: ['img:src', 'source:src']
+          attrs: ['img:src', 'source:src', 'link:href']
         }
       },
       {

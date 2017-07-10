@@ -12,14 +12,10 @@
   }
 }
 
-
-// Pre-Animation Styles
-// --------------------
-
-.format,
-.about {
-  transform: translate3d(0, 60px, 0);
-  opacity  : 0;
+@keyframes grow {
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 
@@ -29,6 +25,19 @@
 .slide {
   // Three Element Slide
   @include m(3) {
-    @include createAnimation(slide, 3, 5);
+    @include createAnimation(slide, 750ms, 3, 5);
   }
+}
+
+
+.grow {
+  // Four Element Grow
+  @for $i from 1 through 5 {
+    @include m($i) {
+      @include createAnimation(grow, 500ms, $i, 3);
+    }
+  }
+  // @include m(4) {
+  //   @include createAnimation(grow, 500ms, 4, 3);
+  // }
 }

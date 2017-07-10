@@ -5,7 +5,8 @@
 .form {
   // Labels
   @include e(label) {
-    @extend %text-important;
+    @extend .header-3;
+    color: palette(blue);
     display   : block;
     margin    : em(10px) 0;
     text-align: center;
@@ -21,12 +22,15 @@
     // form__label--boxed - Radio Buttons
     @include m(boxed) {
       @extend %input-default;
+      @extend .content-4;
       display    : inline-block;
       width      : 100px;
       margin     : em(5px);
-      // font-weight: $font-weight--bold;
+      font-weight: 300;
       text-align : center;
-      transition : color $trns-duration--default, background-color $trns-duration--default;
+      transition : color $trns-duration--med,
+                   background-color $trns-duration--med,
+                   border-color $trns-duration--default;
 
       &:hover {
         cursor: pointer;
@@ -44,6 +48,7 @@
 
   // Fieldsets
   @include e(fieldset) {
+
     &:last-of-type {
       margin: em(20px) 0 0 0;
     }
@@ -60,15 +65,19 @@
     display: none;
 
     &:checked + label {
-      color           : $color-primary;
-      background-color: $color-accent;
+      color           : palette(white);
+      background-color: palette(blue);
+      border-color    : palette(blue);
     }
   }
   
   // Input
   @include e(input) {
-    @extend %input-default;
+    border-bottom: 1px solid palette(gray, x-light);  
     width: 100%;
+    @extend .content-4;
+    font-weight: 300;
+    color: palette(gray, dark);
   }
 
 }

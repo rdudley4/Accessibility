@@ -47,7 +47,10 @@ p {
 // -------------
 
 form {
-  color: $color-accent;
+  @include mq(med) {
+    align-self: center;
+    margin-left: em(20px);
+  }
 }
 
 fieldset {
@@ -58,7 +61,6 @@ fieldset {
 
 legend {
   @extend %text-content;
-  @extend %border-outline;
   visibility    : hidden;
   position      : absolute;
   top           : -34px;
@@ -76,12 +78,16 @@ select,
 input,
 textarea {
   @extend %text-content;
+  padding-bottom: 5px;   
   background-color: transparent;
-  transition      : border $trns-duration--default, outline $trns-duration--default;
+  border          : none;
+  border-bottom   : 1px solid transparent;
+  transition      : box-shadow $trns-duration--default, border-color $trns-duration--default;
 
   &:focus {
-    @extend %border-outline;
     outline-offset: 0;
+    outline: none;
+    border-color: palette(blue);
     // Style Validation only for required form elements.
     &:required {
       &:valid {
@@ -92,6 +98,11 @@ textarea {
         border-color: $color-error;
       }
     }  
+  }
+
+  &::placeholder {
+    font-style: italic;
+    color: palette(gray, light);
   }
 }
 

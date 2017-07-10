@@ -3,6 +3,16 @@
 // ==========================================================================
 
 .flex {
-  display  : flex;
-  flex-wrap: wrap;
+  @extend %flex-default;
+
+  @include m(centered) {
+    @extend %flex-default;
+    justify-content: center;
+  }
+}
+
+.fb {
+  @include m(100) {
+    flex-basis: 100%;
+  }
 }

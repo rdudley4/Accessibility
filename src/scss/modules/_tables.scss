@@ -2,45 +2,68 @@
 // Tables
 // ==========================================================================
 
-.table {
-  @extend %border-outline;
-  @extend .centered; 
-  border-spacing: em(20px);
+.tour-header {
+  @extend .header-1 ;
+  color: palette(blue, dark);
+  margin-top: em(5px, 28.9px);
+}
 
-  // Caption
+.table {
+  @extend .centered;
+  border-spacing: em(20px, 15px);
+  border-radius : $br;
+  color         : palette(gray, dark); 
+
   caption {
-    @extend %text-important;
-    @extend %border-outline;
-    @include shadow(bottom);
-    padding       : 0 em(5px);
+    @extend .content-2;
+    margin-bottom : em(10px);
     letter-spacing: em(2px);
-    line-height   : em(33px);
+    line-height   : em(33px, 18.7px); 
+    color         : palette(gray);
+
+    @include mq(med) {
+      line-height: em(33px, 22px);
+    }
   }
 
-  // th
-  th {
-    @extend %text-important;
-    @extend %border-outline-reverse;
-    width  : 33%;
-    padding: em(7px);
+  th {  
+    width      : 33%;
+    padding    : em(10px);
+    font-weight: $font-weight--normal;
+    border     : 1px solid palette(gray, x-light);
+    color      : palette(blue);
   }
 
   tr {
+    @include mq(med) {
+      transform: scale3d(0, 0 , 0);
+    }
+
     &:hover {
       cursor: help;
 
       & td {
-        @extend %border-outline-reverse;
-        color: $color-accent;
+        color: palette(blue);
+
+        &::after {
+          transform: scaleX(1);
+        }
       }
     }
   }
 
-  // td
   td {
-    @extend %text-content;
-    border : 1px solid transparent;
-    outline: 1px solid transparent;
-    padding: em(8px);
+    padding    : em(8px);
+    font-weight: $font-weight--light;
+    transition : color $trns-duration--default;
+
+    &::after {
+      content      : '';
+      display      : block;
+      margin-top   : em(5px);
+      border-bottom: 2px solid;
+      transform    : scaleX(0);
+      transition   : transform $trns-duration--med ease-in-out;
+    }
   }
 }

@@ -1,0 +1,40 @@
+// ==========================================================================
+// List
+// ==========================================================================
+
+.list {
+  li {
+    @extend .flex;
+    align-items: center;
+    padding    : em(8px) em(15px);
+    color      : palette(gray, light);
+    transition : all $trns-duration--med;
+
+    &:hover {
+      @extend %hover-shadow;
+      transform: scale(1.1);
+      cursor   : help;
+
+      & > .list__tag {
+        background-color: palette(red);
+      }
+    }
+
+    @include pseudo(before, 20.281px, 20.281px) {
+      margin-right: em(8px);
+    }
+  }
+
+  @include e(tag) {
+    @extend %text-center;
+    display         : inline-block;
+    width           : 50px;
+    font-size       : em(12px);
+    padding         : em(5px) em(7px);
+    margin-left     : auto;
+    color           : palette(white);
+    background-color: palette(blue);
+    border-radius   : $br * 3;
+    transition      : background-color $trns-duration--default;
+  }
+}

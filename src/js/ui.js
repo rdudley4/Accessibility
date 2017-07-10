@@ -2,6 +2,8 @@
 // User Interface Functionality
 // ==========================================================================
 
+// @ts-check
+
 // Dependencies
 // ------------
 
@@ -11,7 +13,8 @@ require('smoothscroll-polyfill').polyfill();
 
 // Modules
 import { Nav } from './nav';
-import { Anim } from './anim';
+import { Anim } from "./anim";
+import { loremGenerator } from './loremGenerator';
 
 
 // UI Object
@@ -26,41 +29,42 @@ const UI = {
     mainContent: document.getElementById('main-content'),
     chevronDown: document.querySelector('.title__chevron-down'),
     toTop: document.getElementById('top'),
+    table: document.querySelector('.table'),
+    liveShow: document.getElementById('text__live-show'),
+    tourText: document.getElementById('text__tour'),
 
     // Navigation Elements
     // -------------------
     navBar: document.querySelector('.navbar'),
     navLinks: document.querySelectorAll('.nav__item'),
 
-    // Animation Elements
+    // Sections
     // ------------------ 
-    // Album Formats
-    formatContainer: document.querySelector('.section__list'),
-    formatItems: document.querySelectorAll('.format'),
-    // About The Band
-    aboutContainer: document.querySelector('.section__about-the-band'),
-    aboutItems: document.querySelectorAll('.about')
+    sectionFormats: document.querySelector('.album__formats'),
+    sectionAbout: document.querySelector('.about'),
   },
   elementInViewport: el => {
-    let top = el.offsetTop;
-    let left = el.offsetLeft;
-    let width = el.offsetWidth;
-    let height = el.offsetHeight;
+    if (el && window.innerWidth >= 840) { // Make sure element exists on the page.
+      const rect = el.getBoundingClientRect();
       
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-      left += el.offsetLeft;
-    }
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= ( window.innerHeight || document.documentElement.clientHeight ) &&
+        rect.right <= ( window.innerWidth || document.documentElement.clientWidth )
+      );
 
-    return (
-      top >= window.pageYOffset &&
-      left >= window.pageXOffset &&
-      (top + height) <= (window.pageYOffset + window.innerHeight) &&
-      (left + width) <= (window.pageXOffset + window.innerWidth)
-    );
+      // return rect.top <= rect.height;
+    }
   }
 };
+
+// Generate Random Lorem Text and Insert it to our page
+// Using http://www.randomtext.me/ API
+
+const elmToGen = [UI.elms.liveShow, UI.elms.tourText];
+
+loremGenerator.genData(loremGenerator.genOptions.createString(), elmToGen);
 
 
 // Object-fit Polyfill
@@ -87,21 +91,35 @@ window.addEventListener('scroll', () => {
   });
 
   // Trigger Album Format Animation
-  if (UI.elementInViewport(UI.elms.formatContainer) && Anim.notTriggered(UI.elms.formatItems[0], 'slide')) {
+  if (UI.elementInViewport(UI.elms.sectionFormats)) {
     Anim.play({
       animation: 'slide--3',
-      nodeList: UI.elms.formatItems
+      section: UI.elms.sectionFormats,
+      childSelector: '.content-box--animated'
     });
   }
 
   // Trigger About the Band Animation
-  if (UI.elementInViewport(UI.elms.aboutContainer) && Anim.notTriggered(UI.elms.aboutItems[0], 'slide')) {
+  if (UI.elementInViewport(UI.elms.sectionAbout)) {
     Anim.play({
       animation: 'slide--3',
-      nodeList: UI.elms.aboutItems
+      section: UI.elms.sectionAbout,
+      childSelector: '.content-box--animated'
     });
   }
-});
+
+  // Trigger TD Scale Animation
+  if(UI.elementInViewport(UI.elms.table)) {
+    Anim.play({
+      animation: `grow--${UI.elms.table.querySelectorAll('tr').length - 1}`,
+      section: UI.elms.table,
+      childSelector: 'tr'
+    });
+    console.log(`Table animation fired.`);
+  }
+}); 
+
+// console.log(UI.elms.table.querySelectorAll('tr').length - 1);
 
 // Landing Chevron
 if (UI.elms.chevronDown) {
@@ -122,3 +140,5 @@ if (UI.elms.toTop) {
     });
   });
 }
+
+

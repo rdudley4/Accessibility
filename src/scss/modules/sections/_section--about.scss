@@ -1,0 +1,35 @@
+// ==========================================================================
+// Section [About The Band]
+// ==========================================================================
+
+.about {
+  @extend .flex;
+
+  .wrap {
+    $gutter: 20px;
+    flex   : 1 per-line(2, $gutter);
+    margin : $gutter;
+
+    @include mq(med) {
+      flex-basis: per-line(3, 20px);
+    }
+  }
+
+  img {
+    max-width: 64px;
+  }
+}
+
+#text__live-show p,
+#text__tour p {
+  @extend .content-4;
+  color: palette(gray); 
+
+  &:last-of-type() {
+    padding         : em(8px) em(0px);
+    margin-top      : em(30px);
+    border-radius   : 21px;
+    color           : palette(white);
+    background-color: palette(red);
+  }
+}
