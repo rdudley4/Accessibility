@@ -20,7 +20,7 @@ export const loremGenerator = {
     numberMin: 5,
     numberMax: 25,
     createString: () => {
-      return `http://www.randomtext.me/api/lorem/p-${loremGenerator.genOptions.paragrahs}/${loremGenerator.genOptions.numberMin}-${loremGenerator.genOptions.numberMax}`;
+      return `https://www.randomtext.me/api/lorem/p-${loremGenerator.genOptions.paragrahs}/${loremGenerator.genOptions.numberMin}-${loremGenerator.genOptions.numberMax}`;
     }
   }   
 };
