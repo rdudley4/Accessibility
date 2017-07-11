@@ -15,12 +15,11 @@ export const loremGenerator = {
     });
   },
   genOptions: { 
-    maxWords: 20,
-    paragrahs: 4,
-    numberMin: 5,
-    numberMax: 25,
-    createString: () => {
-      return `https://www.randomtext.me/api/lorem/p-${loremGenerator.genOptions.paragrahs}/${loremGenerator.genOptions.numberMin}-${loremGenerator.genOptions.numberMax}`;
+    paragrahs: 5,
+    minWords : 5,
+    maxWords : 20,
+    createString: function () {
+      return `https://www.randomtext.me/api/lorem/p-${this.paragrahs}/${this.minWords}-${this.maxWords}`;
     }
   }   
 };

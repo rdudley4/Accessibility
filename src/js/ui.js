@@ -15,6 +15,7 @@ require('smoothscroll-polyfill').polyfill();
 import { Nav } from './nav';
 import { Anim } from "./anim";
 import { loremGenerator } from './loremGenerator';
+import Member from './member';
 const verge = require("verge");
 
 // UI Object
@@ -33,6 +34,21 @@ const UI = {
     liveShow: document.getElementById('text__live-show'),
     tourText: document.getElementById('text__tour'),
 
+    // Member Elements
+    // ---------------
+    member: [
+       document.querySelector('.drums'),
+       document.querySelector('.bass'),
+       document.querySelector('.guitar'),
+       document.querySelector('.vocals')
+    ],
+    infoBox: {
+      base: document.querySelector('.info-box'),
+      name: document.getElementById('member-name'),
+      age: document.getElementById('member-age'),
+      instrument: document.getElementById('member-instrument')  
+    },
+
     // Navigation Elements
     // -------------------
     navBar: document.querySelector('.navbar'),
@@ -43,18 +59,17 @@ const UI = {
     sectionFormats: document.querySelector('.album__formats'),
     sectionAbout: document.querySelector('.about'),
   },
-  elementInViewport: el => {
-    if (el && window.innerWidth >= 840) { // Make sure element exists on the page.
-      const rect = el.getBoundingClientRect();
-      
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= ( window.innerHeight || document.documentElement.clientHeight ) &&
-        rect.right <= ( window.innerWidth || document.documentElement.clientWidth )
-      );
+  randomNumber: function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  },
+  generateMember: function(array, num, instruments) {
+    for (let x = 0; x < num; x++) {
+      const id = UI.randomNumber(1, 1000);
+      const age = UI.randomNumber(20, 50);
+      const newMember = new Member(`Member ${id}`, id, age, instruments[x]);
+      array.push(newMember);
     }
-  }     
+  }
 };
 
 
@@ -64,6 +79,27 @@ const UI = {
 const elmToGen = [UI.elms.liveShow, UI.elms.tourText];
 
 loremGenerator.genData(loremGenerator.genOptions.createString(), elmToGen);
+
+// Placeholder Member Generation
+// -----------------------------
+let members = [];
+const possibleInstruments = ['Drums', 'Guitar', 'Bass', 'Vocals'];
+UI.generateMember(members, 4, possibleInstruments);
+for (let x = 0; x < members.length; x++) {
+  const currentElement = UI.elms.member[x];
+  currentElement.innerHTML = `${members[x].name} <span class="list__tag">${members[x].instrument}</span>`;
+  currentElement.addEventListener('mouseover', function() {
+    UI.elms.infoBox.base.style.opacity = 1;
+    UI.elms.infoBox.name.innerHTML = `${members[x].name}`;
+    UI.elms.infoBox.age.innerHTML = `Age: <span class="stats_value">${members[x].age}</span>`;
+    UI.elms.infoBox.instrument.innerHTML = `Instrument: <span class="stats_value">${members[x].instrument}</span>`;
+  });
+  currentElement.addEventListener('mouseleave', function() {
+    UI.elms.infoBox.base.removeAttribute('style');
+  });
+} 
+
+console.log(members);
 
 
 // Object-fit Polyfill
@@ -106,16 +142,6 @@ window.addEventListener('scroll', () => {
       childSelector: '.content-box--animated'
     });
   }
-
-  // Trigger TD Scale Animation
-    // if(verge.inY(UI.elms.table)) {
-    //   Anim.play({
-    //     animation: `grow--${UI.elms.table.querySelectorAll('tr').length - 1}`,
-    //     section: UI.elms.table,
-    //     childSelector: 'tr'
-    //   });
-    //   console.log(`Table animation fired.`);
-    // }
 }); 
 
 // console.log(UI.elms.table.querySelectorAll('tr').length - 1);

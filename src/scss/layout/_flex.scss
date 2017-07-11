@@ -27,6 +27,8 @@
 
 .info-box {
   @extend %hover-shadow;
+  transition: opacity $trns-duration--default;
+  opacity: 0; 
   margin-top: em(20px);
   border-radius: $br;
   padding: em(15px);  
