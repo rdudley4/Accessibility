@@ -35,10 +35,6 @@
   }
 
   tr {
-    @include mq(med) {
-      transform: scale3d(0, 0 , 0);
-    }
-
     &:hover {
       cursor: help;
 

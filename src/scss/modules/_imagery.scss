@@ -68,17 +68,6 @@
 }
 
 
-// Survey
-// ------
-
-#survey,
-#newsletter {
-  @include mq(med) {
-    height: 300px;
-  }
-}
-
-
 // Section Icons
 // -------------
 
@@ -126,4 +115,20 @@
 
 .vocals::before {
   background-image: url('#{$path--rel}/icons/microphone.svg');
+}
+
+#member-age::before {
+  background-image: url('#{$path--rel}/icons/one.svg');
+}
+
+#member-dob::before {
+  background-image: url('#{$path--rel}/icons/two.svg');
+}
+
+#member-hometown::before {
+  background-image: url('#{$path--rel}/icons/three.svg');
+}
+
+#member-instrument::before {
+  background-image: url('#{$path--rel}/icons/four.svg');
 }

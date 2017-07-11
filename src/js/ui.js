@@ -2,7 +2,7 @@
 // User Interface Functionality
 // ==========================================================================
 
-// @ts-check
+
 
 // Dependencies
 // ------------
@@ -15,7 +15,7 @@ require('smoothscroll-polyfill').polyfill();
 import { Nav } from './nav';
 import { Anim } from "./anim";
 import { loremGenerator } from './loremGenerator';
-
+const verge = require("verge");
 
 // UI Object
 // ---------
@@ -53,11 +53,10 @@ const UI = {
         rect.bottom <= ( window.innerHeight || document.documentElement.clientHeight ) &&
         rect.right <= ( window.innerWidth || document.documentElement.clientWidth )
       );
-
-      // return rect.top <= rect.height;
     }
-  }
+  }     
 };
+
 
 // Generate Random Lorem Text and Insert it to our page
 // Using http://www.randomtext.me/ API
@@ -91,7 +90,7 @@ window.addEventListener('scroll', () => {
   });
 
   // Trigger Album Format Animation
-  if (UI.elementInViewport(UI.elms.sectionFormats)) {
+  if (verge.inY(UI.elms.sectionFormats)) {
     Anim.play({
       animation: 'slide--3',
       section: UI.elms.sectionFormats,
@@ -100,7 +99,7 @@ window.addEventListener('scroll', () => {
   }
 
   // Trigger About the Band Animation
-  if (UI.elementInViewport(UI.elms.sectionAbout)) {
+  if (verge.inY(UI.elms.sectionAbout)) {
     Anim.play({
       animation: 'slide--3',
       section: UI.elms.sectionAbout,
@@ -109,14 +108,14 @@ window.addEventListener('scroll', () => {
   }
 
   // Trigger TD Scale Animation
-  if(UI.elementInViewport(UI.elms.table)) {
-    Anim.play({
-      animation: `grow--${UI.elms.table.querySelectorAll('tr').length - 1}`,
-      section: UI.elms.table,
-      childSelector: 'tr'
-    });
-    console.log(`Table animation fired.`);
-  }
+    // if(verge.inY(UI.elms.table)) {
+    //   Anim.play({
+    //     animation: `grow--${UI.elms.table.querySelectorAll('tr').length - 1}`,
+    //     section: UI.elms.table,
+    //     childSelector: 'tr'
+    //   });
+    //   console.log(`Table animation fired.`);
+    // }
 }); 
 
 // console.log(UI.elms.table.querySelectorAll('tr').length - 1);

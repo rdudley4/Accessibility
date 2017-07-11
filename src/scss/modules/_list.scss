@@ -5,17 +5,18 @@
 .list {
   li {
     @extend .flex;
-    align-items: center;
-    padding    : em(8px) em(15px);
-    color      : palette(gray, light);
-    transition : all $trns-duration--med;
+    align-items  : center;
+    padding      : em(8px) em(15px);  
+    color        : palette(gray, light);
+    transition   : all $trns-duration--med;
+    border-radius: 21px;
 
     &:hover {
-      @extend %hover-shadow;
-      transform: scale(1.1);
-      cursor   : help;
+      color           : palette(white);
+      background-color: palette(red);
+      cursor          : help;   
 
-      & > .list__tag {
+      & > .list__tag {  
         background-color: palette(red);
       }
     }

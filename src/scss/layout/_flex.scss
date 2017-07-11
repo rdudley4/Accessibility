@@ -16,3 +16,30 @@
     flex-basis: 100%;
   }
 }
+
+#survey    {
+  @extend .flex;
+  $gutter: 20px;
+  flex     : 1 per-line(2, $gutter);
+  margin   : $gutter;
+  flex-grow: 1;
+}
+
+.info-box {
+  @extend %hover-shadow;
+  margin-top: em(20px);
+  border-radius: $br;
+
+  h3 {
+    margin: 0;
+    padding: em(10px);
+    background-color: palette(red);
+    color: palette(white);
+    border-top-left-radius: $br;
+    border-top-right-radius: $br;
+  }
+
+    img {
+      margin-top: em(20px);
+  }
+}

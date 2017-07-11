@@ -21,35 +21,35 @@
         <b class="srt">Landing Page Image. Accessible Frog - We Make Awesome Music</b>
         <div class="title--static">
           <img id="logo" src="../img/layout/logo.svg" alt="Website Logo, Flat Design Frog With A Crown">
-          <h1 class="title__name">Accessible Frog</h1>
-          <h2 class="title__subtext">We Make Awesome Music</h2>
+          <h1 class="title__name">Company Title</h1>  <!-- Contrast: ~12.7 -->
+          <h2 class="title__subtext">Company Slogan</h2> <!-- Contrast: ~10.0 -->
         </div>     
       </div>
     </header>
 
     <main id="main-content" class="limit panel--even--centered" role="main">
-      <section class="flex--centered section">
+      <section id="survey" class="flex--centered section">
         <h2 class="section__title fb--100">Survey</h2>
-        <p class="section__desc fb--100">What are your favorites?</p>
-        <img id="survey" class="section__img" src="../img/layout/concert01.jpg" alt="Picture of the band playing a live show.">
+        <p class="section__desc fb--100">Feedback Section</p>
+        <!--  -->
         <!-- Survey Form -->
         <form action="" method="POST" class="form" role="form">
           <!-- Favorites -->
           <fieldset class="form__fieldset">
             <legend>Favorites</legend>
             <!-- Favorite Band Member -->
-            <label class="form__label" for="John">Who is your favorite band member?</label>
-            <input id="John" class="form__radio" type="radio" name="members" value="John">
-            <label class="form__label--boxed" for="John">John</label>
+            <label class="form__label" for="option_1">Who is your favorite band member?</label>
+            <input id="option_1" class="form__radio" type="radio" name="members" value="option_1">
+            <label class="form__label--boxed" for="option_1">Option 1</label>
 
-            <input id="Hazzard" class="form__radio" type="radio" name="members" value="Hazzard">
-            <label class="form__label--boxed" for="Hazzard">Hazzard</label>
+            <input id="option_2" class="form__radio" type="radio" name="members" value="option_2">
+            <label class="form__label--boxed" for="option_2">Option 2</label>
             
-            <input id="Bob" class="form__radio" type="radio" name="members" value="Bob">
-            <label class="form__label--boxed" for="Bob">Bob</label>
+            <input id="option_3" class="form__radio" type="radio" name="members" value="option_3">
+            <label class="form__label--boxed" for="option_3">Option 3</label>
             
-            <input id="Sally" class="form__radio" type="radio" name="members" value="Sally">
-            <label class="form__label--boxed" for="Sally">Sally</label>
+            <input id="option_4" class="form__radio" type="radio" name="members" value="option_4">
+            <label class="form__label--boxed" for="option_4">Option 4</label>
 
             <!-- Favorite Album -->
             <label for="favorite-album" class="form__label">What is your favorite album?</label>
@@ -70,36 +70,33 @@
 
             <!-- Favorite Song -->
             <label for="favorite-song" class="form__label">What is your favorite song?</label>
-            <input id="favorite-song" class="form__input" type="text" placeholder="Super Kewl Song">
+            <input id="favorite-song" class="form__input" type="text" placeholder="Enter Song Name...">
+          </fieldset>
+        </form>
+        <!--<img id="newsletter" class="info-card__photo" src="../img/layout/the_band.jpg" alt="Picture of the band playing a live show.">-->
+        <!-- Newsletter Form -->
+        <form action="#" method="POST" class="form" role="form">
+          <fieldset class="form__fieldset">
+            <legend>Contact Info</legend>
+            <!-- Name -->
+            <label class="form__label" for="input-name">Full Name</label>
+            <input id="input-name" class="form__input" type="text" placeholder="Rick Sanchez" pattern="[a-zA-Z]+[\s][a-zA-Z]+" required>
+            <!-- Email -->
+            <label class="form__label" for="input-email">Email</label>
+            <input id="input-email" class="form__input" type="email" placeholder="rick@szechuan.sauce" pattern=".{9,}" required>
+            <!-- Email Verify -->
+            <label class="form__label" for="input-email-verify">Verify Email</label>
+            <input id="input-email-verify" class="form__input" type="email" placeholder="Retype Email" pattern=".{9,}" required>
+            <!-- Submit -->
+            <input class="btn" type="submit" value="Submit">
+            <!-- Reset -->
+            <input class="btn" type="reset" value="Reset">
           </fieldset>
         </form>   
       </section>
 
       <h1 class="headline-primary">Newsletter</h1>
-      <div class="info-card flex panel--even--centered">
-        <img id="newsletter" class="info-card__photo" src="../img/layout/the_band.jpg" alt="Picture of the band playing a live show.">
-        <div class="info-card__content">
-          <!-- Newsletter Form -->
-          <form action="#" method="POST" class="form" role="form">
-            <fieldset class="form__fieldset">
-              <legend>Contact Info</legend>
-              <!-- Name -->
-              <label class="form__label" for="input-name">Full Name</label>
-              <input id="input-name" class="form__input" type="text" placeholder="Rick Sanchez" pattern="[a-zA-Z]+[\s][a-zA-Z]+" required>
-              <!-- Email -->
-              <label class="form__label" for="input-email">Email</label>
-              <input id="input-email" class="form__input" type="email" placeholder="rick@szechuan.sauce" pattern=".{9,}" required>
-              <!-- Email Verify -->
-              <label class="form__label" for="input-email-verify">Verify Email</label>
-              <input id="input-email-verify" class="form__input" type="email" placeholder="Retype Email" pattern=".{9,}" required>
-              <!-- Submit -->
-              <input class="btn" type="submit" value="Submit">
-              <!-- Reset -->
-              <input class="btn" type="reset" value="Reset">
-            </fieldset>
-          </form>
-        </div>      
-      </div>
+      
     </main>
 
     <footer class="limit panel--centered" role="contentinfo">
