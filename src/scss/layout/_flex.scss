@@ -29,17 +29,27 @@
   @extend %hover-shadow;
   margin-top: em(20px);
   border-radius: $br;
+  padding: em(15px);  
+
+  @include e(stats) {
+    border-radius: 0;
+  }
 
   h3 {
     margin: 0;
     padding: em(10px);
     background-color: palette(red);
     color: palette(white);
-    border-top-left-radius: $br;
-    border-top-right-radius: $br;
+    border-radius: $br;
   }
 
     img {
       margin-top: em(20px);
   }
+}
+
+.stats_value {
+  font-weight: bold;
+  font-style: italic;
+  margin-left: em(5px);
 }
