@@ -21,7 +21,7 @@ const verge = require("verge");
 // UI Object
 // ---------
 
-const UI = {
+export const UI = {
   elms: {
     // Generic Elements
     // ----------------
@@ -45,8 +45,8 @@ const UI = {
     infoBox: {
       base: document.querySelector('.info-box'),
       name: document.getElementById('member-name'),
-      age: document.getElementById('member-age'),
-      instrument: document.getElementById('member-instrument')  
+      age: document.getElementById('stat1'),
+      instrument: document.getElementById('stat4')  
     },
 
     // Navigation Elements
@@ -62,12 +62,35 @@ const UI = {
   randomNumber: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
-  generateMember: function(array, num, instruments) {
+  generateMember: function(num) {
+    let members = [];
     for (let x = 0; x < num; x++) {
       const id = UI.randomNumber(1, 1000);
       const age = UI.randomNumber(20, 50);
-      const newMember = new Member(`Member ${id}`, id, age, instruments[x]);
-      array.push(newMember);
+      const instrument = ['Drums', 'Guitar', 'Bass', 'Vocals'];
+      const newMember = new Member(`Member ${id}`, id, age, instrument[x]);
+      members.push(newMember);
+    }
+    return members;
+  },
+  registerEvent: function(element, member) {
+    element.innerHTML = `${member.name} <span class="list__tag">${member.instrument}</span>`;
+    element.addEventListener('mouseover', function() {
+      UI.elms.infoBox.base.style.opacity = 1;
+      UI.elms.infoBox.name.innerHTML = member.name;
+      UI.elms.infoBox.age.innerHTML = `${ member.age } Years Old`;
+      UI.elms.infoBox.instrument.innerHTML = member.instrument;
+    });
+    element.addEventListener('mouseleave', function() {
+      UI.elms.infoBox.base.removeAttribute('style');
+    });
+  },
+  populate: function() {
+    const newMembers = this.generateMember(4);
+    // Register Event Handlers
+    for (let x = 0; x < newMembers.length; x++) {
+      this.registerEvent(UI.elms.member[x], newMembers[x]);
+      console.log(UI.elms.member[x], newMembers[x]);    
     }
   }
 };
@@ -80,26 +103,10 @@ const elmToGen = [UI.elms.liveShow, UI.elms.tourText];
 
 loremGenerator.genData(loremGenerator.genOptions.createString(), elmToGen);
 
-// Placeholder Member Generation
-// -----------------------------
-let members = [];
-const possibleInstruments = ['Drums', 'Guitar', 'Bass', 'Vocals'];
-UI.generateMember(members, 4, possibleInstruments);
-for (let x = 0; x < members.length; x++) {
-  const currentElement = UI.elms.member[x];
-  currentElement.innerHTML = `${members[x].name} <span class="list__tag">${members[x].instrument}</span>`;
-  currentElement.addEventListener('mouseover', function() {
-    UI.elms.infoBox.base.style.opacity = 1;
-    UI.elms.infoBox.name.innerHTML = `${members[x].name}`;
-    UI.elms.infoBox.age.innerHTML = `Age: <span class="stats_value">${members[x].age}</span>`;
-    UI.elms.infoBox.instrument.innerHTML = `Instrument: <span class="stats_value">${members[x].instrument}</span>`;
-  });
-  currentElement.addEventListener('mouseleave', function() {
-    UI.elms.infoBox.base.removeAttribute('style');
-  });
-} 
 
-console.log(members);
+// Generate Test Members
+
+UI.populate();
 
 
 // Object-fit Polyfill
