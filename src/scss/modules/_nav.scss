@@ -15,6 +15,7 @@
   border          : 2px solid transparent;
   transition      : background-color $trns-duration--default,
                     border-color $trns-duration--default;
+  background-color: palette(black, opaque);
 }
 
 

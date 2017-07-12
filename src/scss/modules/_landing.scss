@@ -4,6 +4,12 @@
 
 .landing {
   @extend %text-center;
+  @include shadow(bottom);
+  background         : url('#{$path--rel}/layout/test.jpg');
+  background-size    : cover;
+  background-position: 50% 85%;
+  background-repeat  : no-repeat;
+  height             : 100vh;
 
   // IE/Edge Specific Fixes
   // ----------------------
@@ -20,12 +26,10 @@
   // landing--stationary
   @include m(static) {
     @extend %text-center;
-    // @include bg-image('background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");', 100%, 350px);
     @include shadow(inset);
-    background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
-    background-color: palette(blue, dark);
-    // background-position: center bottom;
-    // background-repeat: repeat-x;
+    background-image: url('#{$path--rel}/layout/test.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
 
     @include mq(med) {
       min-height: 470px; 
@@ -37,26 +41,26 @@
   }
 
   // landing__video
-  @include e(video) {
-    @extend %border-outline-reverse;
-    width     : 100%;
-    height    : 100vh;
-    object-fit:  cover;
+  // @include e(video) {
+  //   @extend %border-outline-reverse;
+  //   width     : 100%;
+  //   height    : 100vh;
+  //   object-fit:  cover;
 
-    @include mq(med) {
-      object-fit: fill;
-    }
+  //   @include mq(med) {
+  //     object-fit: fill;
+  //   }
 
-    // IE/Edge Specific Fixes
-    // ----------------------
-    @include mq(edge) {
-      width:  100%;
-      height: 100%;
-    }
+  //   // IE/Edge Specific Fixes
+  //   // ----------------------
+  //   @include mq(edge) {
+  //     width:  100%;
+  //     height: 100%;
+  //   }
 
-    @include mq(ie11) {
-      width:  100%;
-      height: 100%;
-    }   
-  }
+  //   @include mq(ie11) {
+  //     width:  100%;
+  //     height: 100%;
+  //   }   
+  // }
 }

@@ -8,7 +8,6 @@
 // ------------
 
 // Polyfills
-import 'objectFitPolyfill/dist/objectFitPolyfill.min';
 require('smoothscroll-polyfill').polyfill();
 
 // Modules
@@ -40,7 +39,7 @@ const firstNames = [
   'Blake',
   'Israel',
   'Daniel',
-  'Joe',,
+  'Joe',
   'Morris'
 ];
 
@@ -180,12 +179,12 @@ UI.populate();
 // Object-fit Polyfill
 // -------------------
 
-if (/Edge\/\d./i.test(navigator.userAgent) || !!navigator.userAgent.match(/Trident\/7\./)){
-   // This is Microsoft Edge or IE 10-11
-   if(UI.elms.landingVideo) {
-     UI.elms.landingVideo.setAttribute('data-object-fit', 'cover');
-   }
-}
+// if (/Edge\/\d./i.test(navigator.userAgent) || !!navigator.userAgent.match(/Trident\/7\./)){
+//    // This is Microsoft Edge or IE 10-11
+//    if(UI.elms.landingVideo) {
+//      UI.elms.landingVideo.setAttribute('data-object-fit', 'cover');
+//    }
+// }
 
 
 // Event Handlers

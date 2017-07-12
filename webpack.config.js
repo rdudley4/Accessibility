@@ -65,14 +65,6 @@ const webpackConfig = {
             }
           }
         ]
-      },
-      {
-        test: /\.(webm|mp4)$/i,
-        loader: "file-loader",
-        options: {
-          name: '[path]video-[sha512:hash:base64:7].[ext]',
-          context: './src'
-        }
       }
     ]
   },
