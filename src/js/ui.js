@@ -18,6 +18,12 @@ import { loremGenerator } from './loremGenerator';
 import Member from './member';
 const verge = require("verge");
 
+// Images
+import helmet from '../img/icons/helmet.svg';
+import beer from '../img/icons/beer.svg';
+import shield from '../img/icons/shield.svg';
+import viking from '../img/icons/viking.svg';  
+
 // UI Object
 // ---------
 
@@ -45,6 +51,7 @@ export const UI = {
     infoBox: {
       base: document.querySelector('.info-box'),
       name: document.getElementById('member-name'),
+      icon: document.getElementById('info-box__icon'),
       age: document.getElementById('stat1'),
       dob: document.getElementById('stat2'),
       town: document.getElementById('stat3'),
@@ -72,7 +79,22 @@ export const UI = {
       const dob = new Date().getFullYear() - age;
       const town = `${UI.randomNumber(1, 2000)} Imaginary Ln`;
       const instrument = ['Drums', 'Guitar', 'Bass', 'Vocals'];
-      const newMember = new Member(`Member ${id}`, id, age, dob, town, instrument[x]);
+      let icon;
+      switch (instrument[x]) {
+        case 'Drums':
+          icon = helmet;
+          break;
+        case 'Guitar':
+          icon = beer;
+          break;
+        case 'Bass':
+          icon = shield;
+          break;
+        case 'Vocals':
+          icon = viking;
+          break;
+      }
+      const newMember = new Member(`Member ${id}`, id, icon, age, dob, town, instrument[x]);
       members.push(newMember);
     }
     return members;
@@ -81,6 +103,7 @@ export const UI = {
     element.innerHTML = `${member.name} <span class="list__tag">${member.instrument}</span>`;
     element.addEventListener('mouseover', function() {
       UI.elms.infoBox.base.style.opacity = 1;
+      UI.elms.infoBox.icon.src = member.icon;
       UI.elms.infoBox.name.innerHTML = member.name;
       UI.elms.infoBox.age.innerHTML = `${ member.age } Years Old`;
       UI.elms.infoBox.dob.innerHTML = member.dob;
@@ -95,7 +118,8 @@ export const UI = {
     const newMembers = this.generateMember(4);
     // Register Event Handlers
     for (let x = 0; x < newMembers.length; x++) {
-      this.registerEvent(UI.elms.member[x], newMembers[x]);  
+      this.registerEvent(UI.elms.member[x], newMembers[x]);
+      console.log(UI.elms.member[x], newMembers[x]);      
     }
   }
 };
