@@ -22,7 +22,44 @@ const verge = require("verge");
 import helmet from '../img/icons/helmet.svg';
 import beer from '../img/icons/beer.svg';
 import shield from '../img/icons/shield.svg';
-import viking from '../img/icons/viking.svg';  
+import viking from '../img/icons/viking.svg'; 
+
+const firstNames = [
+  'Bob',
+  'Bill',
+  'David',
+  'Joel',
+  'Steven',
+  'Carl',
+  'Alfredo',
+  'Jay',
+  'Kevin',
+  'John',
+  'Michael',
+  'William',
+  'Blake',
+  'Israel',
+  'Daniel',
+  'Joe',,
+  'Morris'
+];
+
+const lastNames = [
+  'Wilson',
+  'Lopes',
+  'Peeples',
+  'Potter',
+  'Franklin',
+  'Roland',
+  'Byler',
+  'Young',
+  'Robbins',
+  'Morton',
+  'Miller',
+  'Dawson',
+  'Meserve',
+  'Garcia'
+];
 
 // UI Object
 // ---------
@@ -75,6 +112,8 @@ export const UI = {
     let members = [];
     for (let x = 0; x < num; x++) {
       const id = UI.randomNumber(1, 1000);
+      const first = firstNames[this.randomNumber(0, firstNames.length - 1)];
+      const last = lastNames[this.randomNumber(0, lastNames.length - 1)]; 
       const age = UI.randomNumber(20, 50);
       const dob = new Date().getFullYear() - age;
       const town = `${UI.randomNumber(1, 2000)} Imaginary Ln`;
@@ -94,7 +133,7 @@ export const UI = {
           icon = viking;
           break;
       }
-      const newMember = new Member(`Member ${id}`, id, icon, age, dob, town, instrument[x]);
+      const newMember = new Member(`${ first } ${ last }`, id, icon, age, dob, town, instrument[x]);
       members.push(newMember);
     }
     return members;
