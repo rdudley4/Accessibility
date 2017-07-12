@@ -46,6 +46,8 @@ export const UI = {
       base: document.querySelector('.info-box'),
       name: document.getElementById('member-name'),
       age: document.getElementById('stat1'),
+      dob: document.getElementById('stat2'),
+      town: document.getElementById('stat3'),
       instrument: document.getElementById('stat4')  
     },
 
@@ -67,8 +69,10 @@ export const UI = {
     for (let x = 0; x < num; x++) {
       const id = UI.randomNumber(1, 1000);
       const age = UI.randomNumber(20, 50);
+      const dob = new Date().getFullYear() - age;
+      const town = `${UI.randomNumber(1, 2000)} Imaginary Ln`;
       const instrument = ['Drums', 'Guitar', 'Bass', 'Vocals'];
-      const newMember = new Member(`Member ${id}`, id, age, instrument[x]);
+      const newMember = new Member(`Member ${id}`, id, age, dob, town, instrument[x]);
       members.push(newMember);
     }
     return members;
@@ -79,6 +83,8 @@ export const UI = {
       UI.elms.infoBox.base.style.opacity = 1;
       UI.elms.infoBox.name.innerHTML = member.name;
       UI.elms.infoBox.age.innerHTML = `${ member.age } Years Old`;
+      UI.elms.infoBox.dob.innerHTML = member.dob;
+      UI.elms.infoBox.town.innerHTML = member.town;
       UI.elms.infoBox.instrument.innerHTML = member.instrument;
     });
     element.addEventListener('mouseleave', function() {
@@ -89,8 +95,7 @@ export const UI = {
     const newMembers = this.generateMember(4);
     // Register Event Handlers
     for (let x = 0; x < newMembers.length; x++) {
-      this.registerEvent(UI.elms.member[x], newMembers[x]);
-      console.log(UI.elms.member[x], newMembers[x]);    
+      this.registerEvent(UI.elms.member[x], newMembers[x]);  
     }
   }
 };
