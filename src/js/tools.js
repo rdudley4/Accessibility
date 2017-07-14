@@ -2,6 +2,9 @@
 // Random Stuff
 // ==========================================================================
 
+// Verge
+const verge = require('verge');
+
 // Member Class
 import Member from './member';
 
@@ -52,7 +55,9 @@ export const Tools = {
   registerMemberEvents: function(domElm, memberInfo, infobox) {
     domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instrument}</span>`;
     domElm.addEventListener('mouseover', function() {
-      infobox.base.style.opacity = 1;
+      if (verge.mq('(min-width: 840px)')) {
+        infobox.base.style.opacity = 1;
+      }
       infobox.icon.src = memberInfo.icon;
       infobox.name.innerHTML = memberInfo.name;
       infobox.age.innerHTML = `${ memberInfo.age } Years Old`;

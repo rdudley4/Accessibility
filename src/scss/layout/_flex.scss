@@ -27,22 +27,25 @@
 
 .info-box {
   @extend %hover-shadow;
-  transition: opacity $trns-duration--default;
-  opacity: 0; 
-  margin-top: em(20px);
+  transition   : opacity $trns-duration--default;
+  opacity      : 1; 
+  margin-top   : em(20px);
   border-radius: $br;
-  padding: em(15px);  
+  padding      : em(15px);  
+  @include mq(med) {
+    opacity: 0;
+  }
 
   @include e(stats) {
     border-radius: 0;
   }
 
   h3 {
-    margin: 0;
-    padding: em(10px);
+    margin          : 0;
+    padding         : em(10px);
     background-color: palette(red);
-    color: palette(white);
-    border-radius: $br;
+    color           : palette(white);
+    border-radius   : $br;
   }
 
     img {
@@ -52,6 +55,6 @@
 
 .stats_value {
   font-weight: bold;
-  font-style: italic;
+  font-style : italic;
   margin-left: em(5px);
 }

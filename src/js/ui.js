@@ -69,7 +69,7 @@ export const UI = {
 // Generate Random Lorem Text and Insert it to our page
 // Using http://www.randomtext.me/ API
 
-loremGenerator.genData(loremGenerator.genOptions.createString(),[UI.elms.liveShow, UI.elms.tourText]);
+loremGenerator.genData(loremGenerator.genOptions.createString(), [UI.elms.liveShow, UI.elms.tourText]);
 
 
 // Generate Test Members
