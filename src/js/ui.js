@@ -14,51 +14,10 @@ require('smoothscroll-polyfill').polyfill();
 import { Nav } from './nav';
 import { Anim } from "./anim";
 import { loremGenerator } from './loremGenerator';
-import Member from './member';
+import { Tools } from './tools';
 const verge = require("verge");
 
-// Images
-import helmet from '../img/icons/helmet.svg';
-import beer from '../img/icons/beer.svg';
-import shield from '../img/icons/shield.svg';
-import viking from '../img/icons/viking.svg'; 
-
-const firstNames = [
-  'Bob',
-  'Bill',
-  'David',
-  'Joel',
-  'Steven',
-  'Carl',
-  'Alfredo',
-  'Jay',
-  'Kevin',
-  'John',
-  'Michael',
-  'William',
-  'Blake',
-  'Israel',
-  'Daniel',
-  'Joe',
-  'Morris'
-];
-
-const lastNames = [
-  'Wilson',
-  'Lopes',
-  'Peeples',
-  'Potter',
-  'Franklin',
-  'Roland',
-  'Byler',
-  'Young',
-  'Robbins',
-  'Morton',
-  'Miller',
-  'Dawson',
-  'Meserve',
-  'Garcia'
-];
+ 
 
 // UI Object
 // ---------
@@ -78,7 +37,7 @@ export const UI = {
 
     // Member Elements
     // ---------------
-    member: [
+    members: [
        document.querySelector('.drums'),
        document.querySelector('.bass'),
        document.querySelector('.guitar'),
@@ -103,62 +62,6 @@ export const UI = {
     // ------------------ 
     sectionFormats: document.querySelector('.album__formats'),
     sectionAbout: document.querySelector('.about'),
-  },
-  randomNumber: function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  },
-  generateMember: function(num) {
-    let members = [];
-    for (let x = 0; x < num; x++) {
-      const id = UI.randomNumber(1, 1000);
-      const first = firstNames[this.randomNumber(0, firstNames.length - 1)];
-      const last = lastNames[this.randomNumber(0, lastNames.length - 1)]; 
-      const age = UI.randomNumber(20, 50);
-      const dob = new Date().getFullYear() - age;
-      const town = `${UI.randomNumber(1, 2000)} Imaginary Ln`;
-      const instrument = ['Drums', 'Guitar', 'Bass', 'Vocals'];
-      let icon;
-      switch (instrument[x]) {
-        case 'Drums':
-          icon = helmet;
-          break;
-        case 'Guitar':
-          icon = beer;
-          break;
-        case 'Bass':
-          icon = shield;
-          break;
-        case 'Vocals':
-          icon = viking;
-          break;
-      }
-      const newMember = new Member(`${ first } ${ last }`, id, icon, age, dob, town, instrument[x]);
-      members.push(newMember);
-    }
-    return members;
-  },
-  registerEvent: function(element, member) {
-    element.innerHTML = `${member.name} <span class="list__tag">${member.instrument}</span>`;
-    element.addEventListener('mouseover', function() {
-      UI.elms.infoBox.base.style.opacity = 1;
-      UI.elms.infoBox.icon.src = member.icon;
-      UI.elms.infoBox.name.innerHTML = member.name;
-      UI.elms.infoBox.age.innerHTML = `${ member.age } Years Old`;
-      UI.elms.infoBox.dob.innerHTML = member.dob;
-      UI.elms.infoBox.town.innerHTML = member.town;
-      UI.elms.infoBox.instrument.innerHTML = member.instrument;
-    });
-    element.addEventListener('mouseleave', function() {
-      UI.elms.infoBox.base.removeAttribute('style');
-    });
-  },
-  populate: function() {
-    const newMembers = this.generateMember(4);
-    // Register Event Handlers
-    for (let x = 0; x < newMembers.length; x++) {
-      this.registerEvent(UI.elms.member[x], newMembers[x]);
-      console.log(UI.elms.member[x], newMembers[x]);      
-    }
   }
 };
 
@@ -166,25 +69,16 @@ export const UI = {
 // Generate Random Lorem Text and Insert it to our page
 // Using http://www.randomtext.me/ API
 
-const elmToGen = [UI.elms.liveShow, UI.elms.tourText];
-
-loremGenerator.genData(loremGenerator.genOptions.createString(), elmToGen);
+loremGenerator.genData(loremGenerator.genOptions.createString(),[UI.elms.liveShow, UI.elms.tourText]);
 
 
 // Generate Test Members
 
-UI.populate();
-
-
-// Object-fit Polyfill
-// -------------------
-
-// if (/Edge\/\d./i.test(navigator.userAgent) || !!navigator.userAgent.match(/Trident\/7\./)){
-//    // This is Microsoft Edge or IE 10-11
-//    if(UI.elms.landingVideo) {
-//      UI.elms.landingVideo.setAttribute('data-object-fit', 'cover');
-//    }
-// }
+Tools.createMembers({
+  amount: 4,
+  eventElms: UI.elms.members,
+  infoBox: UI.elms.infoBox
+});
 
 
 // Event Handlers
