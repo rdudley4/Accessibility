@@ -6,7 +6,8 @@
 // ----------
 
 #logo {
-  max-width : 75px;
+  max-width    : 75px;
+  margin-bottom: em(15px);
 
   @include mq(med) {
     max-width: 150px;

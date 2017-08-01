@@ -12,10 +12,10 @@
   padding         : em(17.5px) em(7px);
   z-index         : 1;
   background-color: transparent;
-  border          : 2px solid transparent;
+  border          : 1px solid palette(black, m-opaque);
   transition      : background-color $trns-duration--default,
                     border-color $trns-duration--default;
-  background-color: palette(black, opaque);
+  background-color: palette(black, m-opaque);
 }
 
 

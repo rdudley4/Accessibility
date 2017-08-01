@@ -63,6 +63,7 @@ $color-palette: (
   ),
   black: (
     x-opaque: rgba($black, .1),
+    m-opaque: rgba($black, .25),
     opaque  : rgba(black, .6),
     base    : $black
   ),

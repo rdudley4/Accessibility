@@ -32,11 +32,13 @@
   @include e(chevron-down) {
     width     : 56px;
     margin-top: em(50px);
-    transition: transform $trns-duration--default;
+    transition: border-color $trns-duration--med;
+    animation : bounce 1.5s infinite;
+    border-bottom: 2px solid transparent;
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.25);
+      border-color: palette(white);
     }
   } 
 }

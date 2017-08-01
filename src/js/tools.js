@@ -9,10 +9,10 @@ const verge = require('verge');
 import Member from './member';
 
 // Images
-import helmet from '../img/icons/helmet.svg';
-import beer from '../img/icons/beer.svg';
-import shield from '../img/icons/shield.svg';
-import viking from '../img/icons/viking.svg';
+import helmet from '../img/icons/rank1.svg';
+import beer from '../img/icons/rank2.svg';
+import shield from '../img/icons/rank3.svg';
+import viking from '../img/icons/rank4.svg';
 
 const firstNames = [
   'Bob',
@@ -31,7 +31,12 @@ const firstNames = [
   'Israel',
   'Daniel',
   'Joe',
-  'Morris'
+  'Morris',
+  'Connie',
+  'Kyle',
+  'Nancy',
+  'Peggy',
+  'Alice'
 ];
 
 const lastNames = [
@@ -48,7 +53,33 @@ const lastNames = [
   'Miller',
   'Dawson',
   'Meserve',
-  'Garcia'
+  'Garcia',
+  'Castillo',
+  'Kellogg',
+  'Davis',
+  'Mathewson',
+  'Clark'
+];
+
+const streetNames = [
+  'Petunia Way',
+  'Farland Street',
+  'Grant Street',
+  'Badger Pond Lane',
+  'Grove Avenue',
+  'Fleming Street',
+  'Linden Avenue',
+  'Abia Martin Drive',
+  'Augusta Park',
+  'Archwood Avenue',
+  'Daylene Drive',
+  'Traders Alley',
+  'Oakdale Avenue',
+  'Masonic Hill Road',
+  'Henery Street',
+  'Walnut Avenue',
+  'Rogers Street',
+  'Renwick Drive'
 ];
 
 export const Tools = {
@@ -80,7 +111,7 @@ export const Tools = {
       const last = lastNames[this.randomNumber(0, lastNames.length - 1)]; 
       const age = this.randomNumber(20, 50);
       const dob = new Date().getFullYear() - age;
-      const town = `${this.randomNumber(1, 2000)} Imaginary Ln`;
+      const address = `${this.randomNumber(1, 9999)} ${streetNames[this.randomNumber(0, streetNames.length - 1)]}`;
       const instrument = ['Drums', 'Guitar', 'Bass', 'Vocals'];
       let icon;
       switch (instrument[x]) {
@@ -97,7 +128,7 @@ export const Tools = {
           icon = viking;
           break;
       }
-      const newMember = new Member(`${ first } ${ last }`, id, icon, age, dob, town, instrument[x]);
+      const newMember = new Member(`${ first } ${ last }`, id, icon, age, dob, address, instrument[x]);
       members.push(newMember);
     }
     return members;

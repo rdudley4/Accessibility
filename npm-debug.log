@@ -1,33 +1,33 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'stage' ]
-2 info using npm@3.10.10
-3 info using node@v6.11.1
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'run', 'stage' ]
+2 info using npm@3.5.2
+3 info using node@v4.7.2
 4 verbose run-script [ 'prestage', 'stage', 'poststage' ]
 5 info lifecycle tth-project-8@0.9.1~prestage: tth-project-8@0.9.1
 6 silly lifecycle tth-project-8@0.9.1~prestage: no script for prestage, continuing
 7 info lifecycle tth-project-8@0.9.1~stage: tth-project-8@0.9.1
 8 verbose lifecycle tth-project-8@0.9.1~stage: unsafe-perm in lifecycle true
-9 verbose lifecycle tth-project-8@0.9.1~stage: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/ryan/Documents/Projects/Accessibility/node_modules/.bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/ryan/.local/bin:/home/ryan/bin:/home/ryan/.local/bin:/home/ryan/bin
+9 verbose lifecycle tth-project-8@0.9.1~stage: PATH: /usr/share/npm/bin/node-gyp-bin:/home/ryan/Documents/Projects/Accessibility/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 10 verbose lifecycle tth-project-8@0.9.1~stage: CWD: /home/ryan/Documents/Projects/Accessibility
 11 silly lifecycle tth-project-8@0.9.1~stage: Args: [ '-c', 'git add . && git commit && git push' ]
 12 silly lifecycle tth-project-8@0.9.1~stage: Returned: code: 1  signal: null
 13 info lifecycle tth-project-8@0.9.1~stage: Failed to exec stage script
 14 verbose stack Error: tth-project-8@0.9.1 stage: `git add . && git commit && git push`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
-14 verbose stack     at emitTwo (events.js:106:13)
-14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/usr/lib/node_modules/npm/lib/utils/spawn.js:40:14)
-14 verbose stack     at emitTwo (events.js:106:13)
-14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:891:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+14 verbose stack     at EventEmitter.<anonymous> (/usr/share/npm/lib/utils/lifecycle.js:232:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:854:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:222:5)
 15 verbose pkgid tth-project-8@0.9.1
 16 verbose cwd /home/ryan/Documents/Projects/Accessibility
-17 error Linux 4.11.11-300.fc26.x86_64
-18 error argv "/usr/bin/node" "/usr/bin/npm" "run" "stage"
-19 error node v6.11.1
-20 error npm  v3.10.10
+17 error Linux 4.10.0-28-generic
+18 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "stage"
+19 error node v4.7.2
+20 error npm  v3.5.2
 21 error code ELIFECYCLE
 22 error tth-project-8@0.9.1 stage: `git add . && git commit && git push`
 22 error Exit status 1
