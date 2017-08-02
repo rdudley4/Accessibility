@@ -43,6 +43,8 @@ export const UI = {
        document.querySelector('.guitar'),
        document.querySelector('.vocals')
     ],
+    
+    // Info Box Elements
     infoBox: {
       base: document.querySelector('.info-box'),
       name: document.getElementById('member-name'),
@@ -50,7 +52,8 @@ export const UI = {
       age: document.getElementById('stat1'),
       dob: document.getElementById('stat2'),
       town: document.getElementById('stat3'),
-      instrument: document.getElementById('stat4')  
+      about: document.getElementById('member-about'),
+      instIcon: document.getElementById('member-instIcon')
     },
 
     // Navigation Elements

@@ -5,96 +5,32 @@
 // Verge
 const verge = require('verge');
 
+// Faker (Dummy Data Generator)
+const faker = require('faker');
+
 // Member Class
 import Member from './member';
 
 // Images
-import helmet from '../img/icons/rank1.svg';
-import beer from '../img/icons/rank2.svg';
-import shield from '../img/icons/rank3.svg';
-import viking from '../img/icons/rank4.svg';
-
-const firstNames = [
-  'Bob',
-  'Bill',
-  'David',
-  'Joel',
-  'Steven',
-  'Carl',
-  'Alfredo',
-  'Jay',
-  'Kevin',
-  'John',
-  'Michael',
-  'William',
-  'Blake',
-  'Israel',
-  'Daniel',
-  'Joe',
-  'Morris',
-  'Connie',
-  'Kyle',
-  'Nancy',
-  'Peggy',
-  'Alice'
-];
-
-const lastNames = [
-  'Wilson',
-  'Lopes',
-  'Peeples',
-  'Potter',
-  'Franklin',
-  'Roland',
-  'Byler',
-  'Young',
-  'Robbins',
-  'Morton',
-  'Miller',
-  'Dawson',
-  'Meserve',
-  'Garcia',
-  'Castillo',
-  'Kellogg',
-  'Davis',
-  'Mathewson',
-  'Clark'
-];
-
-const streetNames = [
-  'Petunia Way',
-  'Farland Street',
-  'Grant Street',
-  'Badger Pond Lane',
-  'Grove Avenue',
-  'Fleming Street',
-  'Linden Avenue',
-  'Abia Martin Drive',
-  'Augusta Park',
-  'Archwood Avenue',
-  'Daylene Drive',
-  'Traders Alley',
-  'Oakdale Avenue',
-  'Masonic Hill Road',
-  'Henery Street',
-  'Walnut Avenue',
-  'Rogers Street',
-  'Renwick Drive'
-];
+import drums from '../img/icons/drum-set.svg';
+import guitar from '../img/icons/electric-guitar.svg';
+import keyboard from '../img/icons/keyboard.svg';
+import mic from '../img/icons/microphone.svg';
 
 export const Tools = {
   registerMemberEvents: function(domElm, memberInfo, infobox) {
-    domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instrument}</span>`;
+    domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instName}</span>`;
     domElm.addEventListener('mouseover', function() {
       if (verge.mq('(min-width: 840px)')) {
         infobox.base.style.opacity = 1;
       }
-      infobox.icon.src = memberInfo.icon;
-      infobox.name.innerHTML = memberInfo.name;
-      infobox.age.innerHTML = `${ memberInfo.age } Years Old`;
-      infobox.dob.innerHTML = memberInfo.dob;
-      infobox.town.innerHTML = memberInfo.town;
-      infobox.instrument.innerHTML = memberInfo.instrument;
+      infobox.icon.src        = memberInfo.icon;
+      infobox.instIcon.src    = memberInfo.instIcon;
+      infobox.name.innerHTML  = memberInfo.name;
+      infobox.age.innerHTML   = memberInfo.age;
+      infobox.dob.innerHTML   = memberInfo.dob;
+      infobox.town.innerHTML  = memberInfo.town;
+      infobox.about.innerHTML = memberInfo.about;
     });
     domElm.addEventListener('mouseleave', function() {
       infobox.base.removeAttribute('style');
@@ -103,41 +39,45 @@ export const Tools = {
   randomNumber: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
-  generateMember: function(num) {
-    let members = [];
-    for (let x = 0; x < num; x++) {
+  genMembers: function(num) { 
+    const members = [];
+    const instruments = ['Drums', 'Guitar', 'Keyboard', 'Vocals']
+    for (let i = 0; i < num; i++) {
+      // Member Information Variables
       const id = this.randomNumber(1, 1000);
-      const first = firstNames[this.randomNumber(0, firstNames.length - 1)];
-      const last = lastNames[this.randomNumber(0, lastNames.length - 1)]; 
+      const name = `${faker.name.firstName()} ${faker.name.lastName()}`;
       const age = this.randomNumber(20, 50);
       const dob = new Date().getFullYear() - age;
-      const address = `${this.randomNumber(1, 9999)} ${streetNames[this.randomNumber(0, streetNames.length - 1)]}`;
-      const instrument = ['Drums', 'Guitar', 'Bass', 'Vocals'];
+      const avatar = faker.image.avatar();
+      const hometown = `${faker.address.city()}, ${faker.address.state()}`;
+      const about = faker.lorem.paragraph();
+      const instrument = instruments[i];
+      // Instrument Icon
       let icon;
-      switch (instrument[x]) {
+      switch (instrument) {
         case 'Drums':
-          icon = helmet;
+          icon = drums;
           break;
         case 'Guitar':
-          icon = beer;
+          icon = guitar;
           break;
-        case 'Bass':
-          icon = shield;
+        case 'Keyboard':
+          icon = keyboard;
           break;
         case 'Vocals':
-          icon = viking;
+          icon = mic;
           break;
       }
-      const newMember = new Member(`${ first } ${ last }`, id, icon, age, dob, address, instrument[x]);
+      // Create Member then push to members array
+      const newMember = new Member(name, id, avatar, age, dob, hometown, about, instrument, icon);
       members.push(newMember);
     }
     return members;
   },
   createMembers: function({ amount, eventElms, infoBox } = {}) {
-    const newMembers = this.generateMember(amount);
+    const newMembers = this.genMembers(amount);
     for (let x = 0; x < newMembers.length; x++ ) {
       this.registerMemberEvents(eventElms[x], newMembers[x], infoBox);
-      console.log(eventElms[x], newMembers[x]);
     }
   }
 };

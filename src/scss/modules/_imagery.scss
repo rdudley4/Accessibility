@@ -133,3 +133,12 @@
 #member-instrument::before {
   background-image: url('#{$path--rel}/icons/four.svg');
 }
+
+
+// Info Box Avatars
+#info-box__icon {
+  max-width    : 96px;
+  padding      : em(1px);
+  border-radius: 50%;
+  border       : 2px solid palette(gray, x-light);
+}

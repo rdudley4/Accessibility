@@ -6,3 +6,6 @@
 
 #Ignore Node Modules 
 node_modules/
+
+#Ignore Node Debug Logs
+npm-debug.log*

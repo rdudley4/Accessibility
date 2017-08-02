@@ -3,13 +3,15 @@
 // ==========================================================================
 
 export default class Member {
-  constructor(name, id, icon, age, dob, town, instrument) {
+  constructor(name, id, icon, age, dob, town, about, instName, instIcon) {
     this.name = name;
     this.id = id;
     this.icon = icon;
     this.age = age;
     this.dob = dob;
     this.town = town;
-    this.instrument = instrument;
+    this.instName = instName;
+    this.instIcon = instIcon;
+    this.about = about;
   }
 }
