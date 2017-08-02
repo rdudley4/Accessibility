@@ -1,0 +1,38 @@
+// ==========================================================================
+// Page Footer
+// ==========================================================================
+
+footer {
+  @extend .flex--centered;
+  align-items: center;
+  padding    : em(15px);
+  
+  p {
+    margin: 0;
+  }
+}
+
+#top {
+  display: inline-block;
+  width  : 28px;
+  height : 28px;
+  margin : 0 auto;
+  opacity: .75;
+
+  path {
+    transition: fill $trns-duration--default;
+
+    &:nth-of-type(2) {
+      animation: bounce--alt 1.25s linear infinite;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    path { fill: palette(green); }
+  }
+}
+
+.social__platforms {
+  order: -1;
+}

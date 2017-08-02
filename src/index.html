@@ -82,29 +82,29 @@
         <div class="about">
           <!-- Who We Are -->
           <div class="wrap content-box--animated">
-            <img src="img/icons/puppets.svg" alt="flat icon of team members" />
+            <img src="img/icons/vip-pass.svg" alt="flat icon of team members" />
             <h3 class="section__title--info">Live Shows Section</h3>
             <p id ="text__live-show" class="section__desc--padded">Randomly Generated Text Here</p> 
           </div>
           <!-- Current Members -->
           <div class="wrap content-box--animated">
-            <img src="img/icons/teamwork.svg" alt="flat icon of team members" />
+            <img src="img/icons/sunglasses.svg" alt="flat icon of team members" />
             <h3 class="section__title--info">Current Members</h3>
             <ul class="list content-4">
-              <li class="drums">Member 1<span class="list__tag">Drums</span></li>
-              <li class="bass">Member 2<span class="list__tag">Bass</span></li>
-              <li class="guitar">Member 3<span class="list__tag">Guitar</span></li>
-              <li class="vocals">Member 4<span class="list__tag">Vocals</span></li>
+              <li class="list__item--flex drums">Member 1<span class="list__tag">Drums</span></li>
+              <li class="list__item--flex bass">Member 2<span class="list__tag">Bass</span></li>
+              <li class="list__item--flex guitar">Member 3<span class="list__tag">Guitar</span></li>
+              <li class="list__item--flex vocals">Member 4<span class="list__tag">Vocals</span></li>
             </ul>
             <div class="info-box">
-              <img id="info-box__icon" src="img/icons/drum.svg" alt="Current Member Icon" />
+              <img id="info-box__icon" src="img/icons/drum-set.svg" alt="Current Member Icon" />
               <h3 id="member-name" class="section__title--info">InfoBox Name</h3>
               <img id="member-instIcon" src="./img/icons/drum-set.svg" alt="Member's Instrument">
               <ul id="member__list" class="list content-4">
-                <li id="member-age" class="info-box__stats">Age:<span id="stat1" class="stats_value">26</span></li>
-                <li id="member-dob" class="info-box__stats">Born:<span id="stat2" class="stats_value">1991</span></li>
-                <li id="member-hometown" class="info-box__stats"><span id="stat3" class="stats_value">Chicago, Illinois</span></li>
-                <li id="member-about" class="info-box__stats">Filler Dummy Text</li>
+                <li id="member-age" class="list__item info-box__stats">Age:<span id="stat1" class="stats_value">26</span></li>
+                <li id="member-dob" class="list__item info-box__stats">Born:<span id="stat2" class="stats_value">1991</span></li>
+                <li id="member-hometown" class="list__item info-box__stats"><span id="stat3" class="stats_value">Chicago, Illinois</span></li>
+                <li id="member-about" class="list__item info-box__stats">Filler Dummy Text</li>
               </ul>
             </div>
           </div>
@@ -118,18 +118,24 @@
       </section>
     </main>
 
-    <footer class="limit panel--centered" role="contentinfo">
-      <a href="#" class="platform twitter">
-        <b class="srt">Find us on Twitter</b>
-      </a>
-      <a href="#" class="platform facebook">
-        <b class="srt">Find us on Facebook</b>
-      </a>
-      <a href="#" class="platform instagram">
-        <b class="srt">Find us on Instagram</b>
-      </a>
+    <footer class="limit" role="contentinfo">
+      <!-- Scroll to Top -->
+      <svg id="top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503.284 503.284">
+        <path fill="#005ECE" d="M321.642 148.284v40h137.5v275h-415v-275h137.5v-40H4.142v355h495v-355"/>
+        <path fill="#2488FF" d="M231.642 76.57v249.214h40V76.57l25.858 25.856 28.285-28.284L251.642 0 177.5 74.142l28.285 28.284"/>
+      </svg>
+      <div class="social__platforms">
+        <a href="#" class="platform twitter">
+          <b class="srt">Find us on Twitter</b>
+        </a>
+        <a href="#" class="platform facebook">
+          <b class="srt">Find us on Facebook</b>
+        </a>
+        <a href="#" class="platform instagram">
+          <b class="srt">Find us on Instagram</b>
+        </a>
+      </div>
       <p>&copy; 2017 - Accessible Frog</p>
-      <span id="top" class="btn--small">Back To Top</span>
     </footer>
   </body>
 </html>

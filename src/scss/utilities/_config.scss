@@ -64,12 +64,15 @@ $color-palette: (
   black: (
     x-opaque: rgba($black, .1),
     m-opaque: rgba($black, .25),
-    opaque  : rgba(black, .6),
+    opaque  : rgba($black, .6),
     base    : $black
   ),
   // Layout
   red: (
     base : $froly
+  ),
+  green: (
+    base : $ufo-green
   ),
   blue: (
     light: $malibu,

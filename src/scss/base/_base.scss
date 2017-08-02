@@ -15,9 +15,8 @@ body {
 }
 
 main {
-  padding    : em(15px);
-  padding-top: em(90px);
-  overflow   : hidden;
+  padding : em(90px) em(15px) 0;
+  overflow: hidden;
 
   @include mq(med) {
     padding-top: em(110px);

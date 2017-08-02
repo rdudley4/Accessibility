@@ -27,6 +27,15 @@
   }
 }
 
+@keyframes bounce--alt {
+  50% {
+    transform: translate3d(0, 30px, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
 // Animations
 // ----------
 

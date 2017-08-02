@@ -102,38 +102,21 @@
 // Band Members
 // ------------
 
-.drums::before {
-  background-image: url('#{$path--rel}/icons/drum.svg');
-}
+// .drums::before {
+//   background-image: url('#{$path--rel}/icons/drum.svg');
+// }
 
-.guitar::before {
-  background-image: url('#{$path--rel}/icons/electric-guitar.svg');
-}
+// .guitar::before {
+//   background-image: url('#{$path--rel}/icons/electric-guitar.svg');
+// }
 
-.bass::before {
-  background-image: url('#{$path--rel}/icons/bass-guitar.svg');
-}
+// .bass::before {
+//   background-image: url('#{$path--rel}/icons/bass-guitar.svg');
+// }
 
-.vocals::before {
-  background-image: url('#{$path--rel}/icons/microphone.svg');
-}
-
-#member-age::before {
-  background-image: url('#{$path--rel}/icons/one.svg');
-}
-
-#member-dob::before {
-  background-image: url('#{$path--rel}/icons/two.svg');
-}
-
-#member-hometown::before {
-  background-image: url('#{$path--rel}/icons/three.svg');
-}
-
-#member-instrument::before {
-  background-image: url('#{$path--rel}/icons/four.svg');
-}
-
+// .vocals::before {
+//   background-image: url('#{$path--rel}/icons/microphone.svg');
+// }
 
 // Info Box Avatars
 #info-box__icon {
