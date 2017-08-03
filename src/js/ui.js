@@ -46,6 +46,7 @@ export const UI = {
     
     // Info Box Elements
     infoBox: {
+      memberList: document.getElementById('member__list'),
       base: document.querySelector('.info-box'),
       name: document.getElementById('member-name'),
       icon: document.getElementById('info-box__icon'),
@@ -83,9 +84,19 @@ Tools.createMembers({
   infoBox: UI.elms.infoBox
 });
 
-
 // Event Handlers
 // --------------
+
+// Infobox Animation Event Handler
+UI.elms.infoBox.memberList.addEventListener('mouseenter', function() {
+  UI.elms.infoBox.base.style.maxHeight = '1000px';
+  UI.elms.infoBox.base.style.padding   = '15px';
+  UI.elms.infoBox.base.style.boxShadow = '0 0 0 1px rgba(232,232,232,.36), 0 12px 24px 0 rgba(202,202,202,.22)';
+});
+
+UI.elms.infoBox.memberList.addEventListener('mouseleave', function(){
+  UI.elms.infoBox.base.removeAttribute('style');
+});
 
 // Window Scroll
 window.addEventListener('scroll', () => {

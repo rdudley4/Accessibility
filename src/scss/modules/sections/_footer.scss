@@ -3,12 +3,19 @@
 // ==========================================================================
 
 footer {
-  @extend .flex--centered;
-  align-items: center;
-  padding    : em(15px);
-  
+  position  : relative;
+  padding   : em(15px);
+  text-align: center;
+
   p {
     margin: 0;
+    right : 15px;
+    color: palette(gray, light);
+    max-width: 120px;
+
+    @include mq(med) {
+      max-width: 200px;
+    }
   }
 }
 
@@ -16,7 +23,6 @@ footer {
   display: inline-block;
   width  : 28px;
   height : 28px;
-  margin : 0 auto;
   opacity: .75;
 
   path {
@@ -33,6 +39,9 @@ footer {
   }
 }
 
-.social__platforms {
-  order: -1;
+.social__platforms, footer p {
+  position: absolute;
+  top     : em(15px);
 }
+
+.social__platforms { left: 15px }

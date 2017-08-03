@@ -21,19 +21,13 @@ export const Tools = {
   registerMemberEvents: function(domElm, memberInfo, infobox) {
     domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instName}</span>`;
     domElm.addEventListener('mouseover', function() {
-      if (verge.mq('(min-width: 840px)')) {
-        infobox.base.style.opacity = 1;
-      }
-      infobox.icon.src        = memberInfo.icon;
-      infobox.instIcon.src    = memberInfo.instIcon;
-      infobox.name.innerHTML  = memberInfo.name;
-      infobox.age.innerHTML   = memberInfo.age;
-      infobox.dob.innerHTML   = memberInfo.dob;
-      infobox.town.innerHTML  = memberInfo.town;
-      infobox.about.innerHTML = memberInfo.about;
-    });
-    domElm.addEventListener('mouseleave', function() {
-      infobox.base.removeAttribute('style');
+      infobox.icon.src             = memberInfo.icon;
+      infobox.instIcon.src         = memberInfo.instIcon;
+      infobox.name.innerHTML       = memberInfo.name;
+      infobox.age.innerHTML        = memberInfo.age;
+      infobox.dob.innerHTML        = memberInfo.dob;
+      infobox.town.innerHTML       = memberInfo.town;
+      infobox.about.innerHTML      = memberInfo.about;
     });
   },
   randomNumber: function(min, max) {
