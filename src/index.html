@@ -13,7 +13,7 @@
     <header id="head" role="banner">  
       <!-- Navigation -->
       <nav class="navbar" role="navigation">
-        <ul class="nav flex limit">
+        <ul class="nav flex--wrap limit">
           <li class="nav__item"><a id="page-home" href="#">Accessible Frog</a></li>
           <li class="nav__item"><a id="page-survey" href="survey.html">Survey</a></li>
           <li class="nav__item"><a id="page-tours" href="tours.html">Tour</a></li>
@@ -32,89 +32,113 @@
       </div>
     </header>
 
-    <main id="main-content" class="limit" role="main">
+    <main id="main-content" role="main">
       <!-- Section [New Album] -->
       <section id="newAlbum" class="section">
         <!-- Section Heading [Icon/Title/Description] -->
-        <div class="section__icon icon__album">
+        <!-- <div class="section__icon icon__album">
           <b class="srt">Flat styled image of a stack of vinyl albums.</b>
-        </div>
-        <h2 class="section__title">Secondary Headline</h2>
-        <p class="section__desc">Random Stuff Goes Here</p>   
-        <!-- Album Cover -->
-        <img class="section__img" src="img/layout/soul_of_the_frog.jpg" alt="Album cover for Soul of the Frog" />
-        <!-- Purchase Button -->
-        <a class="btn" href="#">Purchase Now</a>
-        <!-- Platforms -->
-        <div class="album__platforms">
-          <!-- SoundCloud -->
-          <a href="#" class="platform soundcloud">
-            <b class="srt">Find us on SoundCloud</b>
-          </a>
-          <!-- iTunes -->
-          <a href="#" class="platform itunes">
-            <b class="srt">Find us on iTunes</b>
-          </a>
-          <!-- YouTube -->
-          <a href="#" class="platform youtube">
-            <b class="srt">Find us on YouTube</b>
-          </a>
-        </div>
-        <!-- Available Formats -->
-        <h3 class="section__title--info">Formats</h3>
-        <ul class="album__formats content-2">
-          <li class="lp content-box--animated">2x Long Play [LP]</li>
-          <li class="cd content-box--animated">Compact Disc [CD]</li>
-          <li class="digital content-box--animated">Digital Download [MP4]</li>              
-        </ul>
+        </div> -->
+        <div class="limit flex--wrap">
+          
+          <div class="wrap col-2 flex--centered">
+            <div class="wrap">
+              <h2 class="section__title">Secondary Headline</h2>
+              <p id="newAlbum__desc" class="section__desc">Sapiente blanditiis architecto nulla sint dignissimos et qui. Rem voluptas rerum debitis. Odit et quisquam sed explicabo est ipsam reprehenderit tempora possimus. Fugit cupiditate repellat incidunt doloremque. Ipsam in odit laboriosam error tenetur. Dicta impedit sed voluptatibus odio.</p>
+            </div>
+            <!-- Available Formats -->
+            <div class="wrap">
+              <h3 class="section__title--info">Formats</h3>
+              <ul class="album__formats content-2">
+                <li class="lp content-box--animated">2x LP</li>
+                <li class="cd content-box--animated">CD</li>
+                <li class="digital content-box--animated">Digital</li>              
+              </ul>
+            </div>        
+          </div> <!-- END WRAP -->
+
+          <div class="wrap col-2">
+            <!-- Album Cover -->
+            <img class="section__img" src="img/layout/soul_of_the_frog.jpg" alt="Album cover for Soul of the Frog" />
+            <div class="wrap">
+              <!-- Purchase Button -->
+              <a class="btn" href="#">Purchase Now</a>
+              <!-- Platforms -->
+              <div class="album__platforms">
+                <!-- YouTube -->
+                <a href="#" class="platform spotify">
+                  <b class="srt">Find us on YouTube</b>
+                </a>
+                <!-- iTunes -->
+                <a href="#" class="platform itunes">
+                  <b class="srt">Find us on iTunes</b>
+                </a>
+                <!-- SoundCloud -->
+                <a href="#" class="platform android">
+                  <b class="srt">Find us on Android's Google Play Store</b>
+                </a>    
+              </div>
+            </div>
+          </div> <!-- END WRAP -->
+
+        </div>  
       </section>
       
       <!-- Section [About The Band] -->
       <section class="section">
-        <!-- Section Heading [Icon/Title/Description] -->
-        <div class="section__icon icon__info">
-          <b class="srt">Flat styled image of a stack of vinyl albums.</b>
-        </div>
-        <h2 class="section__title">Secondary Headline</h2>
-        <p class="section__desc">Info box goes here.</p>  
-        <!-- Lead Singer Image -->
-        <img class="section__img" src="img/layout/lead_singer.jpg" alt="Our lead singer on stage at a recent concert." />
-        <div class="about">
-          <!-- Who We Are -->
-          <div class="wrap content-box--animated">
-            <img src="img/icons/vip-pass.svg" alt="flat icon of team members" />
-            <h3 class="section__title--info">Live Shows Section</h3>
-            <p id ="text__live-show" class="section__desc--padded">Randomly Generated Text Here</p> 
+
+        <div class="limit flex--wrap">
+          <!-- Section Heading [Icon/Title/Description] -->
+          <div class="col-2 flex--centered">
+            <h2 class="section__title">Secondary Headline</h2>
+            <p id ="about__desc" class="section__desc">Info box goes here.</p>
           </div>
-          <!-- Current Members -->
-          <div class="wrap content-box--animated">
-            <img src="img/icons/sunglasses.svg" alt="flat icon of team members" />
-            <h3 class="section__title--info">Current Members</h3>
-            <ul id="member__list" class="list content-4">
-              <li class="list__item--flex drums">Member 1<span class="list__tag">Drums</span></li>
-              <li class="list__item--flex bass">Member 2<span class="list__tag">Bass</span></li>
-              <li class="list__item--flex guitar">Member 3<span class="list__tag">Guitar</span></li>
-              <li class="list__item--flex vocals">Member 4<span class="list__tag">Vocals</span></li>
-            </ul>
-            <div class="info-box">
-              <img id="info-box__icon" src="img/icons/drum-set.svg" alt="Current Member Icon" />
-              <h3 id="member-name" class="section__title--info">InfoBox Name</h3>
-              <img id="member-instIcon" src="./img/icons/drum-set.svg" alt="Member's Instrument">
-              <ul id="member__info" class="list content-4">
-                <li id="member-age" class="list__item info-box__stats">Age:<span id="stat1" class="stats_value">26</span></li>
-                <li id="member-dob" class="list__item info-box__stats">Born:<span id="stat2" class="stats_value">1991</span></li>
-                <li id="member-hometown" class="list__item info-box__stats"><span id="stat3" class="stats_value">Chicago, Illinois</span></li>
-                <li id="member-about" class="list__item info-box__stats">Filler Dummy Text</li>
-              </ul>
+
+          <!-- Lead Singer Image -->
+          <div id ="container-img-lead" class="col-2">
+            <img class="section__img" src="img/layout/lead_singer.jpg" alt="Our lead singer on stage at a recent concert." /> 
+          </div>
+          
+          <!-- About the Band [Content] -->
+          <!-- Live Shows -->
+          <div class="about flex--wrap">
+
+            <div class="col-2 content-box--animated">
+              <img src="img/icons/vip-pass.svg" alt="flat icon of team members" />
+              <h3 class="section__title--info">Live Shows Section</h3>
+              <p id ="text__live-show" class="section__desc--padded">Randomly Generated Text Here</p> 
             </div>
+            <!-- Our Sound -->
+            <div class="col-2 content-box--animated">
+              <img src="img/icons/headphone.svg" alt="flat icon of team members" />
+              <h3 class="section__title--info">Our Sound</h3>
+              <p id="text__tour" class="section__desc--padded">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
+            </div>  
+            <!-- Current Members & InfoBox -->
+            <div class="col content-box--animated">
+              <img src="img/icons/sunglasses.svg" alt="flat icon of team members" />
+              <h3 class="section__title--info">Current Members</h3>
+              <div class="info-box">
+                <img id="info-box__icon" src="img/icons/drum-set.svg" alt="Current Member Icon" />
+                <h3 id="member-name" class="section__title--info">InfoBox Name</h3>
+                <img id="member-instIcon" src="./img/icons/drum-set.svg" alt="Member's Instrument">
+                <ul id="member__info" class="list content-4">
+                  <li id="member-age" class="list__item info-box__stats">Age:<span id="stat1" class="stats_value">26</span></li>
+                  <li id="member-dob" class="list__item info-box__stats">Born:<span id="stat2" class="stats_value">1991</span></li>
+                  <li id="member-hometown" class="list__item info-box__stats"><span id="stat3" class="stats_value">Chicago, Illinois</span></li>
+                  <li id="member-about" class="list__item info-box__stats">Filler Dummy Text</li>
+                </ul>
+              </div>
+              <ul id="member__list" class="list content-4">
+                <li class="list__item--flex drums">Member 1<span class="list__tag">Drums</span></li>
+                <li class="list__item--flex bass">Member 2<span class="list__tag">Bass</span></li>
+                <li class="list__item--flex guitar">Member 3<span class="list__tag">Guitar</span></li>
+                <li class="list__item--flex vocals">Member 4<span class="list__tag">Vocals</span></li>
+              </ul>  
+            </div> 
           </div>
-          <!-- Our Sound -->
-          <div class="wrap content-box--animated">
-            <img src="img/icons/headphone.svg" alt="flat icon of team members" />
-            <h3 class="section__title--info">Our Sound</h3>
-            <p id="text__tour" class="section__desc--padded">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
-          </div>     
-        </div>       
+                      
+        </div>      
       </section>
     </main>
 

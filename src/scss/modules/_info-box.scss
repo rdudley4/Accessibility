@@ -5,7 +5,7 @@
 .info-box {
   position     : relative;
   transition   : all cubic-bezier(0.3, 0, 0.3, 1) $trns-duration--med;
-  max-height   : 0;
+  // max-height   : 0;
   overflow     : hidden;
   margin-top   : em(20px);
   border-radius: $br;

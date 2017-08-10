@@ -15,6 +15,10 @@
 }
 
 
+.img-small {
+  max-width: 64px;
+}
+
 // Music Platform Icons
 // --------------------
 
@@ -36,8 +40,8 @@
   @each $platform, $link in $icons {
     $size: 0px;
     &.#{$platform} {
-      @if $platform == itunes or $platform == soundcloud or $platform == youtube {
-        $size: 48px;
+      @if $platform == itunes or $platform == android or $platform == spotify {
+        $size: 32px;
       }
       @else {
         $size: 24px;

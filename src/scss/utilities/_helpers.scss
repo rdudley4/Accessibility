@@ -37,6 +37,7 @@
 
 .limit {
 	@extend .centered;
+	position : relative;
 	max-width: $content-max-width;
 }
 
@@ -47,3 +48,7 @@
 	margin: 0;
 }
 
+
+.sa {
+	justify-content: space-around;
+}

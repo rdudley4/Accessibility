@@ -14,14 +14,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  padding : em(90px) em(15px) 0;
-  overflow: hidden;
+// main {
+//   padding-top: em(90px);
 
-  @include mq(med) {
-    padding-top: em(110px);
-  }
-}
+//   @include mq(med) {
+//     padding-top: em(110px);
+//   }
+// }
 
 a {
   text-decoration: none;

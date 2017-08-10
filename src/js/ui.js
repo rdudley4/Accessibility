@@ -17,6 +17,9 @@ import { loremGenerator } from './loremGenerator';
 import { Tools } from './tools';
 const verge = require("verge");
 
+// Faker (Dummy Data Generator)
+const faker = require('faker');
+
  
 
 // UI Object
@@ -34,6 +37,8 @@ export const UI = {
     table: document.querySelector('.table'),
     liveShow: document.getElementById('text__live-show'),
     tourText: document.getElementById('text__tour'),
+    albumDesc: document.getElementById('newAlbum__desc'),
+    aboutDesc: document.getElementById('about__desc'),
 
     // Member Elements
     // ---------------
@@ -84,19 +89,23 @@ Tools.createMembers({
   infoBox: UI.elms.infoBox
 });
 
+
 // Event Handlers
 // --------------
 
 // Infobox Animation Event Handler
-UI.elms.infoBox.memberList.addEventListener('mouseenter', function() {
-  UI.elms.infoBox.base.style.maxHeight = '1000px';
-  UI.elms.infoBox.base.style.padding   = '15px';
-  UI.elms.infoBox.base.style.boxShadow = '0 0 0 1px rgba(232,232,232,.36), 0 12px 24px 0 rgba(202,202,202,.22)';
-});
+// UI.elms.infoBox.memberList.addEventListener('mouseenter', function() {
+//   UI.elms.infoBox.base.style.maxHeight = '1000px';
+//   UI.elms.infoBox.base.style.padding   = '15px';
+//   UI.elms.infoBox.base.style.boxShadow = '0 0 0 1px rgba(232,232,232,.36), 0 12px 24px 0 rgba(202,202,202,.22)';
+// });
 
-UI.elms.infoBox.memberList.addEventListener('mouseleave', function(){
-  UI.elms.infoBox.base.removeAttribute('style');
-});
+// UI.elms.infoBox.memberList.addEventListener('mouseleave', function(){
+//   UI.elms.infoBox.base.removeAttribute('style');
+// });
+
+UI.elms.albumDesc.innerHTML = faker.lorem.paragraph();
+UI.elms.aboutDesc.innerHTML = faker.lorem.paragraph();
 
 // Window Scroll
 window.addEventListener('scroll', () => {

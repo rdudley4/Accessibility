@@ -3,37 +3,26 @@
 // ==========================================================================
 
 #newAlbum {
-  background: linear-gradient(to top, transparent 0%, white 100%),
-              //linear-gradient(to bottom, transparent 0%, white 100%),
-              linear-gradient(to right, transparent 90%, white 100%),
-              linear-gradient(to left, transparent 90%, white 100%),
-              url('#{$path--rel}/layout/bg-icon__section-ablum.png');
-  background-position: top left;
-  background-repeat  : no-repeat;
+  
 }
 
 .album {
-  @include e(platforms) {
-    margin-bottom: em(50px);
-  }
-
   @include e(formats) {
     @extend .flex;
     color: palette(gray);
 
     li {
       @extend .flex;
-      flex-direction: column;
-      flex          : 1 per-line(3, $gutter);
-      align-items   : center;
-      padding       : em(8px) em(15px);
-      margin        : $gutter;
-      border        : 1px solid transparent;
-      border-radius : $br;
-      transition    : box-shadow $trns-duration--default;
+      flex-direction : column;
+      flex           : 1 per-line(3, $gutter);
+      align-items    : center;
+      justify-content: center;
+      padding        : em(8px) em(15px);
+      margin         : $gutter;
+      border-radius  : $br;
+      // transition     : box-shadow $trns-duration--default ease;
 
       &:hover {
-        @extend %hover-shadow;
         cursor: pointer;
       }
 
