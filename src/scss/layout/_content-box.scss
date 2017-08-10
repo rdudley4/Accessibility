@@ -4,6 +4,12 @@
 
 .content-box {
   @include m(animated) {
+    // box-shadow: 0 0 0 1px rgba(153,170,181,.3);
+
+    // &:hover {
+    //   box-shadow: 0 9px 30px 1px rgba(153,170,181,.2);
+    // }
+    
     @include mq(med) {
       transform: translate3d(0, 60px, 0);
       opacity  : 0;

@@ -4,9 +4,10 @@
 
 .section {
   @extend %text-center;
-  border-bottom : 1px solid palette(gray, x-light);
+  // border-bottom : 1px solid palette(gray, x-light);
   padding-bottom: em(60px);
-  margin-bottom : em(60px);
+  padding-top   : em(90px);
+  border-bottom : 1px solid #e9e7e7;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -16,7 +17,7 @@
   @include e(title) {
     @extend .header-2;
     color: palette(gray, dark);
-    margin: 0;
+    margin: 0 0 em(20px, 34px);
     // section__title--info
     @include m(info) {
       @extend .header-3;
@@ -53,7 +54,7 @@
     border-radius: $br;
     
     @include mq(med) {
-      max-width: 400px;
+      max-width: 450px;
     }
   }
 

@@ -3,20 +3,16 @@
 // ==========================================================================
 
 .about {
-  @extend .flex;
-
-  .wrap {
-    $gutter: 20px;
-    flex   : 1 per-line(2, $gutter);
-    margin : $gutter;
-
-    @include mq(med) {
-      flex-basis: per-line(3, 20px);
-    }
-  }
+  margin-top: em(60px);
 
   img {
     max-width: 64px;
+  }
+}
+
+#container {
+  &-img-lead {
+    order: -1;
   }
 }
 

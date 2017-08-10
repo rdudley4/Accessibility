@@ -3,17 +3,45 @@
 // ==========================================================================
 
 .flex {
-  @extend %flex-default;
+  display: flex;
 
   @include m(centered) {
-    @extend %flex-default;
+    @extend .flex;
     justify-content: center;
+  }
+
+  @include m(wrap) {
+    @extend .flex;
+    flex-wrap: wrap;
   }
 }
 
 .fb {
   @include m(100) {
     flex-basis: 100%;
+  }
+}
+
+// Columns
+// -------
+
+.col {
+  flex-grow     : 1;
+  flex-direction: column;
+  margin        : 0 $gutter;
+
+  &-2 {
+    @extend .col;
+    @include mq(med) {
+      flex-basis: per-line(2, $gutter);
+    }
+  }
+
+  &-3 {
+    @extend .col;
+    @include mq(med) {
+      flex-basis: per-line(3, $gutter);
+    }
   }
 }
 
