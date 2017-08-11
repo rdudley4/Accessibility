@@ -13,35 +13,35 @@ require('smoothscroll-polyfill').polyfill();
 // Modules
 import { Nav } from './nav';
 import { Anim } from "./anim";
-import { loremGenerator } from './loremGenerator';
 import { Tools } from './tools';
 const verge = require("verge");
-
-// Faker (Dummy Data Generator)
-const faker = require('faker');
-
  
 
 // UI Object
 // ---------
 
 export const UI = {
+  // UI Page Node References [UI.elms]
+  // ---------------------------------
   elms: {
     // Generic Elements
-    // ----------------
-    landing: document.querySelector('.landing') || document.querySelector('.landing--static'),
+    toTop       : document.getElementById('top'),
+    mainContent : document.getElementById('main-content'),
+    landing     : document.querySelector('.landing') || document.querySelector('.landing--static'),
     landingVideo: document.querySelector('.landing__video'),
-    mainContent: document.getElementById('main-content'),
-    chevronDown: document.querySelector('.title__chevron-down'),
-    toTop: document.getElementById('top'),
-    table: document.querySelector('.table'),
-    liveShow: document.getElementById('text__live-show'),
-    tourText: document.getElementById('text__tour'),
-    albumDesc: document.getElementById('newAlbum__desc'),
-    aboutDesc: document.getElementById('about__desc'),
+    chevronDown : document.querySelector('.title__chevron-down'),
+    table       : document.querySelector('.table'),
+    
+    // Navigation Elements
+    navBar  : document.querySelector('.navbar'),
+    navLinks: document.querySelectorAll('.nav__item'),
+
+    // Sections
+    sectionFormats: document.querySelector('.album__formats'),
+    sectionAbout  : document.querySelector('.about'),
+    sectionDummy  : document.querySelectorAll('.dummy'),
 
     // Member Elements
-    // ---------------
     members: [
        document.querySelector('.drums'),
        document.querySelector('.bass'),
@@ -51,43 +51,29 @@ export const UI = {
     
     // Info Box Elements
     infoBox: {
+      base      : document.querySelector('.info-box'),
       memberList: document.getElementById('member__list'),
-      base: document.querySelector('.info-box'),
-      name: document.getElementById('member-name'),
-      icon: document.getElementById('info-box__icon'),
-      age: document.getElementById('stat1'),
-      dob: document.getElementById('stat2'),
-      town: document.getElementById('stat3'),
-      about: document.getElementById('member-about'),
-      instIcon: document.getElementById('member-instIcon')
-    },
-
-    // Navigation Elements
-    // -------------------
-    navBar: document.querySelector('.navbar'),
-    navLinks: document.querySelectorAll('.nav__item'),
-
-    // Sections
-    // ------------------ 
-    sectionFormats: document.querySelector('.album__formats'),
-    sectionAbout: document.querySelector('.about'),
+      name      : document.getElementById('member-name'),
+      icon      : document.getElementById('info-box__icon'),
+      age       : document.getElementById('stat1'),
+      dob       : document.getElementById('stat2'),
+      town      : document.getElementById('stat3'),
+      about     : document.getElementById('member-about'),
+      instIcon  : document.getElementById('member-instIcon')
+    }
   }
 };
 
 
-// Generate Random Lorem Text and Insert it to our page
-// Using http://www.randomtext.me/ API
-
-loremGenerator.genData(loremGenerator.genOptions.createString(), [UI.elms.liveShow, UI.elms.tourText]);
-
-
 // Generate Test Members
-
 Tools.createMembers({
-  amount: 4,
+  amount   : 4,
   eventElms: UI.elms.members,
-  infoBox: UI.elms.infoBox
+  infoBox  : UI.elms.infoBox
 });
+
+// Populate Dummy Lorem
+Tools.genDummyData(UI.elms.sectionDummy);
 
 
 // Event Handlers
@@ -104,23 +90,21 @@ Tools.createMembers({
 //   UI.elms.infoBox.base.removeAttribute('style');
 // });
 
-UI.elms.albumDesc.innerHTML = faker.lorem.paragraph();
-UI.elms.aboutDesc.innerHTML = faker.lorem.paragraph();
 
 // Window Scroll
 window.addEventListener('scroll', () => {
   // Nav Transition
   Nav.transition({
-    navBar: UI.elms.navBar,
-    navLinks: UI.elms.navLinks,
+    navBar    : UI.elms.navBar,
+    navLinks  : UI.elms.navLinks,
     relativeTo: UI.elms.landing
   });
 
   // Trigger Album Format Animation
   if (verge.inY(UI.elms.sectionFormats)) {
     Anim.play({
-      animation: 'slide--3',
-      section: UI.elms.sectionFormats,
+      section      : UI.elms.sectionFormats,
+      animation    : 'slide--3',
       childSelector: '.content-box--animated'
     });
   }
@@ -128,8 +112,8 @@ window.addEventListener('scroll', () => {
   // Trigger About the Band Animation
   if (verge.inY(UI.elms.sectionAbout)) {
     Anim.play({
-      animation: 'slide--3',
       section: UI.elms.sectionAbout,
+      animation: 'slide--3',
       childSelector: '.content-box--animated'
     });
   }

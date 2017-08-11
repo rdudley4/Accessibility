@@ -5,27 +5,9 @@
 .about {
   margin-top: em(60px);
 
-  img {
-    max-width: 64px;
-  }
+  img { max-width: 64px; }
 }
 
 #container {
-  &-img-lead {
-    order: -1;
-  }
-}
-
-#text__live-show p,
-#text__tour p {
-  @extend .content-4;
-  color: palette(gray); 
-
-  &:last-of-type() {
-    padding         : em(8px) em(0px);
-    margin-top      : em(30px);
-    border-radius   : 21px;
-    color           : palette(white);
-    background-color: palette(red);
-  }
+  &-img-lead { order: -1; }
 }

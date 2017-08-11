@@ -2,10 +2,6 @@
 // Section [Album Information]
 // ==========================================================================
 
-#newAlbum {
-  
-}
-
 .album {
   @include e(formats) {
     @extend .flex;

@@ -2,9 +2,6 @@
 // Random Stuff
 // ==========================================================================
 
-// Verge
-const verge = require('verge');
-
 // Faker (Dummy Data Generator)
 const faker = require('faker');
 
@@ -38,13 +35,13 @@ export const Tools = {
     const instruments = ['Drums', 'Guitar', 'Keyboard', 'Vocals']
     for (let i = 0; i < num; i++) {
       // Member Information Variables
-      const id = this.randomNumber(1, 1000);
-      const name = `${faker.name.firstName()} ${faker.name.lastName()}`;
-      const age = this.randomNumber(20, 50);
-      const dob = new Date().getFullYear() - age;
-      const avatar = faker.image.avatar();
-      const hometown = `${faker.address.city()}, ${faker.address.state()}`;
-      const about = faker.lorem.paragraph();
+      const id         = this.randomNumber(1, 1000);
+      const name       = `${ faker.name.firstName() } ${ faker.name.lastName() }`;
+      const age        = this.randomNumber(20, 50);
+      const dob        = new Date().getFullYear() - age;
+      const avatar     = faker.image.avatar();
+      const hometown   = `${ faker.address.city() }, ${ faker.address.state() }`;
+      const about      = faker.lorem.paragraph();
       const instrument = instruments[i];
       // Instrument Icon
       let icon;
@@ -72,6 +69,11 @@ export const Tools = {
     const newMembers = this.genMembers(amount);
     for (let x = 0; x < newMembers.length; x++ ) {
       this.registerMemberEvents(eventElms[x], newMembers[x], infoBox);
+    }
+  },
+  genDummyData: function(elms) {
+    for (let elm of elms) {
+      elm.innerHTML = faker.lorem.paragraph();
     }
   }
 };
