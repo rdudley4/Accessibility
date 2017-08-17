@@ -34,12 +34,12 @@ export const UI = {
     
     // Navigation Elements
     navBar  : document.querySelector('.navbar'),
-    navLinks: document.querySelectorAll('.nav__item'),
+    navLinks: Array.from( document.querySelectorAll('.nav__item') ),
 
     // Sections
     sectionFormats: document.querySelector('.album__formats'),
     sectionAbout  : document.querySelector('.about'),
-    sectionDummy  : document.querySelectorAll('.dummy'),
+    sectionDummy  : Array.from( document.querySelectorAll('.dummy') ),
 
     // Member Elements
     members: [
@@ -79,7 +79,7 @@ Tools.genDummyData(UI.elms.sectionDummy);
 // Event Handlers
 // --------------
 
-// Infobox Animation Event Handler
+// Infobox Animation Event Handler - NEED TO FIX / REMOVE
 // UI.elms.infoBox.memberList.addEventListener('mouseenter', function() {
 //   UI.elms.infoBox.base.style.maxHeight = '1000px';
 //   UI.elms.infoBox.base.style.padding   = '15px';
