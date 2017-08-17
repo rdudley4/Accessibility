@@ -15,6 +15,7 @@ import keyboard from '../img/icons/keyboard.svg';
 import mic from '../img/icons/microphone.svg';
 
 export const Tools = {
+  // Register mouse over events for each band member element.
   registerMemberEvents: function(domElm, memberInfo, infobox) {
     domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instName}</span>`;
     domElm.addEventListener('mouseover', function() {
@@ -32,7 +33,7 @@ export const Tools = {
   },
   genMembers: function(num) { 
     const members = [];
-    const instruments = ['Drums', 'Guitar', 'Keyboard', 'Vocals']
+    const instruments = ['Drums', 'Guitar', 'Keyboard', 'Vocals'];
     for (let i = 0; i < num; i++) {
       // Member Information Variables
       const id         = this.randomNumber(1, 1000);

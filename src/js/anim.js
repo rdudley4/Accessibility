@@ -11,7 +11,7 @@ export const Anim = {
     return !elm.classList.contains(animation);
   },
   play: ({ animation, section, childSelector } = {}) => {
-    const elmsToAnimate = section.querySelectorAll(childSelector);
+    const elmsToAnimate = Array.from( section.querySelectorAll(childSelector) );
     if (Anim.notTriggered(elmsToAnimate[0], animation)) {
       for (let elm of elmsToAnimate) {
         elm.classList.add(animation);
