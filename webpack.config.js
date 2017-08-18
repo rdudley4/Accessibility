@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const version = process.env.npm_package_version;
 
 const webpackConfig = {
-  entry: "./src/js/index.js",
+  entry: ["./src/js/polyfills.js","./src/js/index.js"],
   output: {
     path: __dirname + "/build",
     filename: "bundle.js"
