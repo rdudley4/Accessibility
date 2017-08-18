@@ -2,17 +2,12 @@
 // User Interface Functionality
 // ==========================================================================
 
-
-
 // Dependencies
 // ------------
 
-// Polyfills
-require('smoothscroll-polyfill').polyfill();
-
 // Modules
 import { Nav } from './nav';
-import { Anim } from "./anim";
+import { Anim } from './anim';
 import { Tools } from './tools';
 const verge = require("verge");
  
