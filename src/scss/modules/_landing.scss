@@ -6,12 +6,12 @@
   @extend %text-center;
   @include shadow(bottom);
   background:
-    linear-gradient(to top, transparent 0%, #2c3e50 95%), /* Gradient        */
+    linear-gradient(to top, transparent 0%, #000 95%),    /* Gradient        */
     url('#{$path--rel}/layout/test.jpg')                    /* Image           */
     center 85% / cover                                      /* Position & Size */
     no-repeat                                               /* Repeat          */
     fixed;                                                  /* Attachment      */
-  height               : 100vh;
+  height: 100vh;
 
   // IE/Edge Specific Fixes
   // ----------------------

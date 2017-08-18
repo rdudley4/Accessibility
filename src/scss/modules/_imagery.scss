@@ -52,14 +52,6 @@
 }
 
 
-// Tour Icon
-// ---------
-
-.tour {
-  @include bg-image('layout/concert-poster.svg', 150px, 150px, inline-block);
-  background-size: contain;
-}
-
 // Caption Ticket Icons
 // --------------------
 
@@ -69,20 +61,6 @@
 
   &:last-of-type {
     float: right;
-  }
-}
-
-
-// Section Icons
-// -------------
-
-.icon {
-  @include e(album) {
-    @include bg-image('layout/vinyl.svg', 150px, 150px, inline-block);
-  }
-
-  @include e(info) {
-    @include bg-image('layout/info.svg', 100px, 100px, inline-block);
   }
 }
 
@@ -125,6 +103,7 @@
 // Info Box Avatars
 #info-box__icon {
   max-width    : 96px;
+  margin-top   : em(10px);
   padding      : em(1px);
   border-radius: 50%;
   border       : 2px solid palette(gray, x-light);

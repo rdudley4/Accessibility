@@ -4,10 +4,8 @@
 
 .info-box {
   position     : relative;
-  transition   : all cubic-bezier(0.3, 0, 0.3, 1) $trns-duration--med;
-  // max-height   : 0;
-  overflow     : hidden;
-  margin-top   : em(20px);
+  margin       : em(20px) 0;
+  border       : 1px solid palette(black, x-opaque);
   border-radius: $br;
 
   @include e(stats) {
@@ -29,21 +27,21 @@
 }
 
 .stats_value {
-  color: palette(blue);
+  color      : palette(blue);
   font-style : italic;
   margin-left: em(5px);
 }
 
 
 #member {
-  @include e(info) {
-    @extend .flex;
-    justify-content: space-between;
+  // @include e(info) {
+  //   @extend .flex;
+  //   justify-content: space-between;
 
-    li {
-      @extend .flex;
-    }
-  }
+  //   li {
+  //     @extend .flex;
+  //   }
+  // }
 
   &-age, &-dob {
     position: absolute;
