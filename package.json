@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --optimize-minimize",
     "start": "webpack-dev-server",
-    "push": "git add . && git commit && git push",
+    "push": "git add . && git commit -s && git push",
     "deploy-pages": "git subtree push --prefix build origin gh-pages",
     "clean": "rm -r build"
   },
