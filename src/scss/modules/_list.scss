@@ -8,9 +8,8 @@
 
     @include m(flex) {
       @extend %list-default;
-      @extend %hover-shadow-lt;
       @extend .flex;
-      margin-bottom: em(10px);
+      margin: em(10px);
 
       &:hover {
         @extend %list-hover;
@@ -29,7 +28,7 @@
     width           : 65px;
     font-size       : em(12px);
     padding         : em(5px) em(7px);
-    margin-left     : auto;
+    margin-left     : em(10px, 12px);
     color           : palette(white);
     background-color: palette(blue);
     border-radius   : $br;

@@ -34,18 +34,13 @@
 
 
 #member {
-  // @include e(info) {
-  //   @extend .flex;
-  //   justify-content: space-between;
-
-  //   li {
-  //     @extend .flex;
-  //   }
-  // }
+  @include e(list) {
+    height: 64px;
+  }
 
   &-age, &-dob {
     position: absolute;
-    top     : 64px;
+    top     : 65px;
   }
 
   &-age { left : 0; }
