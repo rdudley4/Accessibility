@@ -52,15 +52,19 @@ const webpackConfig = {
           {
             loader: "image-webpack-loader",
             query: {
-              progressive: true,
               optipng: {
-                optimizationLevel: 7
+                enabled: false
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
               },
               gifscale: {
                 interlaced: false
               },
               mozjpeg: {
-                quality: 75
+                quality: 75,
+                progressive: true
               }
             }
           }

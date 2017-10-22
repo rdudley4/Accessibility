@@ -10,5 +10,8 @@ node_modules/
 #Ignore Node Debug Logs
 npm-debug.log*
 
+#Package Lock
+package-lock.json
+
 #Folder Directory Icons
 .directory
