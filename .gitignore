@@ -1,8 +1,9 @@
 # Ignore VSCode Debugging Plugin Stuff
 .vscode/
 
-# Ignore JSHint Config
+# Ignore JSHint & ESLint Config
 .jshintrc
+.eslintrc.js
 
 #Ignore Node Modules 
 node_modules/

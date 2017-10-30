@@ -4,9 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const version = process.env.npm_package_version;
 
 const webpackConfig = {
-  entry: ["./src/js/polyfills.js","./src/js/index.js"],
+  entry: ["babel-polyfill", "./src/js/index.js"],
   output: {
-    path: __dirname + "/build",
+    path: `${__dirname}/build`,
     filename: "bundle.js"
   },
   module: {
@@ -14,13 +14,11 @@ const webpackConfig = {
       {
         test: /\.html$/,
         loader: "html-loader",
-        options: {
-          attrs: ['img:src', 'source:src', 'link:href']
-        }
+        options: { attrs: ['img:src', 'source:src', 'link:href'] }
       },
       {
         test: /\.js$/,
-        include: [ path.resolve(__dirname, "src/js") ],
+        include: [path.resolve(__dirname, "src/js")],
         loader: "babel-loader",
         options: {
           presets: [
@@ -52,15 +50,11 @@ const webpackConfig = {
           {
             loader: "image-webpack-loader",
             query: {
-              optipng: {
-                enabled: false
-              },
+              optipng: { enabled: false },
+              gifscale: { interlaced: false },
               pngquant: {
                 quality: '65-90',
                 speed: 4
-              },
-              gifscale: {
-                interlaced: false
               },
               mozjpeg: {
                 quality: 75,
@@ -72,10 +66,8 @@ const webpackConfig = {
       }
     ]
   },
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: "./src/index.html"
-		}),
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
     new HtmlWebpackPlugin({
       filename: 'tours.html',
       template: 'src/pages/tours.html'
@@ -84,8 +76,8 @@ const webpackConfig = {
       filename: 'survey.html',
       template: 'src/pages/survey.html'
     }),
-		new ExtractTextPlugin('application.css')
-	]
+    new ExtractTextPlugin('application.css')
+  ]
 };
 
 module.exports = webpackConfig;
