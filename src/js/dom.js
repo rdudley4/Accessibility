@@ -9,7 +9,6 @@ export const DOM = {
     mainContent : document.getElementById('main-content'),
     landing     : document.querySelector('.landing') || document.querySelector('.landing--static'),
     landingVideo: document.querySelector('.landing__video'),
-    chevronDown : document.querySelector('.title__chevron-down'),
     table       : document.querySelector('.table')
   },
 

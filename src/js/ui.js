@@ -6,17 +6,21 @@
 // ------------
 
 // Modules
+import smoothScroll from 'smoothscroll';
+import fontawesome from '@fortawesome/fontawesome';
 import { DOM } from './dom';
 import { Nav } from './nav';
 import { Anim } from './anim';
 import { Tools } from './tools';
-import smoothScroll from 'smoothscroll';
 const verge = require("verge");
+
+// Render FontAwesome Icons
+fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Generate Test Members
 Tools.createMembers({
   amount   : 4,
-  eventElms: DOM.members,
+  memberElm: DOM.members,
   infoBox  : DOM.infoBox
 });
 
@@ -31,8 +35,8 @@ Tools.genDummyData(DOM.section.dummy);
 window.addEventListener('scroll', () => {
   // Nav Transition
   Nav.transition({
-    navBar    : DOM.nav.bar,
-    navLinks  : DOM.nav.links,
+    bar       : DOM.nav.bar,
+    links     : DOM.nav.links,
     relativeTo: DOM.generic.landing
   });
 
@@ -56,13 +60,6 @@ window.addEventListener('scroll', () => {
 }); 
 
 // console.log(UI.elms.table.querySelectorAll('tr').length - 1);
-
-// Landing Chevron
-if (DOM.generic.chevronDown) {
-  DOM.generic.chevronDown.addEventListener('click', () => {
-    smoothScroll(DOM.generic.mainContent, 1000);
-  });
-}
 
 // Footer - Back To Top
 if (DOM.generic.toTop) {

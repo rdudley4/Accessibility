@@ -36,6 +36,7 @@
   position: absolute;
   left    : em(10px);
   right   : em(10px);
+  color   : palette(white); // This is so our icons inherit from the base parent color.
 }
 
 

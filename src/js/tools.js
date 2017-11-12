@@ -6,6 +6,9 @@
 // Faker (Dummy Data Generator)
 const faker = require('faker');
 
+import smoothScroll from 'smoothscroll';
+import { DOM } from './dom';
+
 // Member Class
 import Member from './member';
 
@@ -18,7 +21,7 @@ import mic from '../img/icons/microphone.svg';
 export const Tools = {
   // Register mouse over events for each band member element.
   registerMemberEvents: function(domElm, memberInfo, infobox) {
-    domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instName}</span>`;
+    domElm.innerHTML = `${memberInfo.name} <span class="list__tag">${memberInfo.instrument}</span>`;
     domElm.addEventListener('mouseover', function() {
       infobox.icon.src             = memberInfo.icon;
       infobox.instIcon.src         = memberInfo.instIcon;
@@ -67,15 +70,26 @@ export const Tools = {
     }
     return members;
   },
-  createMembers: function({ amount, eventElms, infoBox } = {}) {
+  createMembers: function({ amount, memberElm, infoBox } = {}) {
     const newMembers = this.genMembers(amount);
     for (let x = 0; x < newMembers.length; x++ ) {
-      this.registerMemberEvents(eventElms[x], newMembers[x], infoBox);
+      this.registerMemberEvents(memberElm[x], newMembers[x], infoBox);
     }
   },
   genDummyData: function(elms) {
     for (let elm of elms) {
       elm.innerHTML = faker.lorem.paragraph();
+    }
+  },
+  iconsRendered: function() {
+    // Create reference to our chevron after it has been rendered as an SVG
+    DOM.generic.scrollDown = document.getElementById('scrollDown');
+
+    // Bind smoothscroll event on click to the chevron image.
+    if (DOM.generic.scrollDown) {
+      DOM.generic.scrollDown.addEventListener('click', () => {
+        smoothScroll(DOM.generic.mainContent, 1000);
+      }); 
     }
   }
 };

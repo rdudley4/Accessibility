@@ -32,6 +32,7 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "0.0.21",
     "babel-polyfill": "^6.26.0",
     "smoothscroll": "^0.4.0"
   },

@@ -23,9 +23,9 @@
 // --------------------
 
 .platform {
-  background-size: contain;
-  opacity        : .5;
-  transition     : opacity $trns-duration--default, transform $trns-duration--default;
+  display   : inline-block;
+  opacity   : .5;
+  transition: opacity $trns-duration--default, transform $trns-duration--default;
 
   &:not(:last-of-type) {
     margin-right: em(10px);
@@ -37,18 +37,34 @@
   }
 
 
-  @each $platform, $link in $icons {
-    $size: 0px;
-    &.#{$platform} {
-      @if $platform == itunes or $platform == android or $platform == spotify {
-        $size: 32px;
-      }
-      @else {
-        $size: 24px;
-      }
-      @include bg-image(#{$link}, $size, $size, inline-block);
-    }
-  }
+  // @each $platform, $link in $icons {
+  //   $size: 0px;
+  //   &.#{$platform} {
+  //     @if $platform == itunes or $platform == android or $platform == spotify {
+  //       $size: 32px;
+  //     }
+  //     @else {
+  //       $size: 24px;
+  //     }
+  //     @include bg-image(#{$link}, $size, $size, inline-block);
+  //   }
+  // }
+}
+
+.spotify {
+  color: #2CD569;
+}
+
+.itunes {
+  color: #F26279;
+}
+
+.soundcloud {
+  color: #F06E35;
+}
+
+.google-play {
+  color: #1BD9FC;
 }
 
 
