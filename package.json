@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --optimize-minimize",
     "start": "webpack-dev-server",
-    "push": "git add . && git commit -S && git push",
+    "push": "git add . && git commit && git push",
     "deploy-pages": "git subtree push --prefix build origin gh-pages",
     "clean": "rm -r build"
   },
@@ -32,7 +32,8 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome": "0.0.21",
+    "@fortawesome/fontawesome": "^1.1.0",
+    "@fortawesome/fontawesome-pro-light": "^5.0.2",
     "babel-polyfill": "^6.26.0",
     "smoothscroll": "^0.4.0"
   },

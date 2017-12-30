@@ -7,14 +7,17 @@
 
 // Modules
 import smoothScroll from 'smoothscroll';
-import fontawesome from '@fortawesome/fontawesome';
 import { DOM } from './dom';
 import { Nav } from './nav';
 import { Anim } from './anim';
 import { Tools } from './tools';
 const verge = require("verge");
 
-// Render FontAwesome Icons
+// Font Awesome 5
+import fontawesome from '@fortawesome/fontawesome';
+import light from '@fortawesome/fontawesome-pro-light';
+
+// Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Generate Test Members

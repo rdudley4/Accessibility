@@ -2,6 +2,30 @@
 // Imagery
 // ==========================================================================
 
+// Font Awesome 5 Testing
+
+.icon {
+  padding      : em(2px);
+  border-radius: em(5px, 48px);
+  color        : palette(white);
+
+  &-blue {
+    @extend .icon;
+    background-color: palette(blue);
+  }
+
+  &-red {
+    @extend .icon;
+    background-color: palette(red);
+  }
+
+  &-green {
+    @extend .icon;
+    background-color: palette(green);
+  }
+}
+
+
 // Logo Image
 // ----------
 
