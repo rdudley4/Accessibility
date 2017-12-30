@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.0",
+    "@fortawesome/fontawesome-free-brands": "^5.0.2",
     "@fortawesome/fontawesome-pro-light": "^5.0.2",
     "babel-polyfill": "^6.26.0",
     "smoothscroll": "^0.4.0"

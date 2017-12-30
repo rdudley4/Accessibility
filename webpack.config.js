@@ -9,6 +9,12 @@ const webpackConfig = {
     path: `${__dirname}/build`,
     filename: "bundle.js"
   },
+  resolve: {
+    alias: {
+      '@fortawesome/fontawesome-free-brands$': '@fortawesome/fontawesome-free-brands/shakable.js',
+      '@fortawesome/fontawesome-pro-light$' : '@fortawesome/fontawesome-pro-light/shakable.js'
+    }
+  },
   module: {
     rules: [
       {
