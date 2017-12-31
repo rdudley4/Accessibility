@@ -43,6 +43,7 @@ export const DOM = {
     dob       : document.getElementById('stat2'),
     town      : document.getElementById('stat3'),
     about     : document.getElementById('member-about'),
-    instIcon  : document.getElementById('member-instIcon')
+    instIcon  : document.getElementById('member-instIcon'),
+    select    : document.getElementById('select-box')
   }
 };

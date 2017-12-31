@@ -81,6 +81,10 @@ export const Tools = {
       elm.innerHTML = faker.lorem.paragraph();
     }
   },
+  getMemberName: function(memberSelect) {
+    const memberName = memberSelect.options[memberSelect.selectedIndex].text;
+    return memberName;
+  },
   iconsRendered: function() {
     // Create reference to our chevron after it has been rendered as an SVG
     DOM.generic.scrollDown = document.getElementById('scrollDown');

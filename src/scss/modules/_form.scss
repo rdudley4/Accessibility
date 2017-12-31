@@ -81,3 +81,17 @@
   }
 
 }
+
+
+#select-box {
+  position  : absolute;
+  top       : 12px;
+  left      : 0;
+  font-size : 1em;
+  background: none;
+  color     : palette(gray);
+}
+
+.member-icon {
+  margin-top: em(117.4px, 80px);
+}

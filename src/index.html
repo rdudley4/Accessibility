@@ -129,6 +129,14 @@
               <h3 class="section__title--info">Current Members</h3>
               <div class="info-box">
                 <!-- Member Selection -->
+                <form action="" method="POST" role="form" id="member-select">
+                  <select name="member-select" id="select-box">
+                    <option value="member1">Bob LastName</option> 
+                    <option value="member2" selected>Peter Somethingsomething</option>
+                    <option value="member3">Susan Hasalastname</option>
+                    <option value="member4">Megan Thatonename</option>
+                  </select>
+                </form>
                 <!-- <ul id="member__list" class="list content-4 flex--wrap">
                   <li class="list__item--flex drums">Member 1<span class="list__tag">Drums</span></li>
                   <li class="list__item--flex bass">Member 2<span class="list__tag">Bass</span></li>
@@ -137,7 +145,7 @@
                 </ul> -->
                 <!-- Member Avatar -->
                 <!-- <img id="info-box__icon" src="img/icons/drum-set.svg" alt="Current Member Icon" /> -->
-                <i id="info-box__icon" class="fal fa-user-secret fa-5x"></i>
+                <i class="fal fa-user-secret fa-fw fa-5x member-icon"></i>
                 <!-- Member Information -->
                 <h3 id="member-name" class="section__title--info">InfoBox Name</h3>
                 <img id="member-instIcon" src="./img/icons/drum-set.svg" alt="Member's Instrument">

@@ -64,7 +64,11 @@ legend {
   }
 }
 
-select,
+select {
+  padding: em(10px);
+  border : none;
+}
+
 input,
 textarea {
   @extend %text-content;
@@ -94,8 +98,4 @@ textarea {
     font-style: italic;
     color: palette(gray, light);
   }
-}
-
-option {
-  background-color: $color-primary;
 }

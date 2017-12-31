@@ -37,6 +37,11 @@ fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 // Event Handlers
 // --------------
 
+// Select Box
+DOM.infoBox.select.addEventListener('change', () => {
+  console.log(Tools.getMemberName(DOM.infoBox.select));
+});
+
 // Window Scroll
 window.addEventListener('scroll', () => {
   // Nav Transition
