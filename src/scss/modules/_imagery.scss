@@ -4,24 +4,29 @@
 
 // Font Awesome 5 Testing
 
-.icon {
+%icon {
   padding      : em(2px);
   border-radius: em(5px, 48px);
-  color        : palette(white);
+}
 
+.icon_fill {
+  color: palette(white);
+
+  &-red, &-blue, &-green {
+    @extend %icon;
+    @extend .icon_fill;
+  }
+
+  &-red   { background-color: palette(red);   }
+  &-blue  { background-color: palette(blue);  }
+  &-green { background-color: palette(green); }
+}
+
+.icon_outline {
   &-blue {
-    @extend .icon;
-    background-color: palette(blue);
-  }
-
-  &-red {
-    @extend .icon;
-    background-color: palette(red);
-  }
-
-  &-green {
-    @extend .icon;
-    background-color: palette(green);
+    @extend %icon;
+    color : palette(blue);
+    border: 2px solid palette(blue);
   }
 }
 
