@@ -11,15 +11,15 @@
 
 .icon_fill {
   color: palette(white);
-
+  // Shared
   &-red, &-blue, &-green {
     @extend %icon;
     @extend .icon_fill;
   }
 
   &-red   { background-color: palette(red);   }
-  &-blue  { background-color: palette(blue);  }
   &-green { background-color: palette(green); }
+  &-blue  { background-color: palette(blue);  }
 }
 
 .icon_outline {
@@ -56,8 +56,7 @@
   padding      : em(4px);
   color        : palette(gray);
   opacity      : .5;
-  transition   : opacity $trns-duration--default, transform $trns-duration--default, color $trns-duration--default, border-bottom-color $trns-duration--default;
-  border-bottom: 1px solid transparent;
+  transition   : opacity $trns-duration--default, transform $trns-duration--default, color $trns-duration--default;
 
   &:not(:last-of-type) {
     margin-right: em(10px);
@@ -66,23 +65,8 @@
   &:hover {
     transform          : scale(1.25); 
     color              : palette(red);
-    border-bottom-color: palette(red);
     opacity            : 1; 
   }
-
-
-  // @each $platform, $link in $icons {
-  //   $size: 0px;
-  //   &.#{$platform} {
-  //     @if $platform == itunes or $platform == android or $platform == spotify {
-  //       $size: 32px;
-  //     }
-  //     @else {
-  //       $size: 24px;
-  //     }
-  //     @include bg-image(#{$link}, $size, $size, inline-block);
-  //   }
-  // }
 }
 
 

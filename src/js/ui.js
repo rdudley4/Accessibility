@@ -15,23 +15,23 @@ const verge = require("verge");
 
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
-import { faChevronDown, faDotCircle, faRocket, faSlidersVSquare, faUsers, faStarExclamation } from '@fortawesome/fontawesome-pro-light';
+import { faChevronDown, faDotCircle, faRocket, faSlidersVSquare, faUsers, faStarExclamation, faUserSecret } from '@fortawesome/fontawesome-pro-light';
 import { faGooglePlay, faSpotify, faApple, faAmazon } from '@fortawesome/fontawesome-free-brands';
 
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faStarExclamation, faSlidersVSquare, faUsers);
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faStarExclamation, faSlidersVSquare, faUsers, faUserSecret);
 
 // Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Generate Test Members
-Tools.createMembers({
-  amount   : 4,
-  memberElm: DOM.members,
-  infoBox  : DOM.infoBox
-});
+// Tools.createMembers({
+//   amount   : 4,
+//   memberElm: DOM.members,
+//   infoBox  : DOM.infoBox
+// });
 
 // Populate Dummy Lorem
-Tools.genDummyData(DOM.section.dummy);
+// Tools.genDummyData(DOM.section.dummy);
 
 
 // Event Handlers
