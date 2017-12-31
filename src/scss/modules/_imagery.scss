@@ -52,17 +52,22 @@
 // --------------------
 
 .platform {
-  display   : inline-block;
-  opacity   : .5;
-  transition: opacity $trns-duration--default, transform $trns-duration--default;
+  display      : inline-block;
+  padding      : em(4px);
+  color        : palette(gray);
+  opacity      : .5;
+  transition   : opacity $trns-duration--default, transform $trns-duration--default, color $trns-duration--default, border-bottom-color $trns-duration--default;
+  border-bottom: 1px solid transparent;
 
   &:not(:last-of-type) {
     margin-right: em(10px);
   }
 
   &:hover {
-    transform: scale(1.25);
-    opacity  : 1;
+    transform          : scale(1.25); 
+    color              : palette(red);
+    border-bottom-color: palette(red);
+    opacity            : 1; 
   }
 
 
@@ -78,22 +83,6 @@
   //     @include bg-image(#{$link}, $size, $size, inline-block);
   //   }
   // }
-}
-
-.spotify {
-  color: #2CD569;
-}
-
-.itunes {
-  color: #F26279;
-}
-
-.soundcloud {
-  color: #F06E35;
-}
-
-.google-play {
-  color: #1BD9FC;
 }
 
 
