@@ -11,6 +11,7 @@ import { DOM } from './dom';
 import { Nav } from './nav';
 import { Anim } from './anim';
 import { Tools } from './tools';
+import Member from './member';
 const verge = require("verge");
 
 // Font Awesome 5
@@ -24,22 +25,26 @@ fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazo
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Generate Test Members
-// Tools.createMembers({
-//   amount   : 4,
-//   memberElm: DOM.members,
-//   infoBox  : DOM.infoBox
-// });
-
-// Populate Dummy Lorem
-// Tools.genDummyData(DOM.section.dummy);
-
+const members = [];
+Member.create(4, members);
 
 // Event Handlers
 // --------------
 
 // Select Box
 DOM.infoBox.select.addEventListener('change', () => {
-  console.log(Tools.getMemberName(DOM.infoBox.select));
+  const currentlySelected = Member.getName(DOM.infoBox.select);
+  for (let member of members) {
+    if (member.name === currentlySelected) {
+      DOM.infoBox.age.innerHTML   = member.age;
+      DOM.infoBox.dob.innerHTML   = member.dob;
+      DOM.infoBox.name.innerHTML  = member.name;
+      DOM.infoBox.town.innerHTML  = member.town;
+      DOM.infoBox.about.innerHTML = member.about;
+      DOM.infoBox.icon.src        = member.avatar;
+      DOM.infoBox.instrument.src  = member.instrument;
+    }
+  }
 });
 
 // Window Scroll

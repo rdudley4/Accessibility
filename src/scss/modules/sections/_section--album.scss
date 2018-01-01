@@ -10,13 +10,11 @@
     li {
       @extend .flex;
       flex-direction : column;
-      flex           : 1 per-line(3, $gutter);
       align-items    : center;
       justify-content: center;
       padding        : em(8px) em(15px);
       margin         : $gutter;
       border-radius  : $br;
-      // transition     : box-shadow $trns-duration--default ease;
 
       &:hover {
         cursor: pointer;

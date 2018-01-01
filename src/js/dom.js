@@ -38,12 +38,13 @@ export const DOM = {
     base      : document.querySelector('.info-box'),
     memberList: document.getElementById('member__list'),
     name      : document.getElementById('member-name'),
-    icon      : document.getElementById('info-box__icon'),
+    icon      : document.querySelector('.member-icon'),
     age       : document.getElementById('stat1'),
     dob       : document.getElementById('stat2'),
     town      : document.getElementById('stat3'),
     about     : document.getElementById('member-about'),
-    instIcon  : document.getElementById('member-instIcon'),
-    select    : document.getElementById('select-box')
+    instrument: document.getElementById('member-instIcon'),
+    select    : document.getElementById('select-box'),
+    options   : Array.from(document.querySelectorAll('.member-option'))
   }
 };

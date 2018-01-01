@@ -8,6 +8,7 @@
   @include m(centered) {
     @extend .flex;
     justify-content: center;
+    align-items    : center;
   }
 
   @include m(wrap) {
