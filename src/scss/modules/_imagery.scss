@@ -11,8 +11,9 @@
 
 .icon_fill {
   color: palette(white);
+  @include shadow(inset);
   // Shared
-  &-red, &-blue, &-green {
+  &-red, &-blue, &-green, &-gray {
     @extend %icon;
     @extend .icon_fill;
   }
@@ -20,6 +21,7 @@
   &-red   { background-color: palette(red);   }
   &-green { background-color: palette(green); }
   &-blue  { background-color: palette(blue);  }
+  &-gray  { background-color: palette(gray);  }
 }
 
 .icon_outline {

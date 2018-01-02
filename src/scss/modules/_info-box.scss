@@ -4,7 +4,7 @@
 
 .info-box {
   position     : relative;
-  margin       : em(20px) 0;
+  margin       : em(20px) 0 em(80px);
 
   @include e(stats) {
     border-radius: 0;

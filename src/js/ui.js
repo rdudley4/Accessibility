@@ -16,10 +16,10 @@ const verge = require("verge");
 
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
-import { faChevronDown, faDotCircle, faRocket, faSlidersVSquare, faUsers, faStarExclamation, faUserSecret } from '@fortawesome/fontawesome-pro-light';
-import { faGooglePlay, faSpotify, faApple, faAmazon } from '@fortawesome/fontawesome-free-brands';
+import { faChevronDown, faDotCircle, faRocket, faSlidersVSquare, faStarExclamation } from '@fortawesome/fontawesome-pro-light';
+import { faGooglePlay, faSpotify, faApple, faAmazon, faFortAwesomeAlt, faAndroid } from '@fortawesome/fontawesome-free-brands';
 
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faStarExclamation, faSlidersVSquare, faUsers, faUserSecret);
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faStarExclamation, faSlidersVSquare, faFortAwesomeAlt, faAndroid);
 
 // Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });

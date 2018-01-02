@@ -8,7 +8,8 @@
     "start": "webpack-dev-server",
     "push": "git add . && git commit && git push",
     "deploy-pages": "git subtree push --prefix build origin gh-pages",
-    "clean": "rm -r build"
+    "clean": "rm -r build",
+    "compile": "npm run clean && npm run build"
   },
   "author": "Ryan Dudley",
   "license": "ISC",

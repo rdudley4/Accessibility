@@ -3,9 +3,6 @@
 // ==========================================================================
 'use strict';
 
-// Faker (Dummy Data Generator)
-// const faker = require('faker');
-
 import smoothScroll from 'smoothscroll';
 import { DOM } from './dom';
 
