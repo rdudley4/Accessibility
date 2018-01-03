@@ -16,10 +16,10 @@ const verge = require("verge");
 
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
-import { faChevronDown, faDotCircle, faRocket, faSlidersVSquare, faStarExclamation } from '@fortawesome/fontawesome-pro-light';
-import { faGooglePlay, faSpotify, faApple, faAmazon, faFortAwesomeAlt, faAndroid } from '@fortawesome/fontawesome-free-brands';
+import { faChevronDown, faDotCircle, faRocket, faUser } from '@fortawesome/fontawesome-pro-light';
+import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faNpm } from '@fortawesome/fontawesome-free-brands';
 
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faStarExclamation, faSlidersVSquare, faFortAwesomeAlt, faAndroid);
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser);
 
 // Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
@@ -36,13 +36,13 @@ DOM.infoBox.select.addEventListener('change', () => {
   const currentlySelected = Member.getName(DOM.infoBox.select);
   for (let member of members) {
     if (member.name === currentlySelected) {
+      DOM.infoBox.id.innerHTML    = `#${ member.id }`;
       DOM.infoBox.age.innerHTML   = member.age;
       DOM.infoBox.dob.innerHTML   = member.dob;
       DOM.infoBox.name.innerHTML  = member.name;
       DOM.infoBox.town.innerHTML  = member.town;
       DOM.infoBox.about.innerHTML = member.about;
       DOM.infoBox.icon.src        = member.avatar;
-      DOM.infoBox.instrument.src  = member.instrument;
     }
   }
 });

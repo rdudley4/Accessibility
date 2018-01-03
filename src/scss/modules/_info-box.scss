@@ -24,11 +24,22 @@
 }
 
 .stats_value {
-  color      : palette(blue);
-  font-style : italic;
   margin-left: em(5px);
 }
 
+
+#member-social-media {
+  li {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding: em(8px);
+  }
+
+  svg {
+    margin-right: em(8px, 32px);
+  }
+}
 
 #member {
   @include e(list) {
@@ -48,11 +59,10 @@
     margin-bottom: 0;
   }
 
-  &-instIcon {
+  &-id {
     position : absolute;
-    top      : 14px;
+    top      : em(28px, 19px);
     right    : 14px;
-    max-width: 36px;
   }
 
   &-hometown {

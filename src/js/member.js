@@ -7,7 +7,8 @@ import { Tools } from './tools';
 import { DOM } from './dom';
 
 export default class Member {
-  constructor(name, age, dob, town, about, avatar, instrument) {
+  constructor(id, name, age, dob, town, about, avatar, instrument) {
+    this.id = id;
     this.name = name;
     this.age = age;
     this.dob = dob;
@@ -28,6 +29,7 @@ export default class Member {
     generatedData.about = data.members.about[index];
     generatedData.avatar = data.members.icons[index];
     generatedData.instrument = data.members.instruments[index];
+    generatedData.id = Tools.randomNumber(1, 100);
 
     return generatedData;
   }
@@ -37,7 +39,7 @@ export default class Member {
       // Generate new member data.
       const newMemberInfo = this.generateData(i);
       // Push new member object to the storage array.
-      storage.push(new Member(newMemberInfo.name, newMemberInfo.age, newMemberInfo.dob, newMemberInfo.town, newMemberInfo.about, newMemberInfo.avatar, newMemberInfo.instrument));
+      storage.push(new Member(newMemberInfo.id, newMemberInfo.name, newMemberInfo.age, newMemberInfo.dob, newMemberInfo.town, newMemberInfo.about, newMemberInfo.avatar, newMemberInfo.instrument));
       // Dynamically generate our select field with member names.
       DOM.infoBox.options[i].text = newMemberInfo.name;
     }
