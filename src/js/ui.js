@@ -40,7 +40,7 @@ DOM.infoBox.select.addEventListener('change', () => {
       DOM.infoBox.age.innerHTML   = member.age;
       DOM.infoBox.dob.innerHTML   = member.dob;
       DOM.infoBox.name.innerHTML  = member.name;
-      DOM.infoBox.town.innerHTML  = member.town;
+      DOM.infoBox.town.innerHTML  = member.location;
       DOM.infoBox.about.innerHTML = member.about;
       DOM.infoBox.icon.src        = member.avatar;
     }
