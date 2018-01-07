@@ -26,7 +26,7 @@ fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Generate Test Members
 const members = [];
-Member.create(4, members);
+Member.create(5, members);
 
 // Event Handlers
 // --------------
@@ -36,13 +36,13 @@ DOM.infoBox.select.addEventListener('change', () => {
   const currentlySelected = Member.getName(DOM.infoBox.select);
   for (let member of members) {
     if (member.name === currentlySelected) {
-      DOM.infoBox.id.innerHTML    = `#${ member.id }`;
-      DOM.infoBox.age.innerHTML   = member.age;
-      DOM.infoBox.dob.innerHTML   = member.dob;
-      DOM.infoBox.name.innerHTML  = member.name;
-      DOM.infoBox.town.innerHTML  = member.location;
-      DOM.infoBox.about.innerHTML = member.about;
-      DOM.infoBox.icon.src        = member.avatar;
+      DOM.infoBox.id.innerHTML       = `#${ member.id }`;
+      DOM.infoBox.age.innerHTML      = member.age;
+      DOM.infoBox.dob.innerHTML      = member.dob;
+      DOM.infoBox.name.innerHTML     = member.name;
+      DOM.infoBox.location.innerHTML = member.location;
+      DOM.infoBox.about.innerHTML    = member.about;
+      DOM.infoBox.icon.src           = member.avatar;
     }
   }
 });

@@ -7,10 +7,11 @@ import { Tools } from './tools';
 import { DOM } from './dom';
 
 export default class Member {
-  constructor(id, name, age, dob, location, about, avatar) {
+  constructor(id, name, age, gender, dob, location, about, avatar) {
     this.id         = id;
     this.name       = name;
     this.age        = age;
+    this.gender     = gender;
     this.dob        = dob;
     this.location   = location;
     this.about      = about;
@@ -23,17 +24,29 @@ export default class Member {
     const id    = Tools.randomNumber(1, 500);
     const age   = Tools.randomNumber(20, 50);
     const dob   = new Date().getFullYear() - age;
-    const first = data.gen.first[Tools.randomNumber(0, data.gen.first.length - 1)];
-    const last  = data.gen.last[Tools.randomNumber(0, data.gen.last.length - 1)];
-    const location = data.gen.location[Tools.randomNumber(0, data.gen.location.length - 1)];
+    const gender = this.getGender(Tools.randomNumber(0, 1));
+    let first;
+    let icon;
+    // Generate first name and icon based on gender.
+    if (gender === 'Female') {
+      first = Tools.randomFromArray(data.gen.first.female);
+      icon  = Tools.randomFromArray(data.gen.icons.female);
+      generatedData.gender = 'Female';
+    } else {
+      first = Tools.randomFromArray(data.gen.first.male);
+      icon  = Tools.randomFromArray(data.gen.icons.male);
+      generatedData.gender = 'Male';
+    }
+    const last  = Tools.randomFromArray(data.gen.last);
+    const location = Tools.randomFromArray(data.gen.location);
     // Store generated data in our generatedData object to be returned.
     generatedData.id     = id;
     generatedData.age    = age;
     generatedData.dob    = dob;
     generatedData.name   = `${first} ${last}`;
-    generatedData.location   = `${location.cities[Tools.randomNumber(0, location.cities.length - 1)]}, ${location.state}`;
+    generatedData.location   = `${Tools.randomFromArray(location.cities)}, ${location.state}`;
     generatedData.about  = data.gen.about[index];
-    generatedData.avatar =  data.gen.icons[index];
+    generatedData.avatar = icon;
 
     return generatedData;
   }
@@ -43,11 +56,33 @@ export default class Member {
       // Generate new member data.
       const newMemberInfo = this.generateData(i);
       // Push new member object to the storage array.
-      storage.push(new Member(newMemberInfo.id, newMemberInfo.name, newMemberInfo.age, newMemberInfo.dob, newMemberInfo.location, newMemberInfo.about, newMemberInfo.avatar));
+      storage.push(new Member(newMemberInfo.id, newMemberInfo.name, newMemberInfo.age, newMemberInfo.gender, newMemberInfo.dob, newMemberInfo.location, newMemberInfo.about, newMemberInfo.avatar));
       // Dynamically generate our select field with member names.
       DOM.infoBox.options[i].text = newMemberInfo.name;
+      // Populate the Info Box with first user information on page load.
+      if (i === 0) {
+        DOM.infoBox.id.innerHTML       = `#${newMemberInfo.id}`;
+        DOM.infoBox.age.innerHTML      = newMemberInfo.age;
+        DOM.infoBox.dob.innerHTML      = newMemberInfo.dob;
+        DOM.infoBox.name.innerHTML     = newMemberInfo.name;
+        DOM.infoBox.location.innerHTML = newMemberInfo.location;
+        DOM.infoBox.about.innerHTML    = newMemberInfo.about;
+        DOM.infoBox.icon.src           = newMemberInfo.avatar;
+      }
     }
-    console.log(storage);
+  }
+
+  // Randomly pick a gender
+  static getGender(genderIndex) {
+    let gender;
+
+    if (genderIndex === 0) {
+      gender = 'Female';
+    } else {
+      gender = 'Male';
+    }
+
+    return gender;
   }
 
   static getName(memberSelect) {

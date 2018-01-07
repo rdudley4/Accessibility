@@ -20,5 +20,9 @@ export const Tools = {
         smoothScroll(DOM.generic.mainContent, 1000);
       }); 
     }
+  },
+  randomFromArray(array) {
+    // Return a random index's value from the array that is passed in.
+    return array[this.randomNumber(0, array.length - 1)];
   }
 };
