@@ -9,6 +9,7 @@ const webpackConfig = {
     path: `${__dirname}/build`,
     filename: "bundle.js"
   },
+  devtool: 'source-map',
   resolve: {
     alias: {
       '@fortawesome/fontawesome-free-brands$': '@fortawesome/fontawesome-free-brands/shakable.js',

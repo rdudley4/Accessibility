@@ -12,14 +12,6 @@
   &:last-of-type {
     margin-bottom: 0;
   }
-  
-.title-uppercase {
-  @extend .header-3;
-  color: palette(gray, dark);
-  margin-bottom: em(10px, 19px);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
 
   // section__title
   @include e(title) {

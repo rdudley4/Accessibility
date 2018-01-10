@@ -22,7 +22,7 @@
 // Nav [UL]
 // --------
 .nav {
-  justify-content: space-between;
+  justify-content: space-around;
 
   @include e(item) {
     @extend %nav-item-default;

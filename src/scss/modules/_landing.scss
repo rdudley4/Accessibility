@@ -2,15 +2,19 @@
 // Page Landing
 // ==========================================================================
 
-.landing {
+%landing-default {
   @extend %text-center;
-  @include shadow(bottom);
   background:
     linear-gradient(to top, transparent 0%, #000 95%),    /* Gradient        */
     url('#{$path--rel}/layout/test.jpg')                    /* Image           */
     center 85% / cover                                      /* Position & Size */
     no-repeat                                               /* Repeat          */
-    fixed;                                                  /* Attachment      */
+    fixed;   
+}
+
+.landing {
+  @extend %landing-default;
+  @include shadow(bottom);
   height: 100vh;
 
   // IE/Edge Specific Fixes
@@ -27,15 +31,9 @@
 
   // landing--stationary
   @include m(static) {
-    @extend %text-center;
+    @extend %landing-default;
     @include shadow(inset);
-    background-image: url('#{$path--rel}/layout/test.jpg');
-    background-size: cover;
-    background-position: 50% 50%;
-
-    @include mq(med) {
-      min-height: 470px; 
-    }
+    min-height: 470px; 
 
     @include mq(xlg) {
       background-size: cover;

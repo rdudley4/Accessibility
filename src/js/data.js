@@ -1,3 +1,5 @@
+// This is just a bunch of dummy data used to randomly populate the page for testing and demo purposes.
+
 // Member  Icons
 import maleIcon1 from '../img/icons/boy.svg';
 import maleIcon2 from '../img/icons/boy_2.svg';
@@ -13,10 +15,10 @@ import femaleIcon5 from '../img/icons/girl_5.svg';
 export const data = {
     gen: {
         first: {
-            female: ['Abagail', 'Esther', 'Violet', 'Skyla', 'Alexus', 'Edith', 'Charlee', 'Giana', 'Siena', 'Jocelyn', 'Ashlee', 'Crystal', 'Ivy', 'Hailee'],
-            male  : ['Colt', 'Hamza', 'Braeden', 'Bryson', 'George', 'Broderick', 'Joey', 'Amare', 'Samir', 'Josiah', 'Kameron', 'Harley', 'Chaz', 'Jasiah', 'Avery']
+            female: ['Abagail', 'Esther', 'Violet', 'Skyla', 'Alexus', 'Edith', 'Krista', 'Giana', 'Siena', 'Jocelyn', 'Ashlee', 'Crystal', 'Ivy', 'Hailee', 'Meadow', 'Hazel', 'Samantha', 'Dakota', 'Savanna', 'Desiree', 'Sasha', 'Theresa', 'Sadie', 'Nathalia'],
+            male  : ['Colt', 'Hamza', 'Braeden', 'Bryson', 'George', 'Broderick', 'Joey', 'Amare', 'Samir', 'Josiah', 'Matthew', 'Craig', 'Chaz', 'Jasiah', 'Avery', 'Ty', 'Alonzo', 'Jabari', 'Tristan', 'Landyn', 'Patrick', 'Francisco', 'Jordon', 'Giovani', 'Jaydin']
         },
-        last : ['Lloyd', 'Klein', 'Miles', 'Mendez', 'Mahoney', 'Shaffer', 'Schmidt', 'Bauer', 'Sanders', 'Nixon', 'Watson', 'Bullock', 'Luna', 'Montoya', 'Shepard', 'Mcgee', 'Grant', 'Wang', 'Simpson', 'Franco', 'Schultz', 'Cuevas', 'Rhodes', 'Mckenzie', 'Taylor', 'Glenn', 'Reilly', 'Morris', 'Herman', 'Beltran'],
+        last : ['Lloyd', 'Klein', 'Miles', 'Mendez', 'Mahoney', 'Shaffer', 'Schmidt', 'Bauer', 'Sanders', 'Nixon', 'Watson', 'Bullock', 'Luna', 'Montoya', 'Shepard', 'Mcgee', 'Grant', 'Wang', 'Simpson', 'Franco', 'Schultz', 'Cuevas', 'Rhodes', 'Mckenzie', 'Taylor', 'Glenn', 'Reilly', 'Morris', 'Herman', 'Beltran', 'Simmons', 'Marsh', 'Trujillo', 'Fisher', 'Donaldson', 'Acosta', 'Campos', 'Cowan', 'Nunez', 'Weeks'],
         location: [
             {
                 state: 'North Carolina',

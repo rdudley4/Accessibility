@@ -61,15 +61,19 @@ export default class Member {
       DOM.infoBox.options[i].text = newMemberInfo.name;
       // Populate the Info Box with first user information on page load.
       if (i === 0) {
-        DOM.infoBox.id.innerHTML       = `#${newMemberInfo.id}`;
-        DOM.infoBox.age.innerHTML      = newMemberInfo.age;
-        DOM.infoBox.dob.innerHTML      = newMemberInfo.dob;
-        DOM.infoBox.name.innerHTML     = newMemberInfo.name;
-        DOM.infoBox.location.innerHTML = newMemberInfo.location;
-        DOM.infoBox.about.innerHTML    = newMemberInfo.about;
-        DOM.infoBox.icon.src           = newMemberInfo.avatar;
+        this.update(newMemberInfo);
       }
     }
+  }
+
+  static update(member) {
+    DOM.infoBox.id.innerHTML       = `#${member.id}`;
+    DOM.infoBox.age.innerHTML      = member.age;
+    DOM.infoBox.dob.innerHTML      = member.dob;
+    DOM.infoBox.name.innerHTML     = member.name;
+    DOM.infoBox.location.innerHTML = member.location;
+    DOM.infoBox.about.innerHTML    = member.about;
+    DOM.infoBox.icon.src           = member.avatar;
   }
 
   // Randomly pick a gender

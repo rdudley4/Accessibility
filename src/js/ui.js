@@ -17,35 +17,33 @@ const verge = require("verge");
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
 import { faChevronDown, faDotCircle, faRocket, faUser } from '@fortawesome/fontawesome-pro-light';
-import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faNpm } from '@fortawesome/fontawesome-free-brands';
+import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faNpm, faUikit } from '@fortawesome/fontawesome-free-brands';
 
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser);
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser, faUikit);
 
 // Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
-// Generate Test Members
-const members = [];
-Member.create(5, members);
+// If the infobox exists on the page..
+if (DOM.infoBox.base) {
+  // Generate Test Members
+  const members = [];
+  Member.create(5, members);
+  // Reset selected index to 0 on each page load.
+  DOM.infoBox.select.options[0].selected = 'selected';
+  // Bind member select event handler.
+  DOM.infoBox.select.addEventListener('change', () => {
+    const currentlySelected = Member.getName(DOM.infoBox.select);
+    for (let member of members) {
+      if (member.name === currentlySelected) {
+        Member.update(member);
+      }
+    }
+  });
+}
 
 // Event Handlers
 // --------------
-
-// Select Box
-DOM.infoBox.select.addEventListener('change', () => {
-  const currentlySelected = Member.getName(DOM.infoBox.select);
-  for (let member of members) {
-    if (member.name === currentlySelected) {
-      DOM.infoBox.id.innerHTML       = `#${ member.id }`;
-      DOM.infoBox.age.innerHTML      = member.age;
-      DOM.infoBox.dob.innerHTML      = member.dob;
-      DOM.infoBox.name.innerHTML     = member.name;
-      DOM.infoBox.location.innerHTML = member.location;
-      DOM.infoBox.about.innerHTML    = member.about;
-      DOM.infoBox.icon.src           = member.avatar;
-    }
-  }
-});
 
 // Window Scroll
 window.addEventListener('scroll', () => {

@@ -17,10 +17,7 @@
   @extend .header-4;
   display      : inline-block;
   padding      : em(8px, 15px) em(15px, 15px);
-  border       : 2px solid palette(gray, x-light);
-  border-radius: $br;
-  transition   : color $trns-duration--default,
-                 border-color $trns-duration--default;
+  transition   : color $trns-duration--default;
 }
 
 %nav-link-hover {

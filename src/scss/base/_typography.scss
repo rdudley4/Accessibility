@@ -5,6 +5,14 @@
 // Headings
 // --------
 
+.title-uppercase {
+  @extend .header-3;
+  color: palette(gray, dark);
+  margin-bottom: em(10px, 19px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .header {
   // Heading [Normal-Lg] (1)
   // --------------------
