@@ -1,16 +1,16 @@
 // This is just a bunch of dummy data used to randomly populate the page for testing and demo purposes.
 
 // Member  Icons
-import maleIcon1 from '../img/icons/boy.svg';
-import maleIcon2 from '../img/icons/boy_2.svg';
-import maleIcon3 from '../img/icons/boy_3.svg';
-import maleIcon4 from '../img/icons/boy_4.svg';
-import maleIcon5 from '../img/icons/boy_5.svg';
-import femaleIcon1 from '../img/icons/girl.svg';
-import femaleIcon2 from '../img/icons/girl_2.svg';
-import femaleIcon3 from '../img/icons/girl_3.svg';
-import femaleIcon4 from '../img/icons/girl_4.svg';
-import femaleIcon5 from '../img/icons/girl_5.svg';
+import maleIcon1 from '../img/icons/boy-1.svg';
+import maleIcon2 from '../img/icons/boy-2.svg';
+import maleIcon3 from '../img/icons/boy-3.svg';
+import maleIcon4 from '../img/icons/boy-4.svg';
+import maleIcon5 from '../img/icons/boy-5.svg';
+import femaleIcon1 from '../img/icons/girl-1.svg';
+import femaleIcon2 from '../img/icons/girl-2.svg';
+import femaleIcon3 from '../img/icons/girl-3.svg';
+import femaleIcon4 from '../img/icons/girl-4.svg';
+import femaleIcon5 from '../img/icons/girl-5.svg';
 
 export const data = {
     gen: {
