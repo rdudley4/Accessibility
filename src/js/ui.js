@@ -16,10 +16,10 @@ const verge = require("verge");
 
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
-import { faChevronDown, faDotCircle, faRocket, faUser } from '@fortawesome/fontawesome-pro-light';
-import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faNpm, faUikit } from '@fortawesome/fontawesome-free-brands';
+import { faChevronDown, faDotCircle, faRocket, faUser, faArrowAltToTop, faHeadphones, faQuestion } from '@fortawesome/fontawesome-pro-light';
+import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faNpm, faUikit, faTwitter, faInstagram, faFacebookF } from '@fortawesome/fontawesome-free-brands';
 
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser, faUikit);
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser, faUikit, faTwitter, faFacebookF, faInstagram, faArrowAltToTop, faHeadphones, faQuestion);
 
 // Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
@@ -74,10 +74,3 @@ window.addEventListener('scroll', () => {
 }); 
 
 // console.log(UI.elms.table.querySelectorAll('tr').length - 1);
-
-// Footer - Back To Top
-if (DOM.generic.toTop) {
-  DOM.generic.toTop.addEventListener('click', () => {
-    smoothScroll(DOM.generic.landing, 1500);
-  });
-}

@@ -56,24 +56,28 @@
 // Music Platform Icons
 // --------------------
 
-.platform {
+.platform, .control {
   display      : inline-block;
   padding      : em(4px);
-  color        : palette(gray);
-  opacity      : .5;
-  transition   : opacity $trns-duration--default, transform $trns-duration--default, color $trns-duration--default;
+  color        : palette(black, opaque);
+  transition: transform $trns-duration--default, color $trns-duration--default;
+
+  &:hover {
+    transform: scale(1.25); 
+    color    : palette(red);
+    opacity  : 1; 
+  }
 
   &:not(:last-of-type) {
     margin-right: em(10px);
   }
-
-  &:hover {
-    transform          : scale(1.25); 
-    color              : palette(red);
-    opacity            : 1; 
-  }
 }
 
+.control {
+  &:hover {
+    cursor: pointer;
+  }
+}
 
 // Caption Ticket Icons
 // --------------------

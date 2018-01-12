@@ -10,16 +10,46 @@ export const Tools = {
   randomNumber: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
-  iconsRendered: function() {
-    // Create reference to our chevron after it has been rendered as an SVG
-    DOM.generic.scrollDown = document.getElementById('scrollDown');
-
-    // Bind smoothscroll event on click to the chevron image.
-    if (DOM.generic.scrollDown) {
-      DOM.generic.scrollDown.addEventListener('click', () => {
-        smoothScroll(DOM.generic.mainContent, 1000);
-      }); 
+  bindScrollEvents: function(elmData) {
+    for (let data of elmData) {
+      const { elm, scrollTo, eventType, duration } = data;
+      if (elm) {
+        elm.addEventListener(eventType, () => {
+          smoothScroll(scrollTo, duration);
+        });
+      }
     }
+  },
+  iconsRendered: function() {
+    const eventElms = [
+      { 
+        eventType: 'click',
+        duration : 1000,
+        // Landing -> To main content 
+        elm      : document.getElementById('scrollDown'),
+        scrollTo : DOM.generic.mainContent    
+      },
+      {
+        eventType: 'click', 
+        duration : 1500,
+        // Footer -> Back to top
+        elm      : document.getElementById('back-to-top'),
+        scrollTo : DOM.generic.landing
+      },
+      {
+        eventType: 'click', 
+        duration : 1500,
+        // Footer -> Back to main content
+        elm      : document.getElementById('back-to-main'),
+        scrollTo : DOM.generic.mainContent
+      }
+    ];
+
+    document.getElementById('site-info').addEventListener('click', () => {
+      console.log('[TSTMGR]: Site info has been clicked.');
+    });
+
+    Tools.bindScrollEvents(eventElms);
   },
   randomFromArray(array) {
     // Return a random index's value from the array that is passed in.

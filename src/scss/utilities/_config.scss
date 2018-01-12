@@ -109,20 +109,6 @@ $brk-md  : '(min-width: 840px)';
 $brk-lg  : '(min-width: 1050px)';
 $brk-xlrg: '(min-width: 2561px)';
 
-
-// Icons
-// -----
-
-$icons: (
-  itunes    : 'platforms/itunes.svg',
-  android   : 'platforms/android.svg',
-  spotify   : 'platforms/spotify.svg',
-  twitter   : 'social-media/twitter.svg',
-  instagram : 'social-media/instagram.svg',
-  facebook  : 'social-media/facebook.svg'
-);
-
-
 .green5 {
   color: #27ae60;
 }

@@ -5,7 +5,6 @@
 export const DOM = {
   // Generic Elements
   generic: {
-    toTop       : document.getElementById('top'),
     mainContent : document.getElementById('main-content'),
     landing     : document.querySelector('.landing') || document.querySelector('.landing--static'),
     landingVideo: document.querySelector('.landing__video'),

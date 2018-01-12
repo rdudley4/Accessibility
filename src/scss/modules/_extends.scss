@@ -86,24 +86,6 @@
 }
 
 
-// Buttons
-// -------
-
-%btn-default {
-  @extend .content-3;
-  padding         : em(12px, 18px) em(11px, 18px);
-  border-radius   : $br;
-  color           : palette(white);
-  background-color: palette(blue, dark);
-  transition      : background-color $trns-duration--default;
-}
-
-%btn-hover {
-  cursor          : pointer;
-  background-color: palette(blue, light);
-}
-
-
 // Input
 // -----
 

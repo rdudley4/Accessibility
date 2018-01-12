@@ -3,20 +3,24 @@
 // ==========================================================================
 
 footer {
-  position  : relative;
-  padding   : em(15px);
-  text-align: center;
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  padding        : em(15px);
 
   p {
     margin: 0;
-    right : 15px;
-    color: palette(gray, light);
-    max-width: 120px;
-
-    @include mq(med) {
-      max-width: 200px;
-    }
+    color : palette(black);
+    text-align: center;
   }
+
+  .social__platforms, p, #footer-controls {
+    flex-basis: per-line(3, 0px);
+  }
+}
+
+#footer-controls {
+  text-align: end;
 }
 
 #top {
@@ -39,9 +43,9 @@ footer {
   }
 }
 
-.social__platforms, footer p {
-  position: absolute;
-  top     : em(15px);
-}
+// .social__platforms, footer p {
+//   position: absolute;
+//   top     : em(15px);
+// }
 
-.social__platforms { left: 15px }
+// .social__platforms { left: 15px }
