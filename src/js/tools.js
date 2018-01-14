@@ -51,6 +51,10 @@ export const Tools = {
 
     Tools.bindScrollEvents(eventElms);
   },
+  timeToExecute(funcName, start, end) {
+    const timeElapsed = end - start;
+    return `${funcName} completed in ${Math.round(timeElapsed * 100) / 100} ms`;
+  },
   randomFromArray(array) {
     // Return a random index's value from the array that is passed in.
     return array[this.randomNumber(0, array.length - 1)];

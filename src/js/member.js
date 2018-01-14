@@ -56,7 +56,7 @@ export default class Member {
       // Generate new member data.
       const newMemberInfo = this.generateData(i);
       // Push new member object to the storage array.
-      storage.push(new Member(newMemberInfo.id, newMemberInfo.name, newMemberInfo.age, newMemberInfo.gender, newMemberInfo.dob, newMemberInfo.location, newMemberInfo.about, newMemberInfo.avatar));
+      storage[i] = new Member(newMemberInfo.id, newMemberInfo.name, newMemberInfo.age, newMemberInfo.gender, newMemberInfo.dob, newMemberInfo.location, newMemberInfo.about, newMemberInfo.avatar);
       // Dynamically generate our select field with member names.
       DOM.infoBox.options[i].text = newMemberInfo.name;
       // Populate the Info Box with first user information on page load.
