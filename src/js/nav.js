@@ -11,23 +11,23 @@ export const Nav = {
       elm.className = newClass;
     }
   },
-  transition: ({bar, links, relativeTo} = {}) => {
+  transition: ({nav, relativeTo} = {}) => {
     const landingIsHidden = Math.abs(relativeTo.getBoundingClientRect().top) > (relativeTo.clientHeight - 50);
-    for (let link of links) {
+    for (let link of nav.links) {
       if (landingIsHidden) {
         Nav.swapLinkStyles({
           elm: link,
           testClass: 'nav__item',
           newClass: 'nav__item--alt'
         });
-        bar.style.backgroundColor = '#7289da';
+        nav.bar.style.backgroundColor = '#7289da';
       } else {
         Nav.swapLinkStyles({
           elm: link,
           testClass: 'nav__item--alt',
           newClass: 'nav__item'
         });
-        bar.removeAttribute('style');
+        nav.bar.removeAttribute('style');
       }
     }
   }

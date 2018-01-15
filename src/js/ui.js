@@ -63,8 +63,7 @@ if (DOM.infoBox.base) {
 window.addEventListener('scroll', () => {
   // Nav Transition
   Nav.transition({
-    bar       : DOM.nav.bar,
-    links     : DOM.nav.links,
+    nav       : DOM.nav,
     relativeTo: DOM.generic.landing
   });
 

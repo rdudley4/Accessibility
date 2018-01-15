@@ -13,8 +13,9 @@ export const DOM = {
 
   // Navigation Elements
   nav: {
-    bar  : document.querySelector('.navbar'),
-    links: Array.from(document.querySelectorAll('.nav__item'))
+    bar      : document.querySelector('.navbar'),
+    container: document.getElementById('nav-container'),
+    links    : Array.from(document.querySelectorAll('.nav__item'))
   },
 
   // Sections
