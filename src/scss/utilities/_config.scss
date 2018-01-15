@@ -27,8 +27,10 @@ $froly         : #F46B70;
 $malibu        : #71b6fb;
 $picton-blue   : #4EA6EC;
 $azure-radiance: #0B88EE;
+$discord-blue  : #7289da;
 
 // Grays
+$concrete      : #f3f3f3;
 $alto          : #dedede;
 $gray-chateau  : #9DA2A6;
 $oslo-gray     : #868C91;
@@ -36,8 +38,8 @@ $cape-cod      : #404447;
 
 
 // Success/Error
-$rusty-red : #DB324D;
-$ufo-green : #2DD881;
+$rusty-red   : #DB324D;
+$ocean-green : #43B581;
 
 
 // Usable Color Variables
@@ -47,7 +49,6 @@ $color-secondary: $isabelline;
 $color-tertiary : $queen-blue;
 $color-accent   : $aquamarine;
 
-$color-success  : $ufo-green;
 $color-error    : $rusty-red;
 
 
@@ -72,14 +73,16 @@ $color-palette: (
     base : $froly
   ),
   green: (
-    base : $ufo-green
+    base : $ocean-green
   ),
   blue: (
     light: $malibu,
+    med  : $discord-blue,
     base : $picton-blue,
     dark : $azure-radiance
   ),
   gray: (
+    bg     : $concrete,
     x-light: $alto,
     light  : $gray-chateau,
     base   : $oslo-gray,

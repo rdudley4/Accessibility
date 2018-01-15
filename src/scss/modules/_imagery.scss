@@ -60,12 +60,10 @@
   display      : inline-block;
   padding      : em(4px);
   color        : palette(black, opaque);
-  transition: transform $trns-duration--default, color $trns-duration--default;
+  transition   : color $trns-duration--default;
 
   &:hover {
-    transform: scale(1.25); 
-    color    : palette(red);
-    opacity  : 1; 
+    color    : palette(blue, med);
   }
 
   &:not(:last-of-type) {
@@ -134,4 +132,10 @@
   padding      : em(1px);
   border-radius: 50%;
   border       : 2px solid palette(gray, x-light);
+}
+
+.fa {
+  &-caret-right {
+    color: palette(blue, med);
+  }
 }

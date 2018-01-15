@@ -28,12 +28,12 @@
     "style-loader": "^0.19.1",
     "verge": "^1.10.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.0"
+    "webpack-dev-server": "^2.11.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.0",
-    "@fortawesome/fontawesome-free-brands": "^5.0.2",
-    "@fortawesome/fontawesome-pro-light": "^5.0.2",
+    "@fortawesome/fontawesome": "^1.1.2",
+    "@fortawesome/fontawesome-free-brands": "^5.0.4",
+    "@fortawesome/fontawesome-pro-light": "^5.0.4",
     "babel-polyfill": "^6.26.0",
     "smoothscroll": "^0.4.0"
   },

@@ -9,12 +9,10 @@
   top             : 0;
   left            : 0;
   right           : 0;
-  padding         : em(17.5px) em(7px);
+  padding         : em(8px);
   z-index         : 1;
   background-color: transparent;
-  border          : 1px solid palette(black, m-opaque);
-  transition      : background-color $trns-duration--default,
-                    border-color $trns-duration--default;
+  transition      : background-color $trns-duration--default;
   background-color: palette(black, m-opaque);
 }
 
@@ -28,7 +26,7 @@
     @extend %nav-item-default;
     a {
       @extend .nav-item-link;
-      color: palette(white);
+      color: palette(gray, bg);
 
       // hover
       &:hover {
@@ -41,7 +39,7 @@
       @extend %nav-item-default;
       a {
         @extend .nav-item-link;
-        color: palette(gray, dark);
+        color: palette(gray, bg);
 
         // hover
         &:hover {

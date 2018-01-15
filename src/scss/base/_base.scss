@@ -8,6 +8,7 @@
 }
 
 body {
+  background-color: palette(gray, bg);
   margin                 : 0;
   font-family            : $font-stack-primary;
   -webkit-font-smoothing : antialiased;
@@ -85,7 +86,7 @@ textarea {
     // Style Validation only for required form elements.
     &:required {
       &:valid {
-        border-color: $color-success;
+        border-color: palette(green);
       }
 
       &:invalid {

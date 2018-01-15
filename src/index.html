@@ -44,7 +44,7 @@
             </div>
             <!-- Available Formats -->
             <div class="wrap">
-              <h3 class="section__title--info">Formats</h3>
+              <h3 class="title-uppercase">Available In</h3>
               <ul class="album__formats content-2">
                 <li class="lp content-box--animated">2x LP</li>
                 <li class="cd content-box--animated">CD</li>
@@ -90,8 +90,7 @@
       </section>
       
       <!-- Section [About The Band] -->
-      <section class="section">
-
+      <section id="secondaryInfo" class="section">
         <div class="limit flex--wrap">
           <!-- Section Heading [Icon/Title/Description] -->
           <div class="col-2 flex--centered">
@@ -103,55 +102,62 @@
           <div id ="container-img-lead" class="col-2">
             <img class="section__img" src="img/layout/450x450.png" alt="Our lead singer on stage at a recent concert." /> 
           </div>
-          
-          <!-- About the Band [Content] -->
-          <!-- Live Shows -->
-          <div class="about flex--wrap">
-
-            <!-- Current Members & InfoBox -->
-            <div class="col content-box--animated">
-              <h3 class="title-uppercase">Current Members</h3>
-              <div class="info-box">
-                <!-- Member Selection -->
-                <form action="" method="POST" role="form" id="member-select">
-                  <select name="member-select" id="select-box">
-                    <option value="member1" class="member-option" selected>Bob Bobberson</option> 
-                    <option value="member2" class="member-option">Jim Jimmerson</option>
-                    <option value="member3" class="member-option">Peter Peterson</option>
-                    <option value="member4" class="member-option">Bill Billerson</option>
-                    <option value="member5" class="member-option">Some Randomguy</option>
-                  </select>
-                </form>
-                <!-- Member Avatar -->
-                <img class="member-icon" src="./img/icons/boy-1.svg" alt="">
-                <!-- Member Information -->
-                <h3 id="member-name" class="title-uppercase">InfoBox Name</h3>
-                <span id="member-id" class="title-uppercase"><i class="fal fa-user"></i> <span id="id-val">#1</span></span>
-                <!-- <img id="member-instIcon" src="./img/icons/drum-set.svg" alt="Member's Instrument"> -->
-                <ul id="member__info" class="list content-4">
-                  <li id="member-age" class="list__item info-box__stats">Age:<span id="stat1" class="stats_value title-uppercase">26</span></li>
-                  <li id="member-dob" class="list__item info-box__stats">Born:<span id="stat2" class="stats_value title-uppercase">1991</span></li>
-                  <li id="member-hometown" class="list__item info-box__stats"><span id="stat3" class="stats_value">Chicago, Illinois</span></li>
-                  <li id="member-about" class="list__item info-box__stats">Yes. You gave me a dollar and some candy. I don't want to be rescued. You don't know how to do any of those. Who's brave enough to fly into something we all keep calling a death sphere. I found what I need. And it's not friends, it's things. I suppose I could part with 'one' and still be feared… Ah, the 'Breakfast Club' soundtrack! I can't wait til I'm old enough to feel ways about stuff!</li>
-                </ul>
-                <div class="flex--wrap">
-                  <div class="col-2 content-box--animated">
-                    <i class="fab fa-npm fa-3x fa-fw icon-gray"></i>
-                    <h3 class="title-uppercase">Section 1</h3>
-                    <p class="section__desc--padded dummy">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
-                  </div>
-                  <!-- Our Sound -->
-                  <div class="col-2 content-box--animated">
-                    <i class="fab fa-node fa-3x fa-fw icon-gray"></i>
-                    <h3 class="title-uppercase">Section 2</h3>
-                    <p class="section__desc--padded dummy">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.>Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future.</p>
-                  </div> 
-                </div>
-              </div>  
-            </div>
-          </div>                     
-        </div>      
+          <div class="col">
+            <ul id="random-stats" class="section__desc">
+              <li><i class="fal fa-caret-right fa-fw"></i>Incidentally, you have a dime up your nose. Take me to your leader! Hey, you add a one and two zeros to that or we walk! No, I'm Santa Claus!</li>
+              <li><i class="fal fa-caret-right fa-fw"></i>Some random stuff goes here.</li>
+              <li><i class="fal fa-caret-right fa-fw"></i>Some random stuff goes here.</li>
+            </ul>
+          </div>
+        </div>
       </section>
+      <section id="currentMembers" class="section">
+        <!-- About the Band [Content] -->
+        <!-- Live Shows -->
+        <div class="about limit flex--wrap">
+          <!-- Current Members & InfoBox -->
+          <div class="col content-box--animated">
+            <h3 class="title-uppercase">Current Members</h3>
+            <div class="info-box">
+              <!-- Member Selection -->
+              <form action="" method="POST" role="form" id="member-select">
+                <select name="member-select" id="select-box">
+                  <option value="member1" class="member-option" selected>Bob Bobberson</option> 
+                  <option value="member2" class="member-option">Jim Jimmerson</option>
+                  <option value="member3" class="member-option">Peter Peterson</option>
+                  <option value="member4" class="member-option">Bill Billerson</option>
+                  <option value="member5" class="member-option">Some Randomguy</option>
+                </select>
+              </form>
+              <!-- Member Avatar -->
+              <img class="member-icon" src="./img/icons/boy-1.svg" alt="">
+              <!-- Member Information -->
+              <h3 id="member-name" class="title-uppercase">InfoBox Name</h3>
+              <span id="member-id" class="title-uppercase"><i class="fal fa-user"></i> <span id="id-val">#1</span></span>
+              <!-- <img id="member-instIcon" src="./img/icons/drum-set.svg" alt="Member's Instrument"> -->
+              <ul id="member__info" class="list content-4">
+                <li id="member-age" class="list__item info-box__stats">Age:<span id="stat1" class="stats_value title-uppercase">26</span></li>
+                <li id="member-dob" class="list__item info-box__stats">Born:<span id="stat2" class="stats_value title-uppercase">1991</span></li>
+                <li id="member-hometown" class="list__item info-box__stats"><span id="stat3" class="stats_value">Chicago, Illinois</span></li>
+                <li id="member-about" class="list__item info-box__stats">Yes. You gave me a dollar and some candy. I don't want to be rescued. You don't know how to do any of those. Who's brave enough to fly into something we all keep calling a death sphere. I found what I need. And it's not friends, it's things. I suppose I could part with 'one' and still be feared… Ah, the 'Breakfast Club' soundtrack! I can't wait til I'm old enough to feel ways about stuff!</li>
+              </ul>
+              <div class="flex--wrap">
+                <div class="col-2 content-box--animated">
+                  <i class="fab fa-npm fa-3x fa-fw icon-gray"></i>
+                  <h3 class="title-uppercase">Section 1</h3>
+                  <p class="section__desc--padded dummy">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
+                </div>
+                <!-- Our Sound -->
+                <div class="col-2 content-box--animated">
+                  <i class="fab fa-node fa-3x fa-fw icon-gray"></i>
+                  <h3 class="title-uppercase">Section 2</h3>
+                  <p class="section__desc--padded dummy">Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future. You lived before you met me?! If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.>Would you censor the Venus de Venus just because you can see her spewers? No argument here. But I know you in the future.</p>
+                </div> 
+              </div>
+            </div>  
+          </div>
+        </div>  
+      </section>                           
     </main>
 
     <footer class="limit" role="contentinfo">

@@ -5,8 +5,7 @@
 .section {
   @extend %text-center;
   // border-bottom : 1px solid palette(gray, x-light);
-  padding-bottom: em(60px);
-  padding-top   : em(90px);
+  padding: em(90px) 0;
   border-bottom : 1px solid #e9e7e7;
 
   &:last-of-type {
@@ -64,6 +63,14 @@
   }
 }
 
-#newAlbum {
-  display: flex;
+#secondaryInfo {
+  background-color: $color-secondary;
+}
+
+#random-stats {
+  margin-top: em(50px, 22px);
+
+  li {
+    padding: em(8px, 22px) em(5px, 22px);
+  }
 }
