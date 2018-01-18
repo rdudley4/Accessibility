@@ -8,9 +8,9 @@
 %nav-item-default {
   text-align: center;
 
-  &:last-of-type {
-    order: -1;
-  }
+  // &:last-of-type {
+  //   order: -1;
+  // }
 }
 
 .nav-item-link {
@@ -18,10 +18,6 @@
   display      : inline-block;
   padding      : em(16px, 15px) em(23px, 15px);
   transition   : color $trns-duration--default;
-}
-
-%nav-link-hover {
-  color       : palette(white);
 }
 
 
@@ -99,7 +95,7 @@
 // -------
 
 %section-desc-default {
-  color: palette(gray, light);
+  color: palette(gray, med);
   margin-top: 0;
 }
 
@@ -121,7 +117,7 @@
 %list-default {
   align-items  : center;
   padding      : em(8px) em(15px);  
-  color        : palette(gray, light);
+  color        : palette(gray, med);
   transition   : all $trns-duration--med;
   border-radius: $br;
 }

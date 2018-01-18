@@ -20,7 +20,7 @@ export const Nav = {
           testClass: 'nav__item',
           newClass: 'nav__item--alt'
         });
-        nav.bar.style.backgroundColor = '#7289da';
+        nav.bar.style.backgroundColor = '#495275';
       } else {
         Nav.swapLinkStyles({
           elm: link,

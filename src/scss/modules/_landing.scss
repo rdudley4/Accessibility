@@ -4,12 +4,13 @@
 
 %landing-default {
   @extend %text-center;
+  background-color: #000; // Fallback
   background:
     linear-gradient(to top, transparent 0%, #000 95%),    /* Gradient        */
     url('#{$path--rel}/layout/test.jpg')                    /* Image           */
     center 85% / cover                                      /* Position & Size */
     no-repeat                                               /* Repeat          */
-    fixed;   
+    fixed;
 }
 
 .landing {

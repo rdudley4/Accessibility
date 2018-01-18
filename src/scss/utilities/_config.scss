@@ -27,13 +27,14 @@ $froly         : #F46B70;
 $malibu        : #71b6fb;
 $picton-blue   : #4EA6EC;
 $azure-radiance: #0B88EE;
-$discord-blue  : #7289da;
+$fiord         : #495275;
 
 // Grays
 $concrete      : #f3f3f3;
 $alto          : #dedede;
 $gray-chateau  : #9DA2A6;
 $oslo-gray     : #868C91;
+$abbey         : #4c5256;
 $cape-cod      : #404447;
 
 
@@ -77,7 +78,7 @@ $color-palette: (
   ),
   blue: (
     light: $malibu,
-    med  : $discord-blue,
+    med  : $fiord,
     base : $picton-blue,
     dark : $azure-radiance
   ),
@@ -86,6 +87,7 @@ $color-palette: (
     x-light: $alto,
     light  : $gray-chateau,
     base   : $oslo-gray,
+    med    : $abbey,
     dark   : $cape-cod
   ),
 );

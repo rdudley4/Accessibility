@@ -19,8 +19,7 @@
 // Nav [UL]
 // --------
 
-// Shared
-.nav__item a, .nav__item--alt a {
+.nav__item--alt a {
   position: relative;
 
   &:before {
@@ -51,7 +50,7 @@
 
       // hover
       &:hover {
-        @extend %nav-link-hover;
+        color: palette(green);
       }
     }
 
@@ -64,7 +63,7 @@
 
         // hover
         &:hover {
-          @extend %nav-link-hover;
+          color: palette(white);
         }
       }
     }

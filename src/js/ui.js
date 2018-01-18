@@ -6,28 +6,25 @@
 // ------------
 
 // Modules
-import smoothScroll from 'smoothscroll';
 import { DOM } from './dom';
 import { Nav } from './nav';
 import { Anim } from './anim';
 import { Tools } from './tools';
 import Member from './member';
-const verge = require("verge");
+import verge from 'verge';
 
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
 import { faChevronDown, faDotCircle, faRocket, faUser, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight } from '@fortawesome/fontawesome-pro-light';
 import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faNpm, faUikit, faTwitter, faInstagram, faFacebookF } from '@fortawesome/fontawesome-free-brands';
+// Add icons to font awesome library.
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser, faUikit, faTwitter, faFacebookF, faInstagram, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight);
+// Bind event handlers to icons after they have been converted to svg by Font Awesome.
+fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Performance Testing;
 let timeStart = 0;
 let timeEnd = 0;
-
-
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faNpm, faUser, faUikit, faTwitter, faFacebookF, faInstagram, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight);
-
-// Bind event handlers to icons after they have been converted to svg by Font Awesome.
-fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // If the infobox exists on the page..
 if (DOM.infoBox.base) {
@@ -48,11 +45,11 @@ if (DOM.infoBox.base) {
   // Bind member select event handler.
   DOM.infoBox.select.addEventListener('change', () => {
     const currentlySelected = Member.getName(DOM.infoBox.select);
-    for (let member of members) {
-      if (member.name === currentlySelected) {
-        Member.update(member);
-      }
-    }
+    const memObj = members.find(function(member) {
+      return member.name === currentlySelected;
+    });
+    // Update DOM
+    Member.update(memObj);
   });
 }
 

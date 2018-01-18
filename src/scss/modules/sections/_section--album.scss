@@ -9,12 +9,12 @@
 
     li {
       @extend .flex;
+      color: palette(gray, med);
       flex-direction : column;
       align-items    : center;
       justify-content: center;
       padding        : em(8px) em(15px);
       margin         : $gutter;
-      border-radius  : $br;
 
       &:hover {
         cursor: pointer;
