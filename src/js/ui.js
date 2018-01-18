@@ -37,7 +37,7 @@ if (DOM.infoBox.base) {
   // Ensure first member is selected on each page load.
   DOM.infoBox.select.options[0].selected = 'selected';
 
-  // DOM.infoBox.select [EVENT] -> 'change'
+  // [EVENT] DOM.infoBox.select -> 'change'
   DOM.infoBox.select.addEventListener('change', () => {
     // Get currently selected value of DOM.infoBox.select.
     const currentlySelected = Member.getName(DOM.infoBox.select);
@@ -53,7 +53,7 @@ if (DOM.infoBox.base) {
 // Event Handlers
 // --------------
 
-// window [EVENT] -> 'scroll'
+// [EVENT] window -> 'scroll'
 window.addEventListener('scroll', () => {
   // Nav Transition
   Nav.transition({
