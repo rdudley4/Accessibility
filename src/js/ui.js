@@ -23,32 +23,29 @@ fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazo
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 
 // Performance Testing;
-let timeStart = 0;
-let timeEnd = 0;
+// let timeStart = 0;
+// let timeEnd = 0;
 
 // If the infobox exists on the page..
 if (DOM.infoBox.base) {
-  const numToGenerate = 5;
   // Generate Test Members
-  const members = new Array(numToGenerate);
-  let i = 0;
-  while (i < numToGenerate) {
-    members[i] = 0;
-    i += 1;
-  }
-  timeStart = performance.now();
+  const numToGenerate = 5;
+  const members = new Array(numToGenerate).fill(0);
+
+  // Create x amount of member objects with randomly generated data and place in members[]
   Member.create(numToGenerate, members);
-  timeEnd = performance.now();
-  console.log(Tools.timeToExecute('Member.create', timeStart, timeEnd));
-  // Reset selected index to 0 on each page load.
+  // Ensure first member is selected on each page load.
   DOM.infoBox.select.options[0].selected = 'selected';
-  // Bind member select event handler.
+
+  // DOM.infoBox.select [EVENT] -> 'change'
   DOM.infoBox.select.addEventListener('change', () => {
+    // Get currently selected value of DOM.infoBox.select.
     const currentlySelected = Member.getName(DOM.infoBox.select);
+    // Use array.prototype.find to return the first member object that satisfies the testing function.
     const memObj = members.find(function(member) {
       return member.name === currentlySelected;
     });
-    // Update DOM
+    // Update DOM with member's info
     Member.update(memObj);
   });
 }
@@ -56,7 +53,7 @@ if (DOM.infoBox.base) {
 // Event Handlers
 // --------------
 
-// Window Scroll
+// window [EVENT] -> 'scroll'
 window.addEventListener('scroll', () => {
   // Nav Transition
   Nav.transition({

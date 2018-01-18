@@ -8,11 +8,19 @@
 }
 
 body {
-  background-color: palette(gray, bg);
   margin                 : 0;
   font-family            : $font-stack-primary;
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  background-color: palette(gray, bg);
+}
+
+header {
+  // Fallback background color for header.
+  background-color: palette(gray, dark);
 }
 
 a {

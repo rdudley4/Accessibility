@@ -96,3 +96,10 @@
   margin-top   : em(117.4px);
   border-bottom: 1px solid palette(black);
 }
+
+label[for="select-box"] {
+  position : absolute;
+  top      : em(-5px);
+  left     : em(18px);
+  font-size: em(12px);
+}

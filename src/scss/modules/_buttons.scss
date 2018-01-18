@@ -8,6 +8,7 @@
   padding      : em(12px, 19px);
   border-bottom: 1px solid palette(gray);
   transition   : background-color $trns-duration--default, color $trns-duration--default, border-color $trns-duration--default;
+  z-index      : 0;
 
   &:hover {
     cursor      : pointer;
@@ -23,7 +24,7 @@
     content   : '';
     background: palette(green);
     position  : absolute;
-    width     : 0%;
+    width     : 0;
     top       : 0;
     left      : 0;
     height    : 100%;
