@@ -102,3 +102,13 @@
     line-height: (22.4px / 16px);
   }
 }
+
+.align {
+  &-l {
+    text-align: left;
+  }
+
+  &-r {
+    text-align: right;
+  }
+}

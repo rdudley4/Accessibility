@@ -43,9 +43,10 @@
 // ----------
 
 #logo {
+  color        : white;
   width        : em(128px);
   height       : em(128px);
-  margin-bottom: em(25px);
+  margin-bottom:  em(25px);
 }
 
 
@@ -57,8 +58,6 @@
 // --------------------
 
 .platform, .control {
-  display      : inline-block;
-  padding      : em(4px);
   color        : palette(black, opaque);
   transition   : color $trns-duration--default;
 
@@ -66,9 +65,9 @@
     color    : palette(blue, med);
   }
 
-  &:not(:last-of-type) {
-    margin-right: em(10px);
-  }
+  // &:not(:last-of-type) {
+  //   margin-right: em(10px);
+  // }
 }
 
 .control {

@@ -17,15 +17,15 @@ export const Nav = {
       if (landingIsHidden) {
         Nav.swapLinkStyles({
           elm: link,
-          testClass: 'nav__item',
-          newClass: 'nav__item--alt'
+          testClass: 'navbar-link',
+          newClass: 'navbar-link-alt'
         });
         nav.bar.style.backgroundColor = '#495275';
       } else {
         Nav.swapLinkStyles({
           elm: link,
-          testClass: 'nav__item--alt',
-          newClass: 'nav__item'
+          testClass: 'navbar-link-alt',
+          newClass: 'navbar-link'
         });
         nav.bar.removeAttribute('style');
       }

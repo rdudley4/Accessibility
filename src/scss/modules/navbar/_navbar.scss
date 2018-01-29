@@ -1,0 +1,27 @@
+// ==========================================================================
+// Navigation
+// ==========================================================================
+
+.navbar {
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  z-index         : 1;
+  background-color: transparent;
+  transition      : background-color $trns-duration--default;
+  height: 53px; //TEMP//
+  overflow: hidden;
+
+  // .navbar-link
+  &-link {
+    @extend %nav-link;
+    &:hover {
+      color: palette(green);
+    }
+    // .navbar-link-alt
+    &-alt {
+      @extend %nav-link-alt;
+    }
+  }
+}

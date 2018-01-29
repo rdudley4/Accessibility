@@ -35,6 +35,7 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.4",
     "@fortawesome/fontawesome-pro-light": "^5.0.4",
     "babel-polyfill": "^6.26.0",
+    "flexboxgrid-sass": "^8.0.5",
     "smoothscroll": "^0.4.0"
   },
   "repository": {

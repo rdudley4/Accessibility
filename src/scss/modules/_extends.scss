@@ -2,25 +2,6 @@
 // Extends
 // ==========================================================================
 
-// Navigation
-// ----------
-
-%nav-item-default {
-  text-align: center;
-
-  // &:last-of-type {
-  //   order: -1;
-  // }
-}
-
-.nav-item-link {
-  @extend .header-4;
-  display      : inline-block;
-  padding      : em(16px, 15px) em(23px, 15px);
-  transition   : color $trns-duration--default;
-}
-
-
 // Titles
 // ------
 
@@ -108,20 +89,4 @@
 
 %hover-shadow-lt {
   box-shadow: 0 0 0 1px rgba(232,232,232,.36), 0 2px 4px 0 rgba(202,202,202,.22);
-}
-
-
-// ul / li 
-// -------
-
-%list-default {
-  align-items  : center;
-  padding      : em(8px) em(15px);  
-  color        : palette(gray, med);
-  transition   : all $trns-duration--med;
-  border-radius: $br;
-}
-
-%list-hover {
-  color: palette(black, opaque);
 }

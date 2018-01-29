@@ -31,6 +31,7 @@
 
 #scrollDown {
   margin-top   : em(20px, 64px);
+  color        : palette(white);
   transition   : border-color $trns-duration--med;
   animation    : bounce 1.5s infinite;
   border-bottom: 2px solid transparent;
@@ -38,6 +39,5 @@
   &:hover {
     cursor      : pointer;
     border-color: palette(white);
-    fill        : red;
   } 
 }

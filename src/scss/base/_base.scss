@@ -10,12 +10,9 @@
 body {
   margin                 : 0;
   font-family            : $font-stack-primary;
+  background             : palette(gray, bg);
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-main {
-  background-color: palette(gray, bg);
 }
 
 header {
@@ -45,13 +42,6 @@ p {
 // Form Elements
 // -------------
 
-form {
-  @include mq(med) {
-    align-self: center;
-    margin-left: em(20px);
-  }
-}
-
 fieldset {
   border : none;
   padding: 0;
@@ -74,7 +64,7 @@ legend {
 }
 
 select {
-  padding: em(10px);
+  padding: em(10px) em(10px) em(10px) 0;
   border : none;
 }
 

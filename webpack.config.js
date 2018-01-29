@@ -28,8 +28,8 @@ const webpackConfig = {
         include: [path.resolve(__dirname, "src/js")],
         loader: "babel-loader",
         options: {
-          presets: [
-            ['env', {
+          "presets": [
+            ["env", {
               "targets": {
                 "browsers": ["last 2 versions", "safari >= 7"]
               }
@@ -58,7 +58,7 @@ const webpackConfig = {
             loader: "image-webpack-loader",
             query: {
               optipng: { enabled: false },
-              gifscale: { interlaced: false },
+              gifscale:  { interlaced: false },
               pngquant: {
                 quality: '65-90',
                 speed: 4

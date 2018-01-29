@@ -2,8 +2,9 @@
 // Page Landing
 // ==========================================================================
 
-%landing-default {
-  @extend %text-center;
+.landing {
+  @include shadow(bottom);
+  height: 100vh;
   background-color: #000; // Fallback
   background:
     linear-gradient(to top, transparent 0%, #000 95%),    /* Gradient        */
@@ -11,57 +12,12 @@
     center 85% / cover                                      /* Position & Size */
     no-repeat                                               /* Repeat          */
     fixed;
-}
-
-.landing {
-  @extend %landing-default;
-  @include shadow(bottom);
-  height: 100vh;
 
   // IE/Edge Specific Fixes
-  // ----------------------
-  @include mq(edge) {
-    width : 100%;
-    height: 100vh;
+  @include mq(edge) { width : 100%; }
+  @include mq(ie11) { width : 100%; }
+
+  .hero {
+    padding-top: em(136px);
   }
-
-  @include mq(ie11) {
-    width : 100%;
-    height: 100vh;
-  }
-
-  // landing--stationary
-  @include m(static) {
-    @extend %landing-default;
-    @include shadow(inset);
-    min-height: 470px; 
-
-    @include mq(xlg) {
-      background-size: cover;
-    }
-  }
-
-  // landing__video
-  // @include e(video) {
-  //   @extend %border-outline-reverse;
-  //   width     : 100%;
-  //   height    : 100vh;
-  //   object-fit:  cover;
-
-  //   @include mq(med) {
-  //     object-fit: fill;
-  //   }
-
-  //   // IE/Edge Specific Fixes
-  //   // ----------------------
-  //   @include mq(edge) {
-  //     width:  100%;
-  //     height: 100%;
-  //   }
-
-  //   @include mq(ie11) {
-  //     width:  100%;
-  //     height: 100%;
-  //   }   
-  // }
 }

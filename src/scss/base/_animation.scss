@@ -58,3 +58,12 @@
   //   @include createAnimation(grow, 500ms, 4, 3);
   // }
 }
+
+// Animate
+
+.animation-queue {
+  @include mq(med) {
+    transform: translate3d(0, 60px, 0);
+    opacity  : 0;
+  }
+}

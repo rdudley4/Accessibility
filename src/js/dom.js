@@ -15,7 +15,7 @@ export const DOM = {
   nav: {
     bar      : document.querySelector('.navbar'),
     container: document.getElementById('nav-container'),
-    links    : Array.from(document.querySelectorAll('.nav__item'))
+    links    : Array.from(document.querySelectorAll('.navbar-link'))
   },
 
   // Sections
@@ -35,7 +35,7 @@ export const DOM = {
 
   // Info Box Elements
   infoBox: {
-    base      : document.querySelector('.info-box'),
+    base      : document.getElementById('current-members'),
     memberList: document.getElementById('member__list'),
     name      : document.getElementById('member-name'),
     icon      : document.querySelector('.member-icon'),

@@ -3,10 +3,9 @@
 // ==========================================================================
 
 .section {
-  @extend %text-center;
-  // border-bottom : 1px solid palette(gray, x-light);
   padding: em(90px) 0;
   border-bottom : 1px solid #e9e7e7;
+  text-align: center;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -59,12 +58,8 @@
 
   .btn {
     max-width: 250px;
-    margin   : em(30px, 19px) auto em(16px, 19px);
+    margin   : em(30px, 19px) auto;
   }
-}
-
-#secondaryInfo {
-  background-color: $color-secondary;
 }
 
 #random-stats {

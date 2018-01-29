@@ -1,0 +1,34 @@
+// ==========================================================================
+// Extended/Consolidated Navbar Styles
+// ==========================================================================
+
+%nav-link {
+    @extend .header-4;
+    display      : block;
+    padding      : em(16px, 15px) em(23px, 15px);
+    color        : palette(white);
+    transition   : color $trns-duration--default;
+
+    &-alt {
+        @extend %nav-link;
+        position: relative;
+        // Green Background Effect (Hidden by default)
+        &:before {
+            content   : '';
+            position  : absolute;
+            top       : 0;
+            left      : 0;
+            width     : 100%;
+            height    : 0;
+            background: palette(green);
+            transition: height $trns-duration--default linear;
+            z-index   : -1;
+        }
+        // Animate the before element when we hover over navbar-link-alt.
+        &:hover {
+            &:before {
+                height: 100%;
+            }
+        }
+    }
+}
