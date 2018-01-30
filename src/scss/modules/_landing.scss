@@ -4,7 +4,11 @@
 
 .landing {
   @include shadow(bottom);
-  height: 100vh;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  text-align     : center; 
+  height         : 100vh;
   background-color: #000; // Fallback
   background:
     linear-gradient(to top, transparent 0%, #000 95%),    /* Gradient        */
@@ -16,8 +20,4 @@
   // IE/Edge Specific Fixes
   @include mq(edge) { width : 100%; }
   @include mq(ie11) { width : 100%; }
-
-  .hero {
-    padding-top: em(136px);
-  }
 }

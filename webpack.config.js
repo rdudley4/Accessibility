@@ -49,23 +49,32 @@ const webpackConfig = {
         use: [
           {
             loader: "file-loader",
-            query: {
+            options: {
               name: '[path]img-[sha512:hash:base64:7].[ext]',
               context: './src'
             }
           },
           {
-            loader: "image-webpack-loader",
-            query: {
-              optipng: { enabled: false },
-              gifscale:  { interlaced: false },
+            loader: "img-loader",
+            options: {
+              optipng: false,
+              gifsicle: {
+                interlaced: false
+              },
               pngquant: {
-                quality: '65-90',
-                speed: 4
+                floyd: 0.5,
+                quality: 75
               },
               mozjpeg: {
-                quality: 75,
-                progressive: true
+                progressive: true,
+                arithmetic: false,
+                quality: 75
+              },
+              svgo: {
+                plugins: [
+                  { removeTitle: true },
+                  { convertPathData: false }
+                ]
               }
             }
           }
