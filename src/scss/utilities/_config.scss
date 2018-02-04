@@ -114,6 +114,10 @@ $brk-md  : '(min-width: 840px)';
 $brk-lg  : '(min-width: 1050px)';
 $brk-xlrg: '(min-width: 2561px)';
 
+$mq-sm : 48em;
+$mq-md : 62em;
+$mq-lg : 75em;
+
 .green5 {
   color: #27ae60;
 }
@@ -129,7 +133,6 @@ $content-max-width: 1200px;
 
 // Gutter
 $gutter: 10px;
-
 
 // Miscellaneous
 // -------------

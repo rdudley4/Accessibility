@@ -91,38 +91,12 @@
 
 // Album Formats
 // -------------
-
-.digital::before {
-  background-image: url('#{$path--rel}/icons/download.svg');
+.format-icon {
+  display: block;
+  margin: 0 auto em(10px, 64px);
+  transition: all $trns-duration--default;
 }
 
-.cd::before {
-  background-image: url('#{$path--rel}/icons/compact-disc.svg');
-}
-
-.lp::before {
-  background-image: url('#{$path--rel}/icons/turntable.svg');
-}
-
-
-// Band Members
-// ------------
-
-// .drums::before {
-//   background-image: url('#{$path--rel}/icons/drum.svg');
-// }
-
-// .guitar::before {
-//   background-image: url('#{$path--rel}/icons/electric-guitar.svg');
-// }
-
-// .bass::before {
-//   background-image: url('#{$path--rel}/icons/bass-guitar.svg');
-// }
-
-// .vocals::before {
-//   background-image: url('#{$path--rel}/icons/microphone.svg');
-// }
 
 // Info Box Avatars
 #info-box__icon {

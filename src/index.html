@@ -4,9 +4,6 @@
     <title>Accessibility Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" 
-      type="image/svg" 
-      href="./img/icons/compact-disc.svg">
   </head>
   <body>
     <!-- Page Header [Nav, Landing] -->
@@ -60,13 +57,34 @@
           </div>
           <!-- END R1 -->
           <!-- R2 -->
-          <div class="row center-xs">
+          <div id="row-purchase-info" class="row center-xs">
             <!-- R2:C1 Platforms/Formats -->
             <div class="col-xs-12 col-md-6">
+              <!-- R2:C1:r2 Formats -->  
+              <div id="row-album-formats" class="row">
+                <div class="col-xs-12">
+                  <h2 class="title-uppercase">Available In</h2>
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 content-box--animated">
+                  <i class="format-icon fal fa-download fa-4x fa-fw"></i>
+                  <span class="format-text">Download</span>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 content-box--animated">
+                  <i class="format-icon fal fa-dot-circle fa-4x fa-fw"></i>
+                  <span class="format-text">Compact Disc</span>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 content-box--animated">
+                  <i class="format-icon fal fa-music fa-4x fa-fw"></i>
+                  <span class="format-text">Vinyl LP</span>
+                </div>
+              </div>
               <!-- Purchase Button -->
               <a class="btn title-uppercase" href="#">Purchase Now</a>
               <!-- R2:C1:r1 Platforms -->
-              <div class="row">
+              <div id="row-platforms" class="row middle-xs">
                 <!-- Google Play -->
                 <div class="col-xs">
                   <a href="#" class="platform google-play">
@@ -94,20 +112,6 @@
                     <i class="fab fa-amazon fa-2x fa-fw"></i>
                     <b class="srt">Find us on Amazon</b>
                   </a>
-                </div>
-              </div>
-              <!-- R2:C1:r2 Formats -->
-              <div class="row album__formats">
-                <div class="col-xs content-box--animated">
-                  <span>2x LP</span>
-                </div>
-
-                <div class="col-xs content-box--animated">
-                  <span>2x LP</span>
-                </div>
-
-                <div class="col-xs content-box--animated">
-                  <span>2x LP</span>
                 </div>
               </div>
             </div>
