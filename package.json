@@ -7,7 +7,7 @@
     "build": "webpack --optimize-minimize",
     "start": "webpack-dev-server",
     "push": "git add . && git commit && git push",
-    "deploy-pages": "git subtree push --prefix build origin gh-pages",
+    "deploy-pages": "git subtree push --prefix dist origin gh-pages",
     "clean": "rm -r dist",
     "compile": "npm run clean && npm run build"
   },
