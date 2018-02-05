@@ -1,18 +1,23 @@
 #member {
+  // Icon
   &-icon {
     max-width: em(150px);
     border-bottom: 1px solid palette(black);
   }
+  // Name
   &-name {
     font-weight: bold;
   }
+  // Info
   &-info {
     margin-bottom: em(50px);
   }
+  // About
   &-about {
     color: palette(gray, med);
     margin-bottom: 0;
   }
+  // Location
   &-location {
     margin-left: 0;
     color: palette(blue, med);

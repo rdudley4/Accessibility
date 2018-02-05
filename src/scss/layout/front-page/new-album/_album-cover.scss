@@ -1,7 +1,20 @@
-// Album Cover Hover Styles
+// ROW - Platforms
+// ---------------
+#row-platforms {
+  position  : absolute;
+  max-width : em(450px);
+  left      : em(10px);
+  right     : em(10px);
+  bottom    : em(40px);
+  margin    : auto;
+  transform : translate3d(0, 20px, 0);
+  opacity   : 0;
+  transition: transform $trns-duration--med $cubic-bezier, opacity $trns-duration--med $cubic-bezier;
+}
+
+// Display platforms on album hover.
 #album-cover:hover+#row-platforms,
 #row-platforms:hover {
   transform: translate3d(0, 0, 0);
-  opacity: 1;
+  opacity  : 1;
 }
-

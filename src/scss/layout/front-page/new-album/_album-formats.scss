@@ -30,9 +30,9 @@
 
 // album format text
 .format-text {
-  display: inline-block;
-  padding: em(6px) em(12px);
+  display      : inline-block;
+  padding      : em(6px) em(12px);
   border-radius: em(20px);
-  border: 1px solid;
-  transition: all $trns-duration--default;
+  border       : 1px solid;
+  transition   : all $trns-duration--default;
 }
