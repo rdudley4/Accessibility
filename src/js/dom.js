@@ -36,14 +36,13 @@ export const DOM = {
   // Info Box Elements
   infoBox: {
     base      : document.getElementById('current-members'),
-    memberList: document.getElementById('member__list'),
     name      : document.getElementById('member-name'),
-    icon      : document.querySelector('.member-icon'),
-    age       : document.getElementById('stat1'),
-    dob       : document.getElementById('stat2'),
-    location  : document.getElementById('stat3'),
+    icon      : document.getElementById('member-icon'),
+    age       : document.getElementById('member-age'),
+    dob       : document.getElementById('member-dob'),
+    location  : document.getElementById('member-location'),
     about     : document.getElementById('member-about'),
-    id        : document.getElementById('id-val'),
+    id        : document.getElementById('member-id'),
     select    : document.getElementById('select-box'),
     options   : Array.from(document.querySelectorAll('.member-option'))
   }

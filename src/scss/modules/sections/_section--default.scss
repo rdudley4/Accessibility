@@ -58,14 +58,6 @@
 
   .btn {
     max-width: 250px;
-    margin   : em(30px, 19px) auto;
-  }
-}
-
-#random-stats {
-  margin-top: em(50px, 22px);
-
-  li {
-    padding: em(8px, 22px) em(5px, 22px);
+    margin: 0 auto em(30px, 19px);
   }
 }

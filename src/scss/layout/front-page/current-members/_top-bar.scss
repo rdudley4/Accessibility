@@ -1,0 +1,21 @@
+#members {
+  &-TopBar {
+    padding-bottom: em(7.5px);
+    border-bottom: 1px solid palette(gray, x-light);
+    
+    &Btm {
+      padding-top: em(7.5px);
+    }
+  }
+}
+
+#select-box {
+  font-size: 1em;
+  background: none;
+  color: palette(blue, med);
+}
+
+.stats_value {
+  margin-left: em(5px);
+  margin-bottom: 0;
+}

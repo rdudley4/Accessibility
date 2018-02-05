@@ -7,7 +7,9 @@
   display      : block;
   padding      : em(12px, 19px);
   border-bottom: 1px solid palette(gray);
-  transition   : background-color $trns-duration--default, color $trns-duration--default, border-color $trns-duration--default;
+  transition   : background-color $trns-duration--default $cubic-bezier,
+                 color $trns-duration--default $cubic-bezier,
+                 border-color $trns-duration--default $cubic-bezier;
   z-index      : 0;
 
   &:hover {

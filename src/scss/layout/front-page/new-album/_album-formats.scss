@@ -1,0 +1,38 @@
+// ROW - Album Formats
+// -------------------
+#row-album-formats {
+  margin-bottom: em(50px);
+  color: palette(gray, med);
+  .col-xs-12 {
+    // All but last
+    &:not(:last-of-type) {
+      margin-bottom: em(30px); // Media Queries
+      @include media($mq-sm) {
+        margin-bottom: 0;
+      }
+    }
+    // Hover Styles
+    &:hover {
+      .format-icon {
+        margin-bottom: em(20px, 64px);
+        color: palette(blue, med);
+      }
+      .format-text {
+        color: palette(white);
+        background-color: palette(blue, med);
+      }
+    }
+  }
+  h2 {
+    margin-bottom: em(40px, 19px);
+  }
+}
+
+// album format text
+.format-text {
+  display: inline-block;
+  padding: em(6px) em(12px);
+  border-radius: em(20px);
+  border: 1px solid;
+  transition: all $trns-duration--default;
+}

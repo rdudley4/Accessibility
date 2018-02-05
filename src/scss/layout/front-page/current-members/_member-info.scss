@@ -1,0 +1,21 @@
+#member {
+  &-icon {
+    max-width: em(150px);
+    border-bottom: 1px solid palette(black);
+  }
+  &-name {
+    font-weight: bold;
+  }
+  &-info {
+    margin-bottom: em(50px);
+  }
+  &-about {
+    color: palette(gray, med);
+    margin-bottom: 0;
+  }
+  &-location {
+    margin-left: 0;
+    color: palette(blue, med);
+    font-size: em(17.6px);
+  }
+}

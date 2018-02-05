@@ -52,7 +52,7 @@
             </div>
             <!-- R1:C2 Album Cover/Platforms -->
             <div class="col-xs-12 col-md-6 rel">
-              <img class="section__img" src="img/layout/450x450.png" alt="Album cover for Soul of the Frog" />
+              <img id="album-cover" class="section__img" src="img/layout/450x450.png" alt="Album cover for Soul of the Frog" />
               <!-- R2:C1:r1 Platforms -->
               <div id="row-platforms" class="row middle-xs">
                 <!-- Google Play -->
@@ -96,7 +96,7 @@
                 <div class="col-xs-12">
                   <h2 class="title-uppercase">Available In</h2>
                 </div>
-                
+            
                 <div class="col-xs-12 col-sm-4 content-box--animated">
                   <i class="format-icon fal fa-download fa-4x fa-fw"></i>
                   <span class="format-text">Download</span>
@@ -112,6 +112,8 @@
                   <span class="format-text">Vinyl LP</span>
                 </div>
               </div>
+              <!-- Price Tag -->
+              <span class="album-price title-uppercase"><i class="fal fa-usd-square fa-fw"></i>10.99</span>
               <!-- Purchase Button -->
               <a class="btn title-uppercase" href="#">Purchase Now</a>
             </div>
@@ -178,7 +180,7 @@
           </div>
           <!-- R2:C2 Member ID -->
           <div class="col-xs align-r">
-            <span id="member-id" class="title-uppercase"><i class="fal fa-user"></i> <span id="id-val">#1</span></span>
+            <span class="title-uppercase"><i class="fal fa-user"></i><span class="stats_value" id="member-id">#1</span></span>
           </div>
         </div>
         <!-- END R2 -->
@@ -187,11 +189,11 @@
         <div id="members-TopBarBtm" class="row middle-xs">
           <!-- R3:C1 Age -->
           <div class="col-xs align-l">
-            <span>Age:<span id="stat1" class="stats_value title-uppercase">26</span></span>
+            <span>Age:<span id="member-age" class="stats_value title-uppercase">26</span></span>
           </div>
           <!-- R3:C2 Birthday -->
           <div class="col-xs align-r">
-            <span>Born:<span id="stat2" class="stats_value title-uppercase">1991</span></span>
+            <span>Born:<span id="member-dob" class="stats_value title-uppercase">1991</span></span>
           </div>
         </div>
         <!-- END R3 -->
@@ -200,7 +202,7 @@
         <div class="row center-xs">
           <!-- R4:C1 Image -->
           <div class="col-xs">
-              <img class="member-icon" src="./img/icons/boy-1.svg" alt="Material placeholder image for featured member.">
+              <img id="member-icon" src="./img/icons/boy-1.svg" alt="Material placeholder image for featured member.">
           </div>
         </div>
         <!-- END R4 -->
@@ -210,7 +212,7 @@
           <!-- R5:C1 Name/State/About -->
           <div class="col-xs">
               <h3 id="member-name" class="title-uppercase">InfoBox Name</h3>
-              <span id="stat3" class="stats_value">Chicago, Illinois</span>
+              <span id="member-location" class="stats_value">Chicago, Illinois</span>
               <p id="member-about">Yes. You gave me a dollar and some candy. I don't want to be rescued. You don't know how to do any of those. Who's brave enough to fly into something we all keep calling a death sphere. I found what I need. And it's not friends, it's things. I suppose I could part with 'one' and still be feared… Ah, the 'Breakfast Club' soundtrack! I can't wait til I'm old enough to feel ways about stuff!</p>
           </div>
         </div>

@@ -82,21 +82,6 @@
 
 }
 
-
-#select-box {
-  // position  : absolute;
-  // top       : 12px;
-  // left      : 0;
-  font-size : 1em;
-  background: none;
-  color     : palette(blue, med);
-}
-
-.member-icon {
-  max-width: em(150px);
-  border-bottom: 1px solid palette(black);
-}
-
 label[for="select-box"] {
   position : absolute;
   top      : em(-5px);

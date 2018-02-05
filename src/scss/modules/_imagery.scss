@@ -94,7 +94,7 @@
 .format-icon {
   display: block;
   margin: 0 auto em(10px, 64px);
-  transition: all $trns-duration--default;
+  transition: all $trns-duration--default $cubic-bezier;
 }
 
 

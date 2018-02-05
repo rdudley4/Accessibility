@@ -1,0 +1,7 @@
+// Album Cover Hover Styles
+#album-cover:hover+#row-platforms,
+#row-platforms:hover {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
