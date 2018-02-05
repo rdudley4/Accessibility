@@ -52,3 +52,18 @@
 #row-purchase-info {
   margin-top: em(75px);
 }
+
+// Row - Platforms
+// ---------------
+#row-platforms {
+  position: absolute;
+  max-width: em(450px);
+  left: em(10px);
+  right: em(10px);
+  bottom: em(40px);
+  margin: auto;
+}
+
+.rel {
+  position: relative;
+}

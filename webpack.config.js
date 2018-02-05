@@ -4,10 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const version = process.env.npm_package_version;
 
 const webpackConfig = {
-  entry: ["babel-polyfill", "./src/js/index.js"],
+  entry: ['babel-polyfill', './src/js/index.js'],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   devtool: 'source-map',
   resolve: {
@@ -21,7 +21,7 @@ const webpackConfig = {
         test: /\.html$/,
         loader: "html-loader",
         options: {
-          attrs: ['img:src', 'source:src', 'link:href']
+          attrs: ['img:src', 'source:src', 'link:href'],
         }
       },
       {

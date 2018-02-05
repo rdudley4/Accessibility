@@ -23,11 +23,10 @@
     "file-loader": "^1.1.6",
     "html-loader": "^0.5.4",
     "html-webpack-plugin": "^2.30.1",
-    "img-loader": "^2.0.0",
+    "img-loader": "^2.0.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.1",
-    "verge": "^1.10.2",
+    "style-loader": "^0.20.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0"
   },
@@ -37,7 +36,8 @@
     "@fortawesome/fontawesome-pro-light": "^5.0.4",
     "babel-polyfill": "^6.26.0",
     "flexboxgrid-sass": "^8.0.5",
-    "smoothscroll": "^0.4.0"
+    "smoothscroll": "^0.4.0",
+    "verge": "^1.10.2"
   },
   "repository": {
     "type": "git",
