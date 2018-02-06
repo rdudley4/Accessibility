@@ -24,3 +24,39 @@
     font-size: em(17.6px);
   }
 }
+
+// Member interests
+
+%member-interests-li {
+  display      : inline-block;
+  padding      : em(4px) em(12px);
+  margin-bottom: em(5px);
+  border-radius: $br;
+  color: palette(white);
+}
+
+#member-interests {
+  // Movies
+  &-movies {
+    margin-bottom: em(15px);
+    li {
+      @extend %member-interests-li;
+      background-color: #6B739E;
+    }
+  }
+  // Foods
+  &-foods {
+    margin-bottom: em(15px);
+    li {
+      @extend %member-interests-li;
+      background-color: #E796AE;
+    }
+  }
+  // Games
+  &-games {
+    li {
+      @extend %member-interests-li;
+      background-color: #27ae60;
+    }
+  }
+}
