@@ -11,6 +11,13 @@
   margin-bottom: em(10px, 19px);
   text-transform: uppercase;
   letter-spacing: 2px;
+
+  &-sm {
+    @extend .title-uppercase;
+    margin-top   : 0;
+    margin-bottom: em(5px, 14px);
+    font-size    : em(14px) !important;
+  }
 }
 
 .header {
