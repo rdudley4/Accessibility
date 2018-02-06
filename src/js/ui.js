@@ -15,10 +15,10 @@ import verge from 'verge';
 
 // Font Awesome 5
 import fontawesome from '@fortawesome/fontawesome';
-import { faChevronDown, faDotCircle, faRocket, faUser, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight, faDownload, faMusic, faUsdSquare, faBolt, faLink } from '@fortawesome/fontawesome-pro-light';
+import { faChevronDown, faDotCircle, faRocket, faUser, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight, faDownload, faMusic, faUsdSquare, faBolt, faLink, faComments } from '@fortawesome/fontawesome-pro-light';
 import { faGooglePlay, faSpotify, faApple, faAmazon, faNode, faUikit, faTwitter, faInstagram, faFacebookF } from '@fortawesome/fontawesome-free-brands';
 // Add icons to font awesome library.
-fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faUser, faUikit, faTwitter, faFacebookF, faInstagram, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight, faDownload, faMusic, faUsdSquare, faBolt, faLink);
+fontawesome.library.add(faChevronDown, faGooglePlay, faSpotify, faApple, faAmazon, faDotCircle, faRocket, faNode, faUser, faUikit, faTwitter, faFacebookF, faInstagram, faArrowAltToTop, faHeadphones, faQuestion, faCaretRight, faDownload, faMusic, faUsdSquare, faBolt, faLink, faComments);
 // Bind event handlers to icons after they have been converted to svg by Font Awesome.
 fontawesome.dom.i2svg({ callback: Tools.iconsRendered });
 

@@ -41,7 +41,7 @@
     margin-bottom: em(15px);
     li {
       @extend %member-interests-li;
-      background-color: #6B739E;
+      background-color: palette(blue, med);
     }
   }
   // Foods
@@ -49,14 +49,14 @@
     margin-bottom: em(15px);
     li {
       @extend %member-interests-li;
-      background-color: #E796AE;
+      background-color: palette(red, dark);
     }
   }
   // Games
   &-games {
     li {
       @extend %member-interests-li;
-      background-color: #27ae60;
+      background-color: palette(green, dark);
     }
   }
 }

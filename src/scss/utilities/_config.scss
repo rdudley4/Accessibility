@@ -22,6 +22,7 @@ $black     : #000;
 
 // Reds
 $froly         : #F46B70;
+$drk-red       : #a32525;
 
 // Blues
 $malibu        : #71b6fb;
@@ -41,6 +42,7 @@ $cape-cod      : #404447;
 // Success/Error
 $rusty-red   : #DB324D;
 $ocean-green : #43B581;
+$fun-green   : #04642d;
 
 
 // Usable Color Variables
@@ -71,10 +73,12 @@ $color-palette: (
   ),
   // Layout
   red: (
-    base : $froly
+    base : $froly,
+    dark : $drk-red
   ),
   green: (
-    base : $ocean-green
+    base : $ocean-green,
+    dark : $fun-green
   ),
   blue: (
     light: $malibu,
